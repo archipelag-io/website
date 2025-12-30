@@ -1,0 +1,69 @@
+# Zola configuration for archipelag.io
+
+# Site metadata
+title = "Archipelag.io"
+description = "Compute, closer to you. A new kind of infrastructure is forming."
+base_url = "https://www.archipelag.io"
+
+# Build settings
+compile_sass = true
+minify_html = true
+generate_feeds = true
+feed_filenames = ["atom.xml"]
+
+# Content settings
+default_language = "en"
+
+# Taxonomy for blog/docs if needed
+taxonomies = [
+    { name = "categories", feed = true },
+    { name = "tags", feed = true },
+]
+
+# Build output
+output_dir = "public"
+
+# Theme settings
+[extra]
+# Site metadata
+author = "Archipelag.io"
+email = "hello@archipelag.io"
+
+# Navigation
+nav_items = [
+    { name = "Use AI", url = "/use" },
+    { name = "Earn with your PC", url = "/earn" },
+    { name = "Pricing", url = "/pricing" },
+    { name = "Docs", url = "https://docs.archipelag.io" },
+]
+
+# Social links
+github = "https://github.com/archipelag-io"
+twitter = "@archipelagio"
+
+# App URLs
+app_base_url = "https://app.archipelag.io"
+use_ai_url = "https://app.archipelag.io/use"
+earn_url = "https://app.archipelag.io/earn"
+
+# Color scheme (for potential theme switching)
+default_theme = "light"
+
+# Analytics (placeholder for future)
+# analytics_id = ""
+
+[markdown]
+# Enable highlighting and extra syntax
+highlight_code = true
+highlight_theme = "base16-ocean-dark"
+extra_syntaxes_and_themes = []
+smart_punctuation = true
+
+# Markdown extensions
+[markdown.extensions]
+strikethrough = true
+table = true
+autolink = true
+tasklist = true
+superscript = true
+footnotes = true

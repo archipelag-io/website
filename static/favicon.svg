@@ -1,0 +1,12 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main circles representing nodes -->
+  <circle cx="8" cy="8" r="4" fill="#0ea5e9"/>
+  <circle cx="24" cy="8" r="4" fill="#0ea5e9"/>
+  <circle cx="16" cy="24" r="4" fill="#0ea5e9"/>
+
+  <!-- Connection lines representing network -->
+  <path d="M8 12v8l8 4 8-4v-8" stroke="#0ea5e9" stroke-width="2" fill="none"/>
+  <path d="M12 8l8 0" stroke="#0ea5e9" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M8 12l8 8" stroke="#0ea5e9" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M24 12l-8 8" stroke="#0ea5e9" stroke-width="2" fill="none" opacity="0.6"/>
+</svg>

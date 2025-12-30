@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container" style="padding-top: 6rem; padding-bottom: 6rem; text-align: center;">
+    <div style="max-width: 600px; margin: 0 auto;">
+        <!-- 404 Icon -->
+        <div style="margin-bottom: 2rem;">
+            <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color: var(--color-primary-300); margin: 0 auto;">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M16 16s-1.5-2-4-2-4 2-4 2"></path>
+                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+            </svg>
+        </div>
+
+        <h1 style="font-size: var(--text-6xl); font-weight: 700; margin-bottom: 1rem; color: var(--text-primary);">
+            404
+        </h1>
+
+        <h2 style="font-size: var(--text-2xl); font-weight: 600; margin-bottom: 1rem; color: var(--text-primary);">
+            Page not found
+        </h2>
+
+        <p style="font-size: var(--text-lg); color: var(--text-secondary); margin-bottom: 3rem;">
+            The page you're looking for seems to have wandered off the network.
+            Let's get you back on track.
+        </p>
+
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="/" class="btn btn-primary btn-lg">
+                Go Home
+            </a>
+            <a href="{{ config.extra.use_ai_url }}" class="btn btn-secondary btn-lg">
+                Try AI
+            </a>
+        </div>
+
+        <!-- Helpful links -->
+        <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-light);">
+            <h3 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: 1rem; color: var(--text-primary);">
+                Popular pages
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; text-align: center;">
+                <a href="/pricing" style="color: var(--color-primary-600); font-weight: 500;">Pricing</a>
+                <a href="/about" style="color: var(--color-primary-600); font-weight: 500;">About</a>
+                <a href="/contact" style="color: var(--color-primary-600); font-weight: 500;">Contact</a>
+                <a href="https://docs.archipelag.io" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary-600); font-weight: 500;">Documentation</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

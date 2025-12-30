@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.archipelag.io/sitemap.xml
+
+# Crawl delay for politeness
+Crawl-delay: 1
+
+# Disallow any admin or private paths (future-proofing)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /.well-known/

@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}"
+        />
+        <meta name="author" content="{{ config.extra.author }}" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:url"
+            content="{{ config.base_url }}{% if current_path %}{{ current_path }}{% else %}/{% endif %}"
+        />
+        <meta
+            property="og:title"
+            content="{% if page.title %}{{ page.title }} | {{ config.title }}{% else %}{{ config.title }}{% endif %}"
+        />
+        <meta
+            property="og:description"
+            content="{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}"
+        />
+        <meta
+            property="og:image"
+            content="{{ config.base_url }}/og-image.png"
+        />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+            property="twitter:url"
+            content="{{ config.base_url }}{% if current_path %}{{ current_path }}{% else %}/{% endif %}"
+        />
+        <meta
+            property="twitter:title"
+            content="{% if page.title %}{{ page.title }} | {{ config.title }}{% else %}{{ config.title }}{% endif %}"
+        />
+        <meta
+            property="twitter:description"
+            content="{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}"
+        />
+        <meta
+            property="twitter:image"
+            content="{{ config.base_url }}/og-image.png"
+        />
+
+        <title>
+            {% if page.title %}{{ page.title }} | {{ config.title }}{% else %}{{
+            config.title }}{% endif %}
+        </title>
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="{{ get_url(path='main.css') }}" />
+
+        <!-- Preload critical assets -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        {% block extra_head %}{% endblock extra_head %}
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <nav class="nav">
+                    <a href="/" class="logo">
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <circle cx="6" cy="6" r="3" fill="currentColor" />
+                            <circle cx="18" cy="6" r="3" fill="currentColor" />
+                            <circle cx="12" cy="18" r="3" fill="currentColor" />
+                            <path
+                                d="M6 9v6l6 3 6-3V9"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                fill="none"
+                            />
+                        </svg>
+                        Archipelag.io
+                    </a>
+
+                    <ul class="nav-links">
+                        <li>
+                            <a
+                                href="{{ config.extra.use_ai_url }}"
+                                class="nav-link"
+                                >Use AI</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="{{ config.extra.earn_url }}"
+                                class="nav-link"
+                                >Earn with your PC</a
+                            >
+                        </li>
+                        <li>
+                            <a href="/pricing" class="nav-link">Pricing</a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://docs.archipelag.io"
+                                class="nav-link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                >Docs</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="{{ config.extra.app_base_url }}/auth/signin"
+                                class="btn btn-secondary btn-sm"
+                                >Sign in</a
+                            >
+                        </li>
+                    </ul>
+
+                    <!-- Mobile menu button (placeholder for future JS enhancement) -->
+                    <button class="mobile-menu-button" style="display: none">
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>{% block content %}{% endblock content %}</main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h4>Product</h4>
+                        <ul class="footer-links">
+                            <li>
+                                <a href="{{ config.extra.use_ai_url }}"
+                                    >Use AI</a
+                                >
+                            </li>
+                            <li>
+                                <a href="{{ config.extra.earn_url }}"
+                                    >Earn with your PC</a
+                                >
+                            </li>
+                            <li><a href="/pricing">Pricing</a></li>
+                            <li>
+                                <a
+                                    href="https://docs.archipelag.io"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >Documentation</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="/careers">Careers</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <ul class="footer-links">
+                            <li>
+                                <a
+                                    href="https://docs.archipelag.io/api"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >API Reference</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://docs.archipelag.io/guides"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >Guides</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://status.archipelag.io"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >System Status</a
+                                >
+                            </li>
+                            <li><a href="/contact">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Legal</h4>
+                        <ul class="footer-links">
+                            <li><a href="/privacy">Privacy Policy</a></li>
+                            <li><a href="/terms">Terms of Service</a></li>
+                            <li><a href="/security">Security</a></li>
+                            <li><a href="/cookies">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>
+                        &copy; {{ now() | date(format="%Y") }} Archipelag.io.
+                        All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        {% block extra_js %}{% endblock extra_js %}
+    </body>
+</html>
