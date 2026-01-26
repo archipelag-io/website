@@ -126,11 +126,22 @@
   --radius-xl: 16px;
   --radius-2xl: 24px;
   --radius-3xl: 32px;
+  --radius-4xl: 40px;
+  --radius-5xl: 48px;
   --radius-full: 9999px;
 
-  // Anti-grid system
-  --antigrid-gap: var(--space-3);
-  --antigrid-radius: var(--radius-2xl);
+  // Surface elevation (layered depth)
+  --surface-0: var(--bg);
+  --surface-1: var(--bg-subtle);
+  --surface-2: var(--bg-muted);
+  --surface-border: var(--border);
+
+  // Anti-grid system - made more prominent
+  --antigrid-gap: var(--space-2);
+  --antigrid-radius: var(--radius-4xl);
+  --antigrid-radius-lg: var(--radius-5xl);
+  --antigrid-padding: var(--space-8);
+  --antigrid-padding-lg: var(--space-10);
 
   // Shadows
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -156,4 +167,10 @@ html.dark {
   --accent: #2dd4bf;
   --accent-light: #5eead4;
   --accent-dark: #14b8a6;
+
+  // Surface elevation for dark mode
+  --surface-0: var(--stone-900);
+  --surface-1: var(--stone-800);
+  --surface-2: var(--stone-700);
+  --surface-border: var(--stone-700);
 }

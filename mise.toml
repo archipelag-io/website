@@ -1,27 +1,29 @@
-# mise.toml
-
-min_version = "2025.8.3"
-
 [tools]
-zola = "0.21.0"
-
-[env]
-# add env vars here
+zola = "0.22.1"
 
 [tasks.build]
-description = "Compile site statically with Zola"
+description = "Build site for production"
 run = "zola build"
 
 [tasks.dev]
-description = "Run dev server (live reload)"
-run = "zola serve --interface 0.0.0.0 --open"
-# Make "serve" exclusive, since it's interactive
+description = "Start dev server with live reload"
+run = "zola serve --open"
 raw = true
 
 [tasks.check]
-description = "Run diagnostics without writing files"
+description = "Check site without building"
 run = "zola check"
 
 [tasks.clean]
-description = "Wipe public directory"
-run = "rm -rf public || true"
+description = "Remove build artifacts"
+run = "rm -rf public"
+
+[tasks.deploy]
+description = "Build and deploy (Cloudflare Pages auto-deploys on push)"
+run = """
+#!/bin/bash
+set -e
+echo "Building site..."
+zola build
+echo "Site built. Push to main to deploy via Cloudflare Pages."
+"""
