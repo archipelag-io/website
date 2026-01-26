@@ -381,3 +381,279 @@ html.dark .code-block {
   width: 48px;
   height: 48px;
 }
+
+// ============================================
+// ANTI-GRID SYSTEM
+// Asymmetric rounded card layouts
+// ============================================
+
+.antigrid {
+  display: grid;
+  gap: var(--antigrid-gap);
+}
+
+// Anti-grid card base
+.antigrid-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: var(--space-8);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+
+  &:hover {
+    border-color: var(--accent);
+  }
+}
+
+// Corner rounding utilities for anti-grid
+.rounded-tl { border-top-left-radius: var(--antigrid-radius); }
+.rounded-tr { border-top-right-radius: var(--antigrid-radius); }
+.rounded-bl { border-bottom-left-radius: var(--antigrid-radius); }
+.rounded-br { border-bottom-right-radius: var(--antigrid-radius); }
+.rounded-t { border-top-left-radius: var(--antigrid-radius); border-top-right-radius: var(--antigrid-radius); }
+.rounded-b { border-bottom-left-radius: var(--antigrid-radius); border-bottom-right-radius: var(--antigrid-radius); }
+.rounded-l { border-top-left-radius: var(--antigrid-radius); border-bottom-left-radius: var(--antigrid-radius); }
+.rounded-r { border-top-right-radius: var(--antigrid-radius); border-bottom-right-radius: var(--antigrid-radius); }
+.rounded-all { border-radius: var(--antigrid-radius); }
+.rounded-none { border-radius: 0; }
+
+// 6-card anti-grid layout (2 rows of 3, with asymmetric rounding)
+.antigrid-6 {
+  grid-template-columns: repeat(3, 1fr);
+
+  // First row
+  .antigrid-card:nth-child(1) {
+    border-top-left-radius: var(--antigrid-radius);
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .antigrid-card:nth-child(2) {
+    border-radius: 0;
+  }
+
+  .antigrid-card:nth-child(3) {
+    border-top-left-radius: 0;
+    border-top-right-radius: var(--antigrid-radius);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  // Second row
+  .antigrid-card:nth-child(4) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: var(--antigrid-radius);
+    border-bottom-right-radius: 0;
+  }
+
+  .antigrid-card:nth-child(5) {
+    border-radius: 0;
+  }
+
+  .antigrid-card:nth-child(6) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: var(--antigrid-radius);
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+
+    // Reflow rounding for 2-column layout
+    .antigrid-card:nth-child(1) {
+      border-top-left-radius: var(--antigrid-radius);
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .antigrid-card:nth-child(2) {
+      border-top-left-radius: 0;
+      border-top-right-radius: var(--antigrid-radius);
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .antigrid-card:nth-child(3),
+    .antigrid-card:nth-child(4) {
+      border-radius: 0;
+    }
+
+    .antigrid-card:nth-child(5) {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: var(--antigrid-radius);
+      border-bottom-right-radius: 0;
+    }
+
+    .antigrid-card:nth-child(6) {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: var(--antigrid-radius);
+    }
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+
+    // Single column - round top of first, bottom of last
+    .antigrid-card {
+      border-radius: 0;
+    }
+
+    .antigrid-card:first-child {
+      border-top-left-radius: var(--antigrid-radius);
+      border-top-right-radius: var(--antigrid-radius);
+    }
+
+    .antigrid-card:last-child {
+      border-bottom-left-radius: var(--antigrid-radius);
+      border-bottom-right-radius: var(--antigrid-radius);
+    }
+  }
+}
+
+// 3-card anti-grid layout (pricing cards)
+.antigrid-3 {
+  grid-template-columns: repeat(3, 1fr);
+
+  .antigrid-card:nth-child(1) {
+    border-top-left-radius: var(--antigrid-radius);
+    border-top-right-radius: 0;
+    border-bottom-left-radius: var(--antigrid-radius);
+    border-bottom-right-radius: 0;
+  }
+
+  .antigrid-card:nth-child(2) {
+    border-radius: 0;
+  }
+
+  .antigrid-card:nth-child(3) {
+    border-top-left-radius: 0;
+    border-top-right-radius: var(--antigrid-radius);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: var(--antigrid-radius);
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+
+    .antigrid-card {
+      border-radius: 0;
+    }
+
+    .antigrid-card:first-child {
+      border-top-left-radius: var(--antigrid-radius);
+      border-top-right-radius: var(--antigrid-radius);
+    }
+
+    .antigrid-card:last-child {
+      border-bottom-left-radius: var(--antigrid-radius);
+      border-bottom-right-radius: var(--antigrid-radius);
+    }
+  }
+}
+
+// 2-card anti-grid layout (split sections)
+.antigrid-2 {
+  grid-template-columns: repeat(2, 1fr);
+
+  .antigrid-card:nth-child(1) {
+    border-top-left-radius: var(--antigrid-radius);
+    border-top-right-radius: 0;
+    border-bottom-left-radius: var(--antigrid-radius);
+    border-bottom-right-radius: 0;
+  }
+
+  .antigrid-card:nth-child(2) {
+    border-top-left-radius: 0;
+    border-top-right-radius: var(--antigrid-radius);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: var(--antigrid-radius);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+
+    .antigrid-card:nth-child(1) {
+      border-top-left-radius: var(--antigrid-radius);
+      border-top-right-radius: var(--antigrid-radius);
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .antigrid-card:nth-child(2) {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: var(--antigrid-radius);
+      border-bottom-right-radius: var(--antigrid-radius);
+    }
+  }
+}
+
+// Anti-grid feature card variant
+.antigrid-feature {
+  text-align: left;
+
+  .feature-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 0 var(--space-4) 0;
+    color: var(--accent);
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .feature-title {
+    font-family: var(--font-brand);
+    font-size: var(--text-lg);
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: var(--space-2);
+  }
+
+  .feature-desc {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+}
+
+// Anti-grid with split/preview content
+.antigrid-card.split-content,
+.antigrid-card.preview-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: none;
+}
+
+// Pricing cards in antigrid context
+.antigrid-card.pricing-card {
+  background: var(--bg);
+
+  &.featured {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+// Highlight card variant (accent border on one side)
+.antigrid-card-highlight {
+  border-left: 3px solid var(--accent);
+}
+
+// Large card spanning multiple columns
+.antigrid-span-2 {
+  grid-column: span 2;
+
+  @media (max-width: 640px) {
+    grid-column: span 1;
+  }
+}

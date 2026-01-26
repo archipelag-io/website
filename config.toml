@@ -53,17 +53,5 @@ default_theme = "light"
 # analytics_id = ""
 
 [markdown]
-# Enable highlighting and extra syntax
-highlight_code = true
-highlight_theme = "base16-ocean-dark"
-extra_syntaxes_and_themes = []
 smart_punctuation = true
-
-# Markdown extensions
-[markdown.extensions]
-strikethrough = true
-table = true
-autolink = true
-tasklist = true
-superscript = true
-footnotes = true
+bottom_footnotes = true

@@ -124,7 +124,13 @@
   --radius-md: 8px;
   --radius-lg: 12px;
   --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-3xl: 32px;
   --radius-full: 9999px;
+
+  // Anti-grid system
+  --antigrid-gap: var(--space-3);
+  --antigrid-radius: var(--radius-2xl);
 
   // Shadows
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
