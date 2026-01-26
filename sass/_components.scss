@@ -1076,3 +1076,535 @@ html.dark .glass {
   background: rgba(0, 0, 0, 0.3);
   border-color: rgba(255, 255, 255, 0.05);
 }
+
+// ============================================
+// TROPICAL/OCEAN VISUAL EFFECTS
+// Pacific island chain inspired elements
+// ============================================
+
+// Gradient text - ocean shimmer effect
+.text-gradient {
+  background: var(--gradient-ocean);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-sunset {
+  background: var(--gradient-sunset);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Animated gradient text with shimmer
+.text-gradient-animated {
+  background: linear-gradient(
+    90deg,
+    var(--accent) 0%,
+    var(--lagoon) 25%,
+    var(--accent-light) 50%,
+    var(--lagoon) 75%,
+    var(--accent) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 4s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+}
+
+// Floating animation - like islands on gentle waves
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes float-subtle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes float-rotate {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-4px) rotate(1deg); }
+  75% { transform: translateY(-4px) rotate(-1deg); }
+}
+
+.float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.float-subtle {
+  animation: float-subtle 3s ease-in-out infinite;
+}
+
+.float-delayed {
+  animation: float 4s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+// Water ripple effect on hover
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple-effect {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, var(--glow-primary) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: scale(0);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &:active::after {
+    animation: ripple 0.6s ease-out;
+  }
+}
+
+// Wave animation keyframes
+@keyframes wave {
+  0% { transform: translateX(0) translateZ(0) scaleY(1); }
+  50% { transform: translateX(-25%) translateZ(0) scaleY(0.8); }
+  100% { transform: translateX(-50%) translateZ(0) scaleY(1); }
+}
+
+@keyframes wave-slow {
+  0% { transform: translateX(0) translateZ(0) scaleY(1); }
+  50% { transform: translateX(-25%) translateZ(0) scaleY(0.9); }
+  100% { transform: translateX(-50%) translateZ(0) scaleY(1); }
+}
+
+// Wave section separator
+.wave-separator {
+  position: relative;
+  height: 80px;
+  overflow: hidden;
+  pointer-events: none;
+
+  svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    animation: wave 8s linear infinite;
+
+    path {
+      fill: var(--bg);
+    }
+  }
+
+  &.wave-top svg {
+    top: 0;
+    bottom: auto;
+    transform: rotate(180deg);
+  }
+}
+
+// Layered waves background
+.waves-bg {
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+
+  .wave {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    background-repeat: repeat-x;
+    background-size: 50% 100%;
+  }
+
+  .wave-1 {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120'%3E%3Cpath d='M0,60 C300,100 400,20 600,60 C800,100 900,20 1200,60 L1200,120 L0,120 Z' fill='%230d948820'/%3E%3C/svg%3E");
+    animation: wave 10s linear infinite;
+    opacity: 0.8;
+  }
+
+  .wave-2 {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120'%3E%3Cpath d='M0,60 C300,20 400,100 600,60 C800,20 900,100 1200,60 L1200,120 L0,120 Z' fill='%2306b6d415'/%3E%3C/svg%3E");
+    animation: wave-slow 12s linear infinite;
+    animation-delay: -2s;
+    opacity: 0.6;
+  }
+
+  .wave-3 {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120'%3E%3Cpath d='M0,80 C300,40 400,100 600,80 C800,40 900,100 1200,80 L1200,120 L0,120 Z' fill='%232dd4bf10'/%3E%3C/svg%3E");
+    animation: wave 14s linear infinite;
+    animation-delay: -4s;
+    opacity: 0.4;
+  }
+}
+
+// Ocean surface shimmer effect
+.ocean-shimmer {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 20%, var(--glow-secondary) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 60%, var(--glow-primary) 0%, transparent 40%),
+      radial-gradient(ellipse at 40% 80%, var(--glow-secondary) 0%, transparent 30%);
+    opacity: 0.3;
+    pointer-events: none;
+    animation: shimmer-pulse 6s ease-in-out infinite;
+  }
+}
+
+@keyframes shimmer-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.5; }
+}
+
+// Bioluminescent glow effect (for dark mode)
+.bioluminescent {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(
+      circle at center,
+      var(--glow-primary) 0%,
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity var(--transition-slow);
+    pointer-events: none;
+    filter: blur(20px);
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+html.dark .bioluminescent:hover::before {
+  opacity: 0.8;
+}
+
+// Coral accent border
+.coral-accent {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--gradient-sunset);
+    border-radius: 4px 0 0 4px;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+// Island silhouette decoration
+.deco-island {
+  position: absolute;
+  width: 120px;
+  height: 60px;
+  background: var(--accent);
+  opacity: 0.05;
+  border-radius: 60% 60% 40% 40%;
+  pointer-events: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 40px;
+    background: var(--accent);
+    border-radius: 50% 50% 10% 10%;
+  }
+}
+
+// Tropical card variant with depth effect
+.card-tropical {
+  position: relative;
+  background: var(--surface-1);
+  border: 2px solid var(--surface-border);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  transition: all var(--transition-base);
+
+  // Ocean depth gradient overlay
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(13, 148, 136, 0.03) 100%
+    );
+    pointer-events: none;
+  }
+
+  // Shine effect on top
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--accent-muted) 50%,
+      transparent 100%
+    );
+    opacity: 0.5;
+  }
+
+  &:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow:
+      0 10px 40px -10px rgba(13, 148, 136, 0.3),
+      0 0 0 1px var(--accent);
+  }
+}
+
+html.dark .card-tropical {
+  &::before {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(45, 212, 191, 0.05) 100%
+    );
+  }
+
+  &:hover {
+    box-shadow:
+      0 10px 60px -10px rgba(45, 212, 191, 0.4),
+      0 0 0 1px var(--accent),
+      0 0 80px -20px var(--glow-primary);
+  }
+}
+
+// Lagoon button variant
+.btn-lagoon {
+  background: var(--gradient-ocean);
+  color: var(--white);
+  border: none;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.2) 50%,
+      transparent 100%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 4px 20px -4px var(--glow-primary),
+      0 0 40px -10px var(--glow-secondary);
+
+    &::before {
+      transform: translateX(100%);
+    }
+  }
+}
+
+// Sunset button variant
+.btn-sunset {
+  background: var(--gradient-sunset);
+  color: var(--white);
+  border: none;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px -4px var(--glow-coral);
+  }
+}
+
+// Depth layers effect (for hero backgrounds)
+.depth-layers {
+  position: relative;
+
+  .depth-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    &.layer-surface {
+      background: radial-gradient(
+        ellipse at 50% 0%,
+        rgba(45, 212, 191, 0.1) 0%,
+        transparent 60%
+      );
+    }
+
+    &.layer-mid {
+      background: radial-gradient(
+        ellipse at 30% 50%,
+        rgba(6, 182, 212, 0.05) 0%,
+        transparent 50%
+      );
+    }
+
+    &.layer-deep {
+      background: radial-gradient(
+        ellipse at 70% 80%,
+        rgba(12, 74, 110, 0.05) 0%,
+        transparent 40%
+      );
+    }
+  }
+}
+
+// Flowing particles (like ocean plankton)
+@keyframes drift {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(100px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+
+  .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 50%;
+    opacity: 0;
+    animation: drift 15s linear infinite;
+
+    &:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 12s; }
+    &:nth-child(2) { left: 20%; animation-delay: 2s; animation-duration: 14s; }
+    &:nth-child(3) { left: 30%; animation-delay: 4s; animation-duration: 16s; }
+    &:nth-child(4) { left: 50%; animation-delay: 1s; animation-duration: 13s; }
+    &:nth-child(5) { left: 70%; animation-delay: 3s; animation-duration: 15s; }
+    &:nth-child(6) { left: 80%; animation-delay: 5s; animation-duration: 11s; }
+    &:nth-child(7) { left: 90%; animation-delay: 2.5s; animation-duration: 17s; }
+  }
+}
+
+// Hover lift with shadow depth
+.hover-lift {
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      0 12px 40px -8px rgba(0, 0, 0, 0.15),
+      0 4px 12px -4px rgba(13, 148, 136, 0.2);
+  }
+}
+
+html.dark .hover-lift:hover {
+  box-shadow:
+    0 12px 50px -8px rgba(0, 0, 0, 0.5),
+    0 0 60px -20px var(--glow-primary);
+}
+
+// Staggered fade-in animation
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.stagger > * {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+
+  @for $i from 1 through 12 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.1}s;
+    }
+  }
+}
+
+// Pulse glow for emphasis
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 var(--glow-primary);
+  }
+  50% {
+    box-shadow: 0 0 20px 5px var(--glow-primary);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
