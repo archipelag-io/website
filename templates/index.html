@@ -252,35 +252,62 @@
     <main id="main-content" role="main" itemprop="mainContentOfPage">
         <!-- SECTION 1: Hero -->
         <section class="hero-section" aria-labelledby="hero-title">
-            <!-- Archipelago map background with islands and shipping routes -->
+            <!-- Archipelago map background with islands and cargo ships -->
             <div class="archipelago-map" aria-hidden="true">
-                <!-- Shipping routes (drawn first, behind islands) -->
-                <svg class="shipping-routes" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
-                    <!-- Route paths with dashed lines -->
-                    <path class="route route-1" d="M150,180 Q300,120 420,200 T650,160" />
-                    <path class="route route-2" d="M420,200 Q500,280 580,320 T780,280" />
-                    <path class="route route-3" d="M650,160 Q720,200 780,280 T950,320" />
-                    <path class="route route-4" d="M180,380 Q280,340 420,200" />
-                    <path class="route route-5" d="M580,320 Q680,400 820,450 T1050,400" />
-                    <path class="route route-6" d="M950,320 Q1000,280 1080,220" />
-                    <path class="route route-7" d="M100,280 Q150,240 150,180" />
+                <!-- Cargo ships - many small dots traveling between ports -->
+                <svg class="shipping-lanes" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+                    <!-- Ships traveling various routes between islands -->
+                    <!-- Route cluster: West islands to Central -->
+                    <circle class="ship" r="1.5"><animateMotion dur="25s" repeatCount="indefinite" path="M100,150 Q200,120 350,180 Q450,220 500,200" /></circle>
+                    <circle class="ship" r="1"><animateMotion dur="32s" repeatCount="indefinite" path="M120,180 Q220,150 380,200 Q480,180 520,160" /></circle>
+                    <circle class="ship" r="1.5"><animateMotion dur="28s" repeatCount="indefinite" path="M80,200 Q180,160 320,190 Q420,210 480,190" /></circle>
+                    <circle class="ship" r="1"><animateMotion dur="35s" repeatCount="indefinite" path="M140,160 Q250,130 400,170 Q500,150 550,180" /></circle>
 
-                    <!-- Animated ships along routes -->
-                    <circle class="ship ship-1" r="4">
-                        <animateMotion dur="12s" repeatCount="indefinite" path="M150,180 Q300,120 420,200 T650,160" />
-                    </circle>
-                    <circle class="ship ship-2" r="3">
-                        <animateMotion dur="15s" repeatCount="indefinite" path="M420,200 Q500,280 580,320 T780,280" />
-                    </circle>
-                    <circle class="ship ship-3" r="4">
-                        <animateMotion dur="18s" repeatCount="indefinite" path="M580,320 Q680,400 820,450 T1050,400" />
-                    </circle>
-                    <circle class="ship ship-4" r="3">
-                        <animateMotion dur="14s" repeatCount="indefinite" path="M650,160 Q720,200 780,280 T950,320" />
-                    </circle>
-                    <circle class="ship ship-5" r="3">
-                        <animateMotion dur="10s" repeatCount="indefinite" path="M180,380 Q280,340 420,200" />
-                    </circle>
+                    <!-- Route cluster: Central to East islands -->
+                    <circle class="ship" r="1.5"><animateMotion dur="30s" repeatCount="indefinite" path="M500,180 Q600,150 750,200 Q900,180 1000,220" /></circle>
+                    <circle class="ship" r="1"><animateMotion dur="26s" repeatCount="indefinite" path="M520,200 Q650,170 800,190 Q920,210 1050,180" /></circle>
+                    <circle class="ship" r="1.5"><animateMotion dur="33s" repeatCount="indefinite" path="M480,160 Q580,190 720,160 Q850,200 980,170" /></circle>
+                    <circle class="ship" r="1"><animateMotion dur="29s" repeatCount="indefinite" path="M540,190 Q680,160 820,180 Q950,150 1080,200" /></circle>
+
+                    <!-- Route cluster: North to South passages -->
+                    <circle class="ship" r="1.5"><animateMotion dur="27s" repeatCount="indefinite" path="M200,100 Q250,200 300,320 Q350,400 400,450" /></circle>
+                    <circle class="ship" r="1"><animateMotion dur="34s" repeatCount="indefinite" path="M600,80 Q620,180 650,300 Q680,400 720,480" /></circle>
+                    <circle class="ship" r="1.5"><animateMotion dur="31s" repeatCount="indefinite" path="M900,120 Q880,220 850,340 Q820,420 800,500" /></circle>
+                    <circle class="ship" r="1"><animateMotion dur="24s" repeatCount="indefinite" path="M400,90 Q420,180 450,280 Q480,380 500,460" /></circle>
+
+                    <!-- Route cluster: Southwest to Northeast diagonal -->
+                    <circle class="ship" r="1.5"><animateMotion dur="40s" repeatCount="indefinite" path="M50,450 Q200,380 400,300 Q650,200 900,120 Q1050,80 1150,50" /></circle>
+                    <circle class="ship" r="1"><animateMotion dur="45s" repeatCount="indefinite" path="M80,480 Q250,400 450,320 Q700,220 950,140 Q1100,90 1180,70" /></circle>
+                    <circle class="ship" r="1.5"><animateMotion dur="38s" repeatCount="indefinite" path="M30,420 Q180,350 380,280 Q620,180 880,110 Q1020,70 1120,40" /></circle>
+
+                    <!-- Route cluster: Northwest to Southeast diagonal -->
+                    <circle class="ship" r="1"><animateMotion dur="42s" repeatCount="indefinite" path="M50,80 Q200,150 400,250 Q650,350 900,450 Q1050,500 1150,550" /></circle>
+                    <circle class="ship" r="1.5"><animateMotion dur="36s" repeatCount="indefinite" path="M80,50 Q250,130 480,240 Q720,360 950,470 Q1100,520 1180,560" /></circle>
+                    <circle class="ship" r="1"><animateMotion dur="48s" repeatCount="indefinite" path="M30,100 Q180,180 380,280 Q600,380 850,480 Q1000,530 1100,570" /></circle>
+
+                    <!-- Scattered shorter routes -->
+                    <circle class="ship" r="1.5"><animateMotion dur="18s" repeatCount="indefinite" path="M150,250 Q250,220 350,260 Q420,290 480,270" /></circle>
+                    <circle class="ship" r="1"><animateMotion dur="20s" repeatCount="indefinite" path="M700,280 Q780,250 860,290 Q920,320 980,300" /></circle>
+                    <circle class="ship" r="1.5"><animateMotion dur="22s" repeatCount="indefinite" path="M300,380 Q400,350 500,390 Q580,420 650,400" /></circle>
+                    <circle class="ship" r="1"><animateMotion dur="16s" repeatCount="indefinite" path="M800,380 Q880,350 960,390 Q1020,420 1080,400" /></circle>
+                    <circle class="ship" r="1.5"><animateMotion dur="19s" repeatCount="indefinite" path="M180,320 Q260,290 340,330 Q400,360 460,340" /></circle>
+                    <circle class="ship" r="1"><animateMotion dur="21s" repeatCount="indefinite" path="M550,350 Q630,320 710,360 Q770,390 830,370" /></circle>
+
+                    <!-- Additional cross-traffic -->
+                    <circle class="ship" r="1"><animateMotion dur="50s" repeatCount="indefinite" path="M1150,300 Q950,280 750,320 Q550,280 350,320 Q150,280 50,300" /></circle>
+                    <circle class="ship" r="1.5"><animateMotion dur="55s" repeatCount="indefinite" path="M1180,250 Q980,220 780,260 Q580,220 380,260 Q180,220 20,250" /></circle>
+                    <circle class="ship" r="1"><animateMotion dur="52s" repeatCount="indefinite" path="M1100,400 Q900,380 700,420 Q500,380 300,420 Q100,380 0,400" /></circle>
+
+                    <!-- More scattered ships for density -->
+                    <circle class="ship" r="1"><animateMotion dur="23s" repeatCount="indefinite" path="M250,150 Q350,180 450,150 Q550,180 650,150" /></circle>
+                    <circle class="ship" r="1.5"><animateMotion dur="26s" repeatCount="indefinite" path="M750,180 Q850,150 950,180 Q1050,150 1100,180" /></circle>
+                    <circle class="ship" r="1"><animateMotion dur="24s" repeatCount="indefinite" path="M100,350 Q200,380 300,350 Q400,380 500,350" /></circle>
+                    <circle class="ship" r="1.5"><animateMotion dur="28s" repeatCount="indefinite" path="M600,420 Q700,450 800,420 Q900,450 1000,420" /></circle>
+                    <circle class="ship" r="1"><animateMotion dur="30s" repeatCount="indefinite" path="M350,480 Q450,450 550,480 Q650,450 750,480" /></circle>
+                    <circle class="ship" r="1.5"><animateMotion dur="22s" repeatCount="indefinite" path="M200,80 Q300,110 400,80 Q500,110 600,80" /></circle>
+                    <circle class="ship" r="1"><animateMotion dur="25s" repeatCount="indefinite" path="M700,100 Q800,130 900,100 Q1000,130 1100,100" /></circle>
+                    <circle class="ship" r="1.5"><animateMotion dur="27s" repeatCount="indefinite" path="M50,500 Q150,470 250,500 Q350,470 450,500" /></circle>
+                    <circle class="ship" r="1"><animateMotion dur="29s" repeatCount="indefinite" path="M550,520 Q650,490 750,520 Q850,490 950,520" /></circle>
                 </svg>
 
                 <!-- Islands -->

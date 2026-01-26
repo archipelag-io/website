@@ -1626,50 +1626,24 @@ html.dark .hover-lift:hover {
   }
 }
 
-// Shipping routes SVG container
-.shipping-routes {
+// Shipping lanes SVG container
+.shipping-lanes {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
 }
 
-// Route paths (dashed lines)
-.route {
-  fill: none;
-  stroke: var(--accent);
-  stroke-width: 1.5;
-  stroke-dasharray: 8 6;
-  stroke-linecap: round;
-  opacity: 0.3;
-  animation: route-dash 30s linear infinite;
-
-  &.route-1 { stroke-dashoffset: 0; animation-duration: 25s; }
-  &.route-2 { stroke-dashoffset: 10; animation-duration: 30s; }
-  &.route-3 { stroke-dashoffset: 5; animation-duration: 28s; }
-  &.route-4 { stroke-dashoffset: 15; animation-duration: 22s; }
-  &.route-5 { stroke-dashoffset: 8; animation-duration: 32s; }
-  &.route-6 { stroke-dashoffset: 12; animation-duration: 20s; }
-  &.route-7 { stroke-dashoffset: 3; animation-duration: 18s; }
-}
-
-@keyframes route-dash {
-  to {
-    stroke-dashoffset: -100;
-  }
-}
-
-// Animated ships (dots moving along routes)
+// Cargo ships - tiny star-like dots
 .ship {
   fill: var(--accent);
-  opacity: 0.8;
-  filter: drop-shadow(0 0 4px var(--glow-primary));
+  opacity: 0.7;
 
-  &.ship-1 { fill: var(--accent-light); }
-  &.ship-2 { fill: var(--lagoon); }
-  &.ship-3 { fill: var(--accent); }
-  &.ship-4 { fill: var(--lagoon-light); }
-  &.ship-5 { fill: var(--accent-light); }
+  // Vary colors for visual interest
+  &:nth-child(3n) { fill: var(--accent-light); opacity: 0.8; }
+  &:nth-child(3n+1) { fill: var(--lagoon); opacity: 0.6; }
+  &:nth-child(5n) { fill: var(--lagoon-light); opacity: 0.75; }
+  &:nth-child(7n) { fill: var(--accent-muted); opacity: 0.5; }
 }
 
 // Island base styles
@@ -1783,16 +1757,16 @@ html.dark .hover-lift:hover {
 
 // Dark mode enhancements
 html.dark .archipelago-map {
-  opacity: 0.7;
-}
-
-html.dark .route {
-  stroke: var(--accent-light);
-  opacity: 0.25;
+  opacity: 0.8;
 }
 
 html.dark .ship {
-  filter: drop-shadow(0 0 6px var(--glow-primary));
+  opacity: 0.9;
+
+  &:nth-child(3n) { opacity: 1; }
+  &:nth-child(3n+1) { opacity: 0.8; }
+  &:nth-child(5n) { opacity: 0.95; }
+  &:nth-child(7n) { opacity: 0.7; }
 }
 
 html.dark .island {
@@ -1814,14 +1788,8 @@ html.dark .island {
   .island-7 { display: none; }
   .island-10 { display: none; }
 
-  .route-4,
-  .route-6,
-  .route-7 {
-    display: none;
-  }
-
-  .ship-4,
-  .ship-5 {
+  // Hide some ships on mobile for performance
+  .ship:nth-child(n+25) {
     display: none;
   }
 }
