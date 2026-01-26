@@ -1,10 +1,10 @@
 +++
 title = "Privacy Policy"
 description = "How Archipelag.io collects, uses, and protects your personal information."
-date = 2025-01-01
+date = 2026-01-26
 +++
 
-*Last updated: January 1, 2025*
+*Last updated: January 26, 2026*
 
 This Privacy Policy describes how Archipelag.io ("we", "us", or "our") collects, uses, and shares information about you when you use our website, platform, and services (collectively, the "Services").
 
@@ -110,7 +110,7 @@ We may update this Privacy Policy from time to time. We will notify you of mater
 If you have questions about this Privacy Policy or our privacy practices, contact us at:
 
 - **Email**: [privacy@archipelag.io](mailto:privacy@archipelag.io)
-- **Address**: Archipelag.io, [Address to be added]
+- **Address**: Archipelag.io, Amsterdam, Netherlands
 
 For data protection inquiries in the EU, you may also contact your local data protection authority.
 

@@ -1,10 +1,10 @@
 +++
 title = "Terms of Service"
 description = "The terms and conditions governing your use of Archipelag.io services."
-date = 2025-01-01
+date = 2026-01-26
 +++
 
-*Last updated: January 1, 2025*
+*Last updated: January 26, 2026*
 
 These Terms of Service ("Terms") govern your access to and use of Archipelag.io's website, platform, APIs, and services (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms.
 
@@ -151,10 +151,10 @@ You agree to indemnify and hold harmless Archipelag.io, its officers, directors,
 Before filing any formal dispute, you agree to contact us at [legal@archipelag.io](mailto:legal@archipelag.io) and attempt to resolve the dispute informally for at least 30 days.
 
 ### 12.2 Governing Law
-These Terms are governed by the laws of [Jurisdiction to be specified], without regard to conflict of law principles.
+These Terms are governed by the laws of the Netherlands, without regard to conflict of law principles.
 
 ### 12.3 Jurisdiction
-Any disputes not resolved informally shall be resolved in the courts of [Jurisdiction to be specified].
+Any disputes not resolved informally shall be resolved in the courts of Amsterdam, the Netherlands.
 
 ## 13. Changes to Terms
 

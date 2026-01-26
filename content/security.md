@@ -1,7 +1,7 @@
 +++
 title = "Security"
 description = "How Archipelag.io protects your data and ensures secure compute operations."
-date = 2025-01-01
+date = 2026-01-26
 +++
 
 Security is fundamental to Archipelag.io. We've designed our platform with security at every layer, ensuring both users and hosts can participate safely in our distributed compute network.

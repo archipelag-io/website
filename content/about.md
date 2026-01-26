@@ -67,10 +67,10 @@ Archipelag.io is bootstrapped and revenue-funded. We take a small platform fee (
 
 ## Roadmap
 
-- **Q1 2025**: Public beta with GPU-based AI workloads
-- **Q2 2025**: Image generation workloads and expanded coverage
-- **Q3 2025**: Mobile app and additional model support
-- **Q4 2025**: Enterprise features and custom deployments
+- **Q1 2026**: Public beta with GPU-based AI workloads
+- **Q2 2026**: Image generation workloads and expanded coverage
+- **Q3 2026**: Mobile app and additional model support
+- **Q4 2026**: Enterprise features and custom deployments
 
 ## Contact
 
