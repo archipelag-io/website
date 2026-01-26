@@ -172,19 +172,10 @@
     animation: hero-shimmer 8s ease-in-out infinite;
   }
 
-  // Subtle animated particles
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      radial-gradient(circle at 20% 30%, var(--accent) 1px, transparent 1px),
-      radial-gradient(circle at 80% 70%, var(--lagoon) 1px, transparent 1px),
-      radial-gradient(circle at 50% 50%, var(--accent-light) 1px, transparent 1px);
-    background-size: 100px 100px, 150px 150px, 200px 200px;
-    opacity: 0.15;
-    pointer-events: none;
-    animation: drift-subtle 20s linear infinite;
+  // Container needs z-index for content above map
+  .container {
+    position: relative;
+    z-index: 1;
   }
 
   @media (min-width: 768px) {
@@ -203,20 +194,11 @@
   }
 }
 
-@keyframes drift-subtle {
-  0% { background-position: 0 0, 0 0, 0 0; }
-  100% { background-position: 100px 50px, -150px 100px, 200px -50px; }
-}
-
 html.dark .hero-section::before {
   background:
     radial-gradient(ellipse at 50% 0%, rgba(45, 212, 191, 0.15) 0%, transparent 50%),
     radial-gradient(ellipse at 30% 30%, rgba(34, 211, 238, 0.1) 0%, transparent 40%),
     radial-gradient(ellipse at 70% 40%, rgba(45, 212, 191, 0.08) 0%, transparent 35%);
-}
-
-html.dark .hero-section::after {
-  opacity: 0.2;
 }
 
 .hero-title {

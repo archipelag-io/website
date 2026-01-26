@@ -1608,3 +1608,220 @@ html.dark .hover-lift:hover {
 .pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
 }
+
+// ============================================
+// ARCHIPELAGO MAP
+// Background decoration with islands and shipping routes
+// ============================================
+
+.archipelago-map {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.6;
+
+  @media (max-width: 768px) {
+    opacity: 0.4;
+  }
+}
+
+// Shipping routes SVG container
+.shipping-routes {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Route paths (dashed lines)
+.route {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  stroke-dasharray: 8 6;
+  stroke-linecap: round;
+  opacity: 0.3;
+  animation: route-dash 30s linear infinite;
+
+  &.route-1 { stroke-dashoffset: 0; animation-duration: 25s; }
+  &.route-2 { stroke-dashoffset: 10; animation-duration: 30s; }
+  &.route-3 { stroke-dashoffset: 5; animation-duration: 28s; }
+  &.route-4 { stroke-dashoffset: 15; animation-duration: 22s; }
+  &.route-5 { stroke-dashoffset: 8; animation-duration: 32s; }
+  &.route-6 { stroke-dashoffset: 12; animation-duration: 20s; }
+  &.route-7 { stroke-dashoffset: 3; animation-duration: 18s; }
+}
+
+@keyframes route-dash {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+// Animated ships (dots moving along routes)
+.ship {
+  fill: var(--accent);
+  opacity: 0.8;
+  filter: drop-shadow(0 0 4px var(--glow-primary));
+
+  &.ship-1 { fill: var(--accent-light); }
+  &.ship-2 { fill: var(--lagoon); }
+  &.ship-3 { fill: var(--accent); }
+  &.ship-4 { fill: var(--lagoon-light); }
+  &.ship-5 { fill: var(--accent-light); }
+}
+
+// Island base styles
+.island {
+  position: absolute;
+  color: var(--accent);
+  opacity: 0.15;
+  transition: opacity var(--transition-slow);
+
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  // Subtle floating animation for islands
+  animation: island-float 8s ease-in-out infinite;
+
+  &:nth-child(even) {
+    animation-direction: reverse;
+    animation-duration: 10s;
+  }
+}
+
+@keyframes island-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+// Island sizes
+.island-xs {
+  width: 30px;
+  height: 24px;
+}
+
+.island-sm {
+  width: 50px;
+  height: 40px;
+}
+
+.island-md {
+  width: 80px;
+  height: 60px;
+}
+
+.island-lg {
+  width: 120px;
+  height: 80px;
+}
+
+// Island positions (scattered across the hero)
+.island-1 {
+  top: 15%;
+  left: 8%;
+  animation-delay: 0s;
+}
+
+.island-2 {
+  top: 25%;
+  left: 32%;
+  animation-delay: -1s;
+}
+
+.island-3 {
+  top: 12%;
+  left: 52%;
+  animation-delay: -2s;
+}
+
+.island-4 {
+  top: 35%;
+  left: 62%;
+  animation-delay: -3s;
+}
+
+.island-5 {
+  top: 18%;
+  right: 15%;
+  animation-delay: -4s;
+}
+
+.island-6 {
+  top: 45%;
+  right: 8%;
+  animation-delay: -2.5s;
+}
+
+.island-7 {
+  bottom: 30%;
+  left: 15%;
+  animation-delay: -1.5s;
+}
+
+.island-8 {
+  bottom: 25%;
+  left: 45%;
+  animation-delay: -3.5s;
+}
+
+.island-9 {
+  bottom: 35%;
+  right: 25%;
+  animation-delay: -0.5s;
+}
+
+.island-10 {
+  bottom: 20%;
+  right: 35%;
+  animation-delay: -4.5s;
+}
+
+// Dark mode enhancements
+html.dark .archipelago-map {
+  opacity: 0.7;
+}
+
+html.dark .route {
+  stroke: var(--accent-light);
+  opacity: 0.25;
+}
+
+html.dark .ship {
+  filter: drop-shadow(0 0 6px var(--glow-primary));
+}
+
+html.dark .island {
+  opacity: 0.12;
+  color: var(--accent-light);
+}
+
+// Responsive adjustments
+@media (max-width: 1024px) {
+  .island-1 { left: 5%; }
+  .island-5 { display: none; }
+  .island-6 { right: 5%; }
+  .island-9 { display: none; }
+}
+
+@media (max-width: 768px) {
+  .island-2 { display: none; }
+  .island-4 { display: none; }
+  .island-7 { display: none; }
+  .island-10 { display: none; }
+
+  .route-4,
+  .route-6,
+  .route-7 {
+    display: none;
+  }
+
+  .ship-4,
+  .ship-5 {
+    display: none;
+  }
+}
