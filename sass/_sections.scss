@@ -31,33 +31,6 @@
 // Section backgrounds
 .section-alt {
   background: var(--bg-subtle);
-  position: relative;
-
-  // Wave-inspired top edge
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    background: var(--bg);
-    clip-path: ellipse(70% 100% at 50% 0%);
-    pointer-events: none;
-  }
-
-  // Wave-inspired bottom edge
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    background: var(--bg);
-    clip-path: ellipse(70% 100% at 50% 100%);
-    pointer-events: none;
-  }
 }
 
 // Flat edge variant (original style)
@@ -148,14 +121,14 @@
   line-height: 1.7;
 }
 
-// Hero section - enhanced with tropical ocean effects
+// Hero section
 .hero-section {
   padding: var(--space-24) 0 var(--space-16);
   text-align: center;
   position: relative;
   overflow: hidden;
 
-  // Multi-layer ocean depth effect
+  // Subtle gradient background
   &::before {
     content: '';
     position: absolute;
@@ -164,12 +137,12 @@
     transform: translateX(-50%);
     width: 150%;
     height: 100%;
-    background:
-      radial-gradient(ellipse at 50% 0%, rgba(13, 148, 136, 0.12) 0%, transparent 50%),
-      radial-gradient(ellipse at 30% 30%, rgba(6, 182, 212, 0.08) 0%, transparent 40%),
-      radial-gradient(ellipse at 70% 40%, rgba(45, 212, 191, 0.06) 0%, transparent 35%);
+    background: radial-gradient(
+      ellipse at 50% 0%,
+      rgba(13, 148, 136, 0.06) 0%,
+      transparent 60%
+    );
     pointer-events: none;
-    animation: hero-shimmer 8s ease-in-out infinite;
   }
 
   // Container needs z-index for content above map
@@ -183,22 +156,12 @@
   }
 }
 
-@keyframes hero-shimmer {
-  0%, 100% {
-    opacity: 1;
-    transform: translateX(-50%) scale(1);
-  }
-  50% {
-    opacity: 0.8;
-    transform: translateX(-50%) scale(1.02);
-  }
-}
-
 html.dark .hero-section::before {
-  background:
-    radial-gradient(ellipse at 50% 0%, rgba(45, 212, 191, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 30% 30%, rgba(34, 211, 238, 0.1) 0%, transparent 40%),
-    radial-gradient(ellipse at 70% 40%, rgba(45, 212, 191, 0.08) 0%, transparent 35%);
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(45, 212, 191, 0.08) 0%,
+    transparent 60%
+  );
 }
 
 .hero-title {
@@ -216,24 +179,7 @@ html.dark .hero-section::before {
 
   // Gradient accent on specific words (via span.accent)
   .accent {
-    background: var(--gradient-ocean);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    position: relative;
-
-    // Subtle underline glow
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: var(--gradient-ocean);
-      border-radius: 2px;
-      opacity: 0.5;
-    }
+    color: var(--accent);
   }
 
   @media (min-width: 768px) {
@@ -245,22 +191,10 @@ html.dark .hero-section::before {
   }
 }
 
-// Animated version for special emphasis
+// Animated version - simplified
 .hero-title-animated {
   .accent {
-    background: linear-gradient(
-      90deg,
-      var(--accent) 0%,
-      var(--lagoon) 25%,
-      var(--accent-light) 50%,
-      var(--lagoon) 75%,
-      var(--accent) 100%
-    );
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradient-shift 4s ease infinite;
+    color: var(--accent);
   }
 }
 
@@ -371,37 +305,10 @@ html.dark .hero-section::before {
 .cta-section {
   text-align: center;
   padding: var(--space-16) 0;
-  position: relative;
-  overflow: hidden;
-
-  // Subtle ocean glow background
-  &::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 150%;
-    height: 200%;
-    background: radial-gradient(
-      ellipse at center,
-      rgba(13, 148, 136, 0.06) 0%,
-      transparent 50%
-    );
-    pointer-events: none;
-  }
 
   @media (min-width: 768px) {
     padding: var(--space-24) 0;
   }
-}
-
-html.dark .cta-section::before {
-  background: radial-gradient(
-    ellipse at center,
-    rgba(45, 212, 191, 0.08) 0%,
-    transparent 50%
-  );
 }
 
 .cta-title {
@@ -665,23 +572,9 @@ html.dark .header-logo img {
 
 // Footer
 .site-footer {
-  border-top: none;
+  border-top: 1px solid var(--border-subtle);
   padding: var(--space-16) 0 var(--space-8);
-  position: relative;
   background: var(--bg-subtle);
-
-  // Wave top edge
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 80px;
-    background: var(--bg);
-    clip-path: ellipse(80% 100% at 50% 0%);
-    pointer-events: none;
-  }
 }
 
 .footer-grid {
