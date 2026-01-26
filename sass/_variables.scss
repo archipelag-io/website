@@ -1,0 +1,153 @@
+// ============================================
+// FONTS
+// ============================================
+
+/* Satoshi - brand typeface */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('https://cdn.jsdelivr.net/gh/nicogulo/Satoshi@master/fonts/Satoshi-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('https://cdn.jsdelivr.net/gh/nicogulo/Satoshi@master/fonts/Satoshi-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('https://cdn.jsdelivr.net/gh/nicogulo/Satoshi@master/fonts/Satoshi-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('https://cdn.jsdelivr.net/gh/nicogulo/Satoshi@master/fonts/Satoshi-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* IA Writer Quattro S - body typeface */
+@font-face {
+  font-family: 'iA Writer Quattro S';
+  src: url('https://cdn.jsdelivr.net/gh/AshKyd/iawrtqt@1.0.3/fonts/iAWriterQuattroS-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'iA Writer Quattro S';
+  src: url('https://cdn.jsdelivr.net/gh/AshKyd/iawrtqt@1.0.3/fonts/iAWriterQuattroS-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+// ============================================
+// DESIGN TOKENS
+// Clean, minimal palette inspired by zed.dev
+// ============================================
+
+:root {
+  // Neutrals - warm off-whites and deep darks
+  --white: #ffffff;
+  --off-white: #fafaf9;
+  --cream: #f5f5f4;
+  --stone-100: #e7e5e4;
+  --stone-200: #d6d3d1;
+  --stone-300: #a8a29e;
+  --stone-400: #78716c;
+  --stone-500: #57534e;
+  --stone-600: #44403c;
+  --stone-700: #292524;
+  --stone-800: #1c1917;
+  --stone-900: #0c0a09;
+
+  // Accent - subtle teal, nods to ocean without being loud
+  --accent: #0d9488;
+  --accent-light: #14b8a6;
+  --accent-muted: #99f6e4;
+  --accent-dark: #0f766e;
+
+  // Semantic
+  --bg: var(--white);
+  --bg-subtle: var(--off-white);
+  --bg-muted: var(--cream);
+  --text: var(--stone-800);
+  --text-secondary: var(--stone-500);
+  --text-tertiary: var(--stone-400);
+  --border: var(--stone-200);
+  --border-subtle: var(--stone-100);
+
+  // Typography
+  --font-body: 'iA Writer Quattro S', 'iA Writer Mono', 'SF Mono', ui-monospace, monospace;
+  --font-brand: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  // Scale
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+
+  // Spacing
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  // Radius
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  // Shadows
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  // Transitions
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease;
+}
+
+// Dark mode - activated via .dark class on html
+html.dark {
+  --bg: var(--stone-900);
+  --bg-subtle: var(--stone-800);
+  --bg-muted: var(--stone-700);
+  --text: var(--stone-100);
+  --text-secondary: var(--stone-400);
+  --text-tertiary: var(--stone-500);
+  --border: var(--stone-700);
+  --border-subtle: var(--stone-800);
+  --accent: #2dd4bf;
+  --accent-light: #5eead4;
+  --accent-dark: #14b8a6;
+}

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ page.description | default(value=config.description) }}">
+    <meta name="author" content="{{ config.extra.author }}">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ config.base_url }}{{ current_path }}">
+    <meta property="og:title" content="{{ page.title }} | {{ config.title }}">
+    <meta property="og:description" content="{{ page.description | default(value=config.description) }}">
+    <meta property="og:image" content="{{ config.base_url }}/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ config.base_url }}{{ current_path }}">
+    <meta property="twitter:title" content="{{ page.title }} | {{ config.title }}">
+    <meta property="twitter:description" content="{{ page.description | default(value=config.description) }}">
+    <meta property="twitter:image" content="{{ config.base_url }}/og-image.png">
+
+    <title>{{ page.title }} | {{ config.title }}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/main.css">
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark' ||
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="/" class="header-logo">
+                    <picture>
+                        <source srcset="/img/archipelagio-brandmark.avif" type="image/avif">
+                        <img src="/img/archipelagio-brandmark.png" alt="" width="32" height="32">
+                    </picture>
+                    <span class="logo-text">archipelag<span class="dot">.</span>io</span>
+                </a>
+
+                <nav class="header-nav">
+                    <a href="/use" class="nav-link">Use AI</a>
+                    <a href="/earn" class="nav-link active">Earn</a>
+                    <a href="/pricing" class="nav-link">Pricing</a>
+                    <a href="/about" class="nav-link">About</a>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                    <a href="{{ config.extra.app_base_url }}" class="btn btn-primary btn-sm md:block sm:hidden">Get Started</a>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <nav class="mobile-nav">
+                <a href="/use" class="nav-link">Use AI</a>
+                <a href="/earn" class="nav-link active">Earn</a>
+                <a href="/pricing" class="nav-link">Pricing</a>
+                <a href="/about" class="nav-link">About</a>
+            </nav>
+            <a href="{{ config.extra.app_base_url }}" class="btn btn-primary w-full">Get Started</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero-section">
+            <div class="container">
+                <span class="section-eyebrow">For Compute Hosts</span>
+                <h1 class="hero-title">Turn idle hardware into income</h1>
+                <p class="hero-subtitle">
+                    Your gaming PC or workstation can earn money while you sleep.
+                    Join the network and get paid for compute you're not using.
+                </p>
+                <div class="hero-cta">
+                    <a href="https://github.com/archipelag-io/node-agent/releases" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Download agent</a>
+                    <a href="https://docs.archipelag.io/hosting" class="btn btn-secondary btn-lg" target="_blank" rel="noopener">Read the guide</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Earnings -->
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow">Potential Earnings</span>
+                    <h2 class="section-title">What you could earn</h2>
+                    <p class="section-subtitle">Earnings depend on hardware, availability, and network demand.</p>
+                </div>
+
+                <div class="card max-w-2xl mx-auto">
+                    <div class="table-wrapper">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>GPU</th>
+                                    <th>Rate</th>
+                                    <th>Est. Monthly*</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>RTX 4090</td>
+                                    <td>up to $0.25/min</td>
+                                    <td>$200-400</td>
+                                </tr>
+                                <tr>
+                                    <td>RTX 4080</td>
+                                    <td>up to $0.18/min</td>
+                                    <td>$140-280</td>
+                                </tr>
+                                <tr>
+                                    <td>RTX 3080</td>
+                                    <td>up to $0.12/min</td>
+                                    <td>$80-150</td>
+                                </tr>
+                                <tr>
+                                    <td>RTX 3070</td>
+                                    <td>up to $0.08/min</td>
+                                    <td>$50-100</td>
+                                </tr>
+                                <tr>
+                                    <td>RTX 3060</td>
+                                    <td>up to $0.06/min</td>
+                                    <td>$40-80</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-sm text-tertiary mt-4">*Estimates based on 8 hours/day availability with typical network demand. Actual earnings vary.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow">Getting Started</span>
+                    <h2 class="section-title">How it works</h2>
+                </div>
+
+                <div class="grid grid-4 gap-6">
+                    <div class="step-card flex-col items-center text-center">
+                        <span class="step-number mb-4">1</span>
+                        <h3 class="step-title">Download</h3>
+                        <p class="step-desc">Get the node agent for Windows, Mac, or Linux.</p>
+                    </div>
+                    <div class="step-card flex-col items-center text-center">
+                        <span class="step-number mb-4">2</span>
+                        <h3 class="step-title">Install</h3>
+                        <p class="step-desc">Run the installer and connect your account.</p>
+                    </div>
+                    <div class="step-card flex-col items-center text-center">
+                        <span class="step-number mb-4">3</span>
+                        <h3 class="step-title">Configure</h3>
+                        <p class="step-desc">Set your availability schedule and resource limits.</p>
+                    </div>
+                    <div class="step-card flex-col items-center text-center">
+                        <span class="step-number mb-4">4</span>
+                        <h3 class="step-title">Earn</h3>
+                        <p class="step-desc">Jobs arrive automatically. Earnings accrue in real-time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Karma System -->
+        <section class="section section-alt">
+            <div class="container">
+                <div class="split">
+                    <div class="preview-content">
+                        <span class="section-eyebrow">Reputation</span>
+                        <h2 class="preview-title">The Karma system</h2>
+                        <p class="preview-desc">
+                            Your karma score reflects your reliability as a host. Higher karma means more jobs and better rates.
+                        </p>
+
+                        <ul class="preview-list">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Starts at 50, maxes at 100</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Increases with successful jobs</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Decreases for failures or timeouts</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Higher karma = job priority + rate bonus</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="flex items-center justify-center p-8">
+                        <div class="card w-full p-8 text-center">
+                            <div class="font-brand text-6xl font-light text-accent mb-4">85</div>
+                            <div class="text-lg font-medium mb-2">Karma Score</div>
+                            <p class="text-sm text-secondary">
+                                Based on 142 successful jobs<br>
+                                99.3% success rate
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Requirements -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow">Requirements</span>
+                    <h2 class="section-title">What you need</h2>
+                </div>
+
+                <div class="grid grid-3 gap-6">
+                    <div class="card feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                <path d="M8 21h8m-4-4v4" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">GPU</h3>
+                        <p class="feature-desc">NVIDIA RTX 3060 or better with 8GB+ VRAM. AMD support coming soon.</p>
+                    </div>
+
+                    <div class="card feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Network</h3>
+                        <p class="feature-desc">100 Mbps+ internet connection. Lower latency is better.</p>
+                    </div>
+
+                    <div class="card feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="4" y="4" width="16" height="16" rx="2"/>
+                                <rect x="9" y="9" width="6" height="6"/>
+                                <path d="M4 9h5M15 9h5M4 15h5M15 15h5M9 4v5M9 15v5M15 4v5M15 15v5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Platform</h3>
+                        <p class="feature-desc">Windows 10/11, macOS 12+, or Linux. Docker required.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security -->
+        <section class="section section-alt">
+            <div class="container">
+                <div class="split">
+                    <div class="flex items-center justify-center p-8">
+                        <div class="icon" style="width: 200px; height: 200px;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="preview-content">
+                        <span class="section-eyebrow">Security</span>
+                        <h2 class="preview-title">Your machine is protected</h2>
+                        <p class="preview-desc">
+                            We take security seriously. Hosts never run arbitrary user code.
+                        </p>
+
+                        <ul class="preview-list">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Sandboxed Docker containers</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Only network-approved, signed workloads</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Outbound-only connections</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>No access to your files or network</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Resource limits enforced</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Payouts -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow">Payouts</span>
+                    <h2 class="section-title">Getting paid</h2>
+                </div>
+
+                <div class="grid grid-3 gap-6 max-w-3xl mx-auto">
+                    <div class="card text-center p-6">
+                        <div class="font-brand text-3xl mb-2">Monthly</div>
+                        <p class="text-sm text-secondary">Payouts processed on the 1st of each month</p>
+                    </div>
+                    <div class="card text-center p-6">
+                        <div class="font-brand text-3xl mb-2">$25 min</div>
+                        <p class="text-sm text-secondary">Minimum balance required for payout</p>
+                    </div>
+                    <div class="card text-center p-6">
+                        <div class="font-brand text-3xl mb-2">Stripe</div>
+                        <p class="text-sm text-secondary">Direct deposit or Stripe account</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section section-alt cta-section">
+            <div class="container text-center">
+                <h2 class="cta-title">Ready to start earning?</h2>
+                <p class="cta-subtitle">Download the agent and join the network.</p>
+                <div class="btn-group justify-center">
+                    <a href="https://github.com/archipelag-io/node-agent/releases" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Download agent</a>
+                    <a href="https://docs.archipelag.io/hosting" class="btn btn-secondary btn-lg" target="_blank" rel="noopener">Read the guide</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="footer-logo">
+                        <picture>
+                            <source srcset="/img/archipelagio-brandmark.avif" type="image/avif">
+                            <img src="/img/archipelagio-brandmark.png" alt="" width="28" height="28">
+                        </picture>
+                        <span class="logo-text">archipelag<span class="dot">.</span>io</span>
+                    </a>
+                    <p class="footer-tagline">Compute, closer to you. A decentralized network for AI inference.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="/use">Use AI</a></li>
+                        <li><a href="/earn">Earn</a></li>
+                        <li><a href="/pricing">Pricing</a></li>
+                        <li><a href="https://docs.archipelag.io" target="_blank" rel="noopener">Docs</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="https://github.com/archipelag-io" target="_blank" rel="noopener">GitHub</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacy">Privacy</a></li>
+                        <li><a href="/terms">Terms</a></li>
+                        <li><a href="/security">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; {{ now() | date(format="%Y") }} archipelag.io. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="/privacy">Privacy Policy</a>
+                    <a href="/terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconMenu = menuToggle.querySelector('.icon-menu');
+        const iconClose = menuToggle.querySelector('.icon-close');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('open');
+            iconMenu.style.display = isOpen ? 'none' : 'block';
+            iconClose.style.display = isOpen ? 'block' : 'none';
+        });
+    </script>
+</body>
+</html>

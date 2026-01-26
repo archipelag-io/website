@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ page.description | default(value=config.description) }}">
+    <meta name="description" content="{{ section.description | default(value=config.description) }}">
     <meta name="author" content="{{ config.extra.author }}">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ config.base_url }}{{ current_path }}">
-    <meta property="og:title" content="{{ page.title }} | {{ config.title }}">
-    <meta property="og:description" content="{{ page.description | default(value=config.description) }}">
+    <meta property="og:title" content="Blog | {{ config.title }}">
+    <meta property="og:description" content="{{ section.description | default(value=config.description) }}">
     <meta property="og:image" content="{{ config.base_url }}/og-image.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ config.base_url }}{{ current_path }}">
-    <meta property="twitter:title" content="{{ page.title }} | {{ config.title }}">
-    <meta property="twitter:description" content="{{ page.description | default(value=config.description) }}">
+    <meta property="twitter:title" content="Blog | {{ config.title }}">
+    <meta property="twitter:description" content="{{ section.description | default(value=config.description) }}">
     <meta property="twitter:image" content="{{ config.base_url }}/og-image.png">
 
-    <title>{{ page.title }} | {{ config.title }}</title>
+    <title>Blog | {{ config.title }}</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -56,7 +56,7 @@
                     <a href="/use" class="nav-link">Use AI</a>
                     <a href="/earn" class="nav-link">Earn</a>
                     <a href="/pricing" class="nav-link">Pricing</a>
-                    <a href="/about" class="nav-link{% if current_path == '/about/' %} active{% endif %}">About</a>
+                    <a href="/about" class="nav-link">About</a>
                 </nav>
 
                 <div class="header-actions">
@@ -105,25 +105,47 @@
     </header>
 
     <main>
+        <!-- Hero -->
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="hero-title">Blog</h1>
+                <p class="hero-subtitle">
+                    Updates, insights, and stories from the Archipelag.io team.
+                </p>
+            </div>
+        </section>
+
+        <!-- Blog Posts -->
         <section class="section">
             <div class="container">
-                <article class="max-w-2xl mx-auto">
-                    <header class="text-center mb-12">
-                        <h1 class="font-brand text-4xl font-light mb-4">{{ page.title }}</h1>
-                        {% if page.description %}
-                        <p class="text-xl text-secondary">{{ page.description }}</p>
-                        {% endif %}
-                        {% if page.date %}
-                        <time class="text-sm text-tertiary mt-4 block" datetime="{{ page.date }}">
-                            {{ page.date | date(format="%B %d, %Y") }}
-                        </time>
-                        {% endif %}
-                    </header>
-
-                    <div class="prose">
-                        {{ page.content | safe }}
-                    </div>
-                </article>
+                <div class="max-w-2xl mx-auto">
+                    {% if section.pages %}
+                        {% for page in section.pages %}
+                        <article class="card mb-6 p-6">
+                            <a href="{{ page.permalink }}" class="block">
+                                <time class="text-sm text-tertiary" datetime="{{ page.date }}">
+                                    {{ page.date | date(format="%B %d, %Y") }}
+                                </time>
+                                <h2 class="font-brand text-2xl mt-2 mb-3">{{ page.title }}</h2>
+                                {% if page.description %}
+                                <p class="text-secondary">{{ page.description }}</p>
+                                {% endif %}
+                                <span class="text-accent text-sm mt-4 inline-block">Read more &rarr;</span>
+                            </a>
+                        </article>
+                        {% endfor %}
+                    {% else %}
+                        <div class="card p-8 text-center">
+                            <div class="icon icon-xl text-tertiary mx-auto mb-4">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1m2 13a2 2 0 0 1-2-2V7m2 13a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h2 class="font-brand text-xl mb-2">Coming soon</h2>
+                            <p class="text-secondary">We're working on our first posts. Check back soon!</p>
+                        </div>
+                    {% endif %}
+                </div>
             </div>
         </section>
     </main>

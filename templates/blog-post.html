@@ -7,11 +7,14 @@
     <meta name="author" content="{{ config.extra.author }}">
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
     <meta property="og:url" content="{{ config.base_url }}{{ current_path }}">
     <meta property="og:title" content="{{ page.title }} | {{ config.title }}">
     <meta property="og:description" content="{{ page.description | default(value=config.description) }}">
     <meta property="og:image" content="{{ config.base_url }}/og-image.png">
+    {% if page.date %}
+    <meta property="article:published_time" content="{{ page.date }}">
+    {% endif %}
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -56,7 +59,7 @@
                     <a href="/use" class="nav-link">Use AI</a>
                     <a href="/earn" class="nav-link">Earn</a>
                     <a href="/pricing" class="nav-link">Pricing</a>
-                    <a href="/about" class="nav-link{% if current_path == '/about/' %} active{% endif %}">About</a>
+                    <a href="/about" class="nav-link">About</a>
                 </nav>
 
                 <div class="header-actions">
@@ -105,27 +108,47 @@
     </header>
 
     <main>
-        <section class="section">
+        <article class="section">
             <div class="container">
-                <article class="max-w-2xl mx-auto">
-                    <header class="text-center mb-12">
-                        <h1 class="font-brand text-4xl font-light mb-4">{{ page.title }}</h1>
-                        {% if page.description %}
-                        <p class="text-xl text-secondary">{{ page.description }}</p>
-                        {% endif %}
+                <div class="max-w-2xl mx-auto">
+                    <!-- Back link -->
+                    <a href="/blog" class="text-sm text-secondary mb-8 inline-flex items-center gap-2">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Back to blog
+                    </a>
+
+                    <!-- Article header -->
+                    <header class="mb-12">
                         {% if page.date %}
-                        <time class="text-sm text-tertiary mt-4 block" datetime="{{ page.date }}">
+                        <time class="text-sm text-tertiary" datetime="{{ page.date }}">
                             {{ page.date | date(format="%B %d, %Y") }}
                         </time>
                         {% endif %}
+                        <h1 class="font-brand text-4xl font-light mt-2 mb-4">{{ page.title }}</h1>
+                        {% if page.description %}
+                        <p class="text-xl text-secondary">{{ page.description }}</p>
+                        {% endif %}
                     </header>
 
+                    <!-- Article content -->
                     <div class="prose">
                         {{ page.content | safe }}
                     </div>
-                </article>
+
+                    <!-- Back link -->
+                    <div class="border-t mt-12 pt-8">
+                        <a href="/blog" class="text-accent inline-flex items-center gap-2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 12H5M12 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Back to blog
+                        </a>
+                    </div>
+                </div>
             </div>
-        </section>
+        </article>
     </main>
 
     <!-- Footer -->

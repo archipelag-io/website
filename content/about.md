@@ -38,7 +38,7 @@ Archipelag.io creates a peer-to-peer compute marketplace that:
 1. Install our lightweight agent on your PC
 2. Set availability preferences and power limits
 3. Earn automatically when your hardware processes workloads
-4. Receive monthly payouts via SEPA transfer
+4. Receive monthly payouts via Stripe
 
 ## Technology
 
@@ -67,10 +67,10 @@ Archipelag.io is bootstrapped and revenue-funded. We take a small platform fee (
 
 ## Roadmap
 
-- **Q1 2024**: MVP with GPU-based AI workloads in select metros
-- **Q2 2024**: CPU workloads and expanded geographic coverage
-- **Q3 2024**: WebAssembly runtime and mobile app
-- **Q4 2024**: VM isolation for untrusted workloads
+- **Q1 2025**: Public beta with GPU-based AI workloads
+- **Q2 2025**: Image generation workloads and expanded coverage
+- **Q3 2025**: Mobile app and additional model support
+- **Q4 2025**: Enterprise features and custom deployments
 
 ## Contact
 
