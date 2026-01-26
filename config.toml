@@ -3,7 +3,7 @@
 # Site metadata
 title = "Archipelag.io"
 description = "Compute, closer to you. A new kind of infrastructure is forming."
-base_url = "https://archipelag-io.github.io/website"
+base_url = "https://www.archipelag.io"
 
 # Build settings
 compile_sass = true
