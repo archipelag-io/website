@@ -1,160 +1,243 @@
 # Archipelag.io Website
 
-This is the marketing website for Archipelag.io, built with [Zola](https://www.getzola.org/) static site generator.
+Marketing website for [archipelag.io](https://archipelag.io), built with [Zola](https://www.getzola.org/) static site generator.
 
-## Overview
-
-The website serves as the public-facing marketing site for the distributed compute platform. It features:
-
-- **Modern, minimalistic design** inspired by Zed.dev and OpenAI
-- **IA Writer Quattro S typography** for clean, readable text
-- **Responsive layout** that works on all devices
-- **Fast loading** with optimized assets and minimal JavaScript
-- **SEO optimized** with proper meta tags and structured data
-
-## Architecture
-
-- **Static site generator**: Zola (Rust-based, fast builds)
-- **Styling**: Custom CSS with design system variables
-- **Hosting**: Intended for CDN deployment (Cloudflare Pages, Netlify, etc.)
-- **Integration**: Links to Phoenix app at `app.archipelag.io`
-
-## Key Pages
-
-- **Homepage** (`/`) - Hero section with primary CTAs
-- **Pricing** (`/pricing`) - Transparent pricing for users and hosts
-- **About** (`/about`) - Company mission and technology overview
-- **Contact** (`/contact`) - Support and business contact information
-
-## Design System
-
-The site uses a custom design system with:
-
-- **Typography**: IA Writer Quattro S as primary font
-- **Colors**: Blue primary palette with neutral grays
-- **Components**: Buttons, cards, status indicators
-- **Layout**: Container-based responsive grid
-- **Dark mode**: Automatic based on system preference
-
-## Development
-
-### Prerequisites
-
-- [Zola](https://www.getzola.org/documentation/getting-started/installation/) installed
-
-### Running locally
+## Quick Start
 
 ```bash
-# Development server with live reload
-zola serve
+# Install dependencies (requires mise)
+mise install
+
+# Run development server
+mise run dev
 
 # Build for production
-zola build
-
-# Check for errors
-zola check
+mise run build
 ```
 
-The development server runs on `http://127.0.0.1:1111` by default.
+The dev server runs at `http://localhost:1111` with live reload.
 
-### Project Structure
+## Project Structure
 
 ```
 website/
-├── config.toml          # Zola configuration
-├── content/             # Markdown content files
-│   ├── _index.md       # Homepage
-│   ├── about.md        # About page
-│   ├── pricing.md      # Pricing page
-│   └── contact.md      # Contact page
-├── templates/           # HTML templates
-│   ├── base.html       # Base layout
-│   ├── index.html      # Homepage template
-│   ├── page.html       # Content page template
-│   └── 404.html        # Error page
-├── sass/               # Stylesheets
-│   └── main.scss       # Main stylesheet with design system
-├── static/             # Static assets
-│   ├── favicon.svg     # Site favicon
-│   └── robots.txt      # Search engine directives
-└── public/             # Built site (generated)
+├── config.toml              # Zola configuration
+├── mise.toml                # Task runner configuration
+│
+├── content/                 # Markdown content
+│   ├── _index.md           # Homepage (uses index.html template)
+│   ├── use.md              # Use AI page
+│   ├── earn.md             # Earn/Host page
+│   ├── pricing.md          # Pricing page
+│   ├── about.md            # About page
+│   ├── contact.md          # Contact page
+│   └── blog/               # Blog section
+│       ├── _index.md       # Blog listing config
+│       └── *.md            # Blog posts
+│
+├── templates/               # Tera HTML templates
+│   ├── index.html          # Homepage
+│   ├── use.html            # Use AI page
+│   ├── earn.html           # Earn page
+│   ├── pricing.html        # Pricing page
+│   ├── blog.html           # Blog listing
+│   ├── blog-post.html      # Individual blog post
+│   ├── page.html           # Generic content page
+│   ├── base.html           # Base layout (unused, each template is standalone)
+│   └── 404.html            # Error page
+│
+├── sass/                    # SCSS stylesheets
+│   ├── main.scss           # Entry point, imports partials
+│   ├── _variables.scss     # Design tokens, fonts, colors
+│   ├── _layout.scss        # Container, grid, flex utilities
+│   ├── _components.scss    # Buttons, cards, tables, badges
+│   ├── _sections.scss      # Hero, header, footer, CTAs
+│   └── _utilities.scss     # Text, spacing, display helpers
+│
+├── static/                  # Static assets (copied as-is)
+│   ├── img/                # Images
+│   ├── favicon.*           # Favicon files
+│   ├── CNAME               # GitHub Pages custom domain
+│   ├── robots.txt          # Search engine directives
+│   └── site.webmanifest    # PWA manifest
+│
+└── public/                  # Built site (git-ignored)
 ```
 
-## Key Features
+## Pages
 
-### CTAs (Call to Actions)
+| Path | Template | Description |
+|------|----------|-------------|
+| `/` | `index.html` | Homepage with hero, features, CTAs |
+| `/use` | `use.html` | For AI consumers - capabilities, API docs |
+| `/earn` | `earn.html` | For hosts - earnings, requirements, security |
+| `/pricing` | `pricing.html` | Credit packages, usage rates, host earnings |
+| `/about` | `page.html` | Mission, team, roadmap |
+| `/contact` | `page.html` | Contact information |
+| `/blog` | `blog.html` | Blog post listing |
+| `/blog/*` | `blog-post.html` | Individual blog posts |
 
-The site has two primary CTAs that link to the Phoenix app:
+## Design System
 
-- **"Use AI"** → `app.archipelag.io/use`
-- **"Earn with your PC"** → `app.archipelag.io/earn`
+### Typography
 
-### External Links
+- **Brand font**: Satoshi (headings, navigation, buttons)
+- **Body font**: iA Writer Quattro S (content, prose)
 
-- **Documentation** → `docs.archipelag.io` (separate repository)
-- **Status Page** → `status.archipelag.io` (future)
-- **Phoenix App** → `app.archipelag.io`
+Both fonts are loaded from CDN with `font-display: swap`.
 
-### Responsive Design
+### Colors
 
-- **Desktop**: Full navigation, multi-column layouts
-- **Tablet**: Adapted grid layouts, collapsible sections
-- **Mobile**: Stacked layout, simplified navigation (mobile menu planned)
+Stone-based neutral palette with teal accent:
+
+```scss
+// Neutrals
+--stone-100 through --stone-900  // Warm grays
+
+// Accent (teal)
+--accent: #0d9488
+--accent-light: #14b8a6
+--accent-dark: #0f766e
+
+// Semantic
+--bg, --bg-subtle, --bg-muted   // Backgrounds
+--text, --text-secondary        // Text colors
+--border, --border-subtle       // Borders
+```
+
+### Dark Mode
+
+Activated via `.dark` class on `<html>`. Theme preference stored in `localStorage`. Each template includes inline JS to prevent flash of wrong theme.
+
+### Spacing Scale
+
+```scss
+--space-1: 0.25rem   --space-8: 2rem
+--space-2: 0.5rem    --space-12: 3rem
+--space-4: 1rem      --space-16: 4rem
+--space-6: 1.5rem    --space-24: 6rem
+```
+
+### Components
+
+**Buttons:**
+```html
+<a class="btn btn-primary btn-lg">Primary</a>
+<a class="btn btn-secondary">Secondary</a>
+```
+
+**Cards:**
+```html
+<div class="card p-6">Content</div>
+<div class="card pricing-card featured">Highlighted</div>
+```
+
+**Feature cards, step cards, code blocks** - see `_components.scss`.
+
+### Layout Utilities
+
+```html
+<div class="container">Max-width centered content</div>
+<div class="grid grid-3 gap-6">3-column grid</div>
+<div class="flex items-center justify-between">Flexbox</div>
+<div class="split">50/50 two-column layout</div>
+```
+
+## SEO & Accessibility
+
+All templates include:
+
+- **Meta tags**: description, robots, canonical, theme-color
+- **Open Graph**: type, url, title, description, image
+- **Twitter Cards**: summary_large_image with @archipelagio
+- **JSON-LD**: Organization, WebSite, WebPage, FAQPage, BreadcrumbList
+- **ARIA**: landmarks (banner, main, contentinfo), labels, states
+- **Skip link**: Keyboard navigation to main content
+
+## Configuration
+
+### config.toml
+
+```toml
+base_url = "https://archipelag.io"
+title = "Archipelag.io"
+
+[extra]
+app_base_url = "https://app.archipelag.io"
+twitter = "@archipelagio"
+```
+
+### Adding a Blog Post
+
+Create `content/blog/my-post.md`:
+
+```markdown
++++
+title = "Post Title"
+description = "Short description for previews and SEO"
+date = 2025-01-26
++++
+
+Post content in Markdown...
+```
+
+Posts with `draft = true` are excluded from production builds.
+
+### Adding a Page
+
+1. Create `content/my-page.md` with frontmatter
+2. Use `template = "page.html"` or create custom template
+3. Add to navigation in templates if needed
+
+## Development
+
+### Available Tasks
+
+```bash
+mise run dev      # Start dev server with live reload
+mise run build    # Build production site
+mise run check    # Validate without building
+mise run clean    # Remove public/ directory
+```
+
+### Editing Styles
+
+1. Edit the appropriate SCSS partial
+2. Dev server auto-recompiles on save
+3. Use existing CSS custom properties for consistency
+
+### Template Syntax
+
+Templates use [Tera](https://tera.netlify.app/) (Jinja2-like):
+
+```html
+{{ config.title }}
+{{ page.content | safe }}
+{% for post in section.pages %}...{% endfor %}
+{% if page.date %}...{% endif %}
+```
 
 ## Deployment
 
-### Production Build
+The site deploys automatically via GitHub Actions on push to `main`:
+
+1. Action installs Zola
+2. Runs `zola build`
+3. Deploys `public/` to GitHub Pages
+4. Custom domain via `static/CNAME`
+
+See `.github/workflows/deploy.yml` for details.
+
+### Manual Deployment
 
 ```bash
-zola build
+mise run build
+# Upload public/ to any static host
 ```
 
-Outputs to `public/` directory, ready for CDN deployment.
+## External Links
 
-### Environment Variables
-
-For production deployment, ensure:
-
-- `base_url` in `config.toml` matches production domain
-- App URLs in `config.extra` point to production Phoenix app
-- Analytics tracking IDs are configured if needed
-
-## Content Management
-
-### Adding Pages
-
-1. Create new `.md` file in `content/`
-2. Add frontmatter with title, description, template
-3. Write content in Markdown
-4. Build and deploy
-
-### Updating Styles
-
-- Edit `sass/main.scss` for styling changes
-- Use CSS custom properties (variables) for consistency
-- Follow the established design system patterns
-
-## Performance
-
-The site is optimized for:
-
-- **Fast loading**: Minimal CSS, no heavy JavaScript frameworks
-- **SEO**: Proper meta tags, semantic HTML, clean URLs
-- **Accessibility**: Proper heading hierarchy, focus states, alt text
-- **Core Web Vitals**: Optimized for Google's performance metrics
-
-## Integration with Phoenix App
-
-The marketing site seamlessly hands off to the Phoenix app:
-
-- **Consistent styling**: Same design tokens and visual language
-- **Smooth transitions**: Preloaded assets for instant navigation
-- **Shared analytics**: Unified tracking across domains (future)
-
-## Future Enhancements
-
-- Mobile navigation menu
-- Blog section for updates and announcements
-- Interactive demos or calculators
-- A/B testing for conversion optimization
-- Multi-language support
+- **App**: https://app.archipelag.io
+- **Docs**: https://docs.archipelag.io
+- **GitHub**: https://github.com/archipelag-io
+- **Status**: https://status.archipelag.io (planned)
