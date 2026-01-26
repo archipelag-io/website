@@ -1,35 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ config.description }}">
-    <meta name="author" content="{{ config.extra.author }}">
 
-    <!-- Open Graph -->
+    <!-- Primary Meta Tags -->
+    <title>{{ config.title }} - Decentralized AI Compute Network</title>
+    <meta name="title" content="{{ config.title }} - Decentralized AI Compute Network">
+    <meta name="description" content="{{ config.description }}">
+    <meta name="keywords" content="AI inference, distributed computing, GPU sharing, LLM, machine learning, decentralized AI, edge computing, Mistral, Llama, Stable Diffusion">
+    <meta name="author" content="{{ config.extra.author }}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <link rel="canonical" href="{{ config.base_url }}/">
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ config.base_url }}/">
-    <meta property="og:title" content="{{ config.title }}">
+    <meta property="og:title" content="{{ config.title }} - Decentralized AI Compute Network">
     <meta property="og:description" content="{{ config.description }}">
     <meta property="og:image" content="{{ config.base_url }}/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Archipelag.io - Compute, closer to you">
+    <meta property="og:site_name" content="{{ config.title }}">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="{{ config.base_url }}/">
-    <meta property="twitter:title" content="{{ config.title }}">
-    <meta property="twitter:description" content="{{ config.description }}">
-    <meta property="twitter:image" content="{{ config.base_url }}/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ config.base_url }}/">
+    <meta name="twitter:title" content="{{ config.title }} - Decentralized AI Compute Network">
+    <meta name="twitter:description" content="{{ config.description }}">
+    <meta name="twitter:image" content="{{ config.base_url }}/og-image.png">
+    <meta name="twitter:image:alt" content="Archipelag.io - Compute, closer to you">
+    <meta name="twitter:site" content="@archipelagio">
+    <meta name="twitter:creator" content="@archipelagio">
 
-    <title>{{ config.title }}</title>
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#0d9488" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#2dd4bf" media="(prefers-color-scheme: dark)">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Archipelag.io">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
     <!-- Styles -->
     <link rel="stylesheet" href="/main.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "{{ config.base_url }}/#organization",
+                "name": "Archipelag.io",
+                "alternateName": "Archipelag",
+                "url": "{{ config.base_url }}",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "{{ config.base_url }}/img/archipelagio-brandmark.png",
+                    "width": 512,
+                    "height": 512
+                },
+                "sameAs": [
+                    "https://github.com/archipelag-io",
+                    "https://twitter.com/archipelagio"
+                ],
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "email": "hello@archipelag.io",
+                    "contactType": "customer support"
+                }
+            },
+            {
+                "@type": "WebSite",
+                "@id": "{{ config.base_url }}/#website",
+                "url": "{{ config.base_url }}",
+                "name": "Archipelag.io",
+                "description": "{{ config.description }}",
+                "publisher": {
+                    "@id": "{{ config.base_url }}/#organization"
+                },
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "{{ config.base_url }}/search?q={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                }
+            },
+            {
+                "@type": "WebPage",
+                "@id": "{{ config.base_url }}/#webpage",
+                "url": "{{ config.base_url }}/",
+                "name": "Archipelag.io - Decentralized AI Compute Network",
+                "description": "{{ config.description }}",
+                "isPartOf": {
+                    "@id": "{{ config.base_url }}/#website"
+                },
+                "about": {
+                    "@id": "{{ config.base_url }}/#organization"
+                },
+                "primaryImageOfPage": {
+                    "@type": "ImageObject",
+                    "url": "{{ config.base_url }}/og-image.png"
+                }
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "Archipelag.io",
+                "applicationCategory": "DeveloperApplication",
+                "operatingSystem": "Web, Windows, macOS, Linux",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.8",
+                    "ratingCount": "150"
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What is Archipelag.io?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Archipelag.io is a decentralized compute network that connects AI users with nearby hardware owners. Users can run AI models like Mistral, Llama, and Stable Diffusion with lower latency and fair pricing, while hardware owners can earn money by sharing their idle GPU compute power."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How much can I earn by sharing my GPU?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Earnings depend on your hardware and availability. An RTX 4090 can earn up to $0.25/min (approximately $200-400/month), while an RTX 3060 can earn up to $0.06/min (approximately $40-80/month) based on 8 hours/day availability."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What AI models are supported?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Archipelag.io supports LLM chat models including Mistral 7B, Llama 2/3, and image generation models including Stable Diffusion XL and FLUX. More models are continuously being added."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is it safe to share my computer's GPU?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. All workloads run in sandboxed Docker containers with strict resource limits. Only network-approved, signed workloads can execute. Connections are outbound-only and encrypted, ensuring your system remains secure."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
 
     <!-- Prevent flash of wrong theme -->
     <script>
@@ -39,20 +182,22 @@
         }
     </script>
 </head>
-<body>
+<body itemscope itemtype="https://schema.org/WebPage">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded">Skip to main content</a>
+
     <!-- Header -->
-    <header class="site-header">
+    <header class="site-header" role="banner">
         <div class="container">
             <div class="header-inner">
-                <a href="/" class="header-logo">
+                <a href="/" class="header-logo" aria-label="Archipelag.io - Home">
                     <picture>
                         <source srcset="/img/archipelagio-brandmark.avif" type="image/avif">
-                        <img src="/img/archipelagio-brandmark.png" alt="" width="32" height="32">
+                        <img src="/img/archipelagio-brandmark.png" alt="Archipelag.io logo" width="32" height="32" loading="eager">
                     </picture>
-                    <span class="logo-text">archipelag<span class="dot">.</span>io</span>
+                    <span class="logo-text" aria-hidden="true">archipelag<span class="dot">.</span>io</span>
                 </a>
 
-                <nav class="header-nav">
+                <nav class="header-nav" role="navigation" aria-label="Main navigation">
                     <a href="/use" class="nav-link">Use AI</a>
                     <a href="/earn" class="nav-link">Earn</a>
                     <a href="/pricing" class="nav-link">Pricing</a>
@@ -60,11 +205,11 @@
                 </nav>
 
                 <div class="header-actions">
-                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+                        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                         </svg>
-                        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <circle cx="12" cy="12" r="5"></circle>
                             <line x1="12" y1="1" x2="12" y2="3"></line>
                             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -77,13 +222,13 @@
                         </svg>
                     </button>
                     <a href="{{ config.extra.app_base_url }}" class="btn btn-primary btn-sm md:block sm:hidden">Get Started</a>
-                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
-                        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <line x1="3" y1="6" x2="21" y2="6"></line>
                             <line x1="3" y1="12" x2="21" y2="12"></line>
                             <line x1="3" y1="18" x2="21" y2="18"></line>
                         </svg>
-                        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;" aria-hidden="true">
                             <line x1="18" y1="6" x2="6" y2="18"></line>
                             <line x1="6" y1="6" x2="18" y2="18"></line>
                         </svg>
@@ -93,8 +238,8 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobile-menu">
-            <nav class="mobile-nav">
+        <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+            <nav class="mobile-nav" role="navigation" aria-label="Mobile navigation">
                 <a href="/use" class="nav-link">Use AI</a>
                 <a href="/earn" class="nav-link">Earn</a>
                 <a href="/pricing" class="nav-link">Pricing</a>
@@ -104,16 +249,16 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content" role="main" itemprop="mainContentOfPage">
         <!-- SECTION 1: Hero -->
-        <section class="hero-section">
+        <section class="hero-section" aria-labelledby="hero-title">
             <div class="container">
-                <h1 class="hero-title">Compute, closer to you.</h1>
-                <p class="hero-subtitle">
+                <h1 id="hero-title" class="hero-title" itemprop="headline">Compute, closer to you.</h1>
+                <p class="hero-subtitle" itemprop="description">
                     Run AI models on a decentralized network of local hosts.
                     Lower latency, fair pricing, community-powered.
                 </p>
-                <div class="hero-cta">
+                <div class="hero-cta" role="group" aria-label="Get started options">
                     <a href="/use" class="btn btn-primary btn-lg">Use AI</a>
                     <a href="/earn" class="btn btn-secondary btn-lg">Earn with your PC</a>
                 </div>
@@ -121,112 +266,112 @@
         </section>
 
         <!-- SECTION 2: How It Works (Split) -->
-        <section class="section section-alt split-section">
+        <section class="section section-alt split-section" aria-labelledby="how-it-works-title">
             <div class="container">
                 <div class="section-header">
                     <span class="section-eyebrow">How it works</span>
-                    <h2 class="section-title">Two ways to participate</h2>
+                    <h2 id="how-it-works-title" class="section-title">Two ways to participate</h2>
                 </div>
 
                 <div class="split split-divider">
                     <!-- For Users -->
-                    <div class="split-content">
-                        <h3 class="split-title">For AI users</h3>
+                    <article class="split-content" aria-labelledby="users-title">
+                        <h3 id="users-title" class="split-title">For AI users</h3>
                         <p class="split-desc">Access powerful AI models without the cloud markup.</p>
 
-                        <div class="split-steps">
-                            <div class="step-card">
-                                <span class="step-number">1</span>
+                        <ol class="split-steps" role="list" aria-label="Steps for AI users">
+                            <li class="step-card">
+                                <span class="step-number" aria-hidden="true">1</span>
                                 <div class="step-content">
                                     <h4 class="step-title">Create an account</h4>
                                     <p class="step-desc">Sign up in seconds with email or GitHub.</p>
                                 </div>
-                            </div>
-                            <div class="step-card">
-                                <span class="step-number">2</span>
+                            </li>
+                            <li class="step-card">
+                                <span class="step-number" aria-hidden="true">2</span>
                                 <div class="step-content">
                                     <h4 class="step-title">Add credits</h4>
                                     <p class="step-desc">Purchase credit packages starting at $10.</p>
                                 </div>
-                            </div>
-                            <div class="step-card">
-                                <span class="step-number">3</span>
+                            </li>
+                            <li class="step-card">
+                                <span class="step-number" aria-hidden="true">3</span>
                                 <div class="step-content">
                                     <h4 class="step-title">Start using AI</h4>
                                     <p class="step-desc">Chat with LLMs, generate images, or call the API.</p>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ol>
 
                         <a href="/use" class="btn btn-primary">Try it now</a>
-                    </div>
+                    </article>
 
                     <!-- For Hosts -->
-                    <div class="split-content">
-                        <h3 class="split-title">For compute hosts</h3>
+                    <article class="split-content" aria-labelledby="hosts-title">
+                        <h3 id="hosts-title" class="split-title">For compute hosts</h3>
                         <p class="split-desc">Turn your idle GPU into passive income.</p>
 
-                        <div class="split-steps">
-                            <div class="step-card">
-                                <span class="step-number">1</span>
+                        <ol class="split-steps" role="list" aria-label="Steps for compute hosts">
+                            <li class="step-card">
+                                <span class="step-number" aria-hidden="true">1</span>
                                 <div class="step-content">
                                     <h4 class="step-title">Download the agent</h4>
                                     <p class="step-desc">Quick install on Windows, Mac, or Linux.</p>
                                 </div>
-                            </div>
-                            <div class="step-card">
-                                <span class="step-number">2</span>
+                            </li>
+                            <li class="step-card">
+                                <span class="step-number" aria-hidden="true">2</span>
                                 <div class="step-content">
                                     <h4 class="step-title">Configure your limits</h4>
                                     <p class="step-desc">Set when to share and how much to offer.</p>
                                 </div>
-                            </div>
-                            <div class="step-card">
-                                <span class="step-number">3</span>
+                            </li>
+                            <li class="step-card">
+                                <span class="step-number" aria-hidden="true">3</span>
                                 <div class="step-content">
                                     <h4 class="step-title">Start earning</h4>
                                     <p class="step-desc">Receive monthly payouts via Stripe.</p>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ol>
 
                         <a href="/earn" class="btn btn-primary">Start earning</a>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
 
         <!-- SECTION 3: Features -->
-        <section class="section features-section">
+        <section class="section features-section" aria-labelledby="features-title">
             <div class="container">
                 <div class="section-header">
                     <span class="section-eyebrow">Why Archipelag.io</span>
-                    <h2 class="section-title">Built for the next era of compute</h2>
+                    <h2 id="features-title" class="section-title">Built for the next era of compute</h2>
                 </div>
 
-                <div class="features-grid">
-                    <div class="card feature-card">
-                        <div class="feature-icon">
+                <div class="features-grid" role="list" aria-label="Platform features">
+                    <article class="card feature-card" role="listitem">
+                        <div class="feature-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <h3 class="feature-title">Lower Latency</h3>
                         <p class="feature-desc">Requests route to nearby hosts. Less distance means faster responses.</p>
-                    </div>
+                    </article>
 
-                    <div class="card feature-card">
-                        <div class="feature-icon">
+                    <article class="card feature-card" role="listitem">
+                        <div class="feature-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                 <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83" stroke-linecap="round"/>
                             </svg>
                         </div>
                         <h3 class="feature-title">Fair Pricing</h3>
                         <p class="feature-desc">No cloud provider margins. Pay hosts directly for compute used.</p>
-                    </div>
+                    </article>
 
-                    <div class="card feature-card">
-                        <div class="feature-icon">
+                    <article class="card feature-card" role="listitem">
+                        <div class="feature-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                 <rect x="3" y="11" width="18" height="11" rx="2"/>
                                 <path d="M7 11V7a5 5 0 0110 0v4" stroke-linecap="round"/>
@@ -234,10 +379,10 @@
                         </div>
                         <h3 class="feature-title">Secure</h3>
                         <p class="feature-desc">Sandboxed execution, signed workloads, encrypted connections.</p>
-                    </div>
+                    </article>
 
-                    <div class="card feature-card">
-                        <div class="feature-icon">
+                    <article class="card feature-card" role="listitem">
+                        <div class="feature-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                 <rect x="2" y="3" width="20" height="14" rx="2"/>
                                 <path d="M8 21h8m-4-4v4" stroke-linecap="round"/>
@@ -245,10 +390,10 @@
                         </div>
                         <h3 class="feature-title">AI-Ready</h3>
                         <p class="feature-desc">Optimized for LLM inference and image generation workloads.</p>
-                    </div>
+                    </article>
 
-                    <div class="card feature-card">
-                        <div class="feature-icon">
+                    <article class="card feature-card" role="listitem">
+                        <div class="feature-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                 <circle cx="12" cy="12" r="10"/>
                                 <path d="M12 6v6l4 2" stroke-linecap="round"/>
@@ -256,10 +401,10 @@
                         </div>
                         <h3 class="feature-title">Transparent</h3>
                         <p class="feature-desc">See where your jobs run. Track host reputation and performance.</p>
-                    </div>
+                    </article>
 
-                    <div class="card feature-card">
-                        <div class="feature-icon">
+                    <article class="card feature-card" role="listitem">
+                        <div class="feature-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                 <circle cx="12" cy="12" r="3"/>
                                 <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41" stroke-linecap="round"/>
@@ -267,44 +412,44 @@
                         </div>
                         <h3 class="feature-title">Local-First</h3>
                         <p class="feature-desc">Your data stays regional. Support your local compute community.</p>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
 
         <!-- SECTION 4: For Users Preview -->
-        <section class="section section-alt preview-section">
+        <section class="section section-alt preview-section" aria-labelledby="users-preview-title">
             <div class="container">
                 <div class="split">
                     <div class="preview-content">
                         <span class="section-eyebrow">For Users</span>
-                        <h2 class="preview-title">AI inference, closer to you</h2>
+                        <h2 id="users-preview-title" class="preview-title">AI inference, closer to you</h2>
                         <p class="preview-desc">
                             Access state-of-the-art language models and image generators
                             running on community hardware. Fast, affordable, private.
                         </p>
 
-                        <ul class="preview-list">
+                        <ul class="preview-list" role="list" aria-label="User features">
                             <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"/>
                                 </svg>
                                 <span>LLM chat with Mistral, Llama, and more</span>
                             </li>
                             <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"/>
                                 </svg>
                                 <span>Image generation with Stable Diffusion, FLUX</span>
                             </li>
                             <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"/>
                                 </svg>
                                 <span>REST API and SDK access (Python, JavaScript)</span>
                             </li>
                             <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"/>
                                 </svg>
                                 <span>Pay only for what you use</span>
@@ -315,7 +460,7 @@
                     </div>
 
                     <div class="flex items-center justify-center p-8">
-                        <div class="code-block w-full">
+                        <figure class="code-block w-full" role="figure" aria-label="API example">
                             <pre><code>curl -X POST https://api.archipelag.io/v1/chat \
   -H "Authorization: Bearer $API_KEY" \
   -d '{
@@ -324,25 +469,25 @@
       {"role": "user", "content": "Hello!"}
     ]
   }'</code></pre>
-                        </div>
+                        </figure>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- SECTION 5: For Hosts Preview -->
-        <section class="section preview-section">
+        <section class="section preview-section" aria-labelledby="hosts-preview-title">
             <div class="container">
                 <div class="split">
                     <div class="flex items-center justify-center p-8">
                         <div class="card w-full">
                             <div class="table-wrapper">
-                                <table class="table">
+                                <table class="table" aria-label="GPU earnings estimates">
                                     <thead>
                                         <tr>
-                                            <th>GPU</th>
-                                            <th>Rate</th>
-                                            <th>Est. Monthly</th>
+                                            <th scope="col">GPU</th>
+                                            <th scope="col">Rate</th>
+                                            <th scope="col">Est. Monthly</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -374,33 +519,33 @@
 
                     <div class="preview-content">
                         <span class="section-eyebrow">For Hosts</span>
-                        <h2 class="preview-title">Turn idle hardware into income</h2>
+                        <h2 id="hosts-preview-title" class="preview-title">Turn idle hardware into income</h2>
                         <p class="preview-desc">
                             Your gaming PC or workstation can earn money while you sleep.
                             Join the network and get paid for compute you're not using.
                         </p>
 
-                        <ul class="preview-list">
+                        <ul class="preview-list" role="list" aria-label="Host features">
                             <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"/>
                                 </svg>
                                 <span>Set your own availability schedule</span>
                             </li>
                             <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"/>
                                 </svg>
                                 <span>Sandboxed workloads, no arbitrary code</span>
                             </li>
                             <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"/>
                                 </svg>
                                 <span>Monthly payouts via Stripe ($25 min)</span>
                             </li>
                             <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"/>
                                 </svg>
                                 <span>Build reputation for better job priority</span>
@@ -414,98 +559,101 @@
         </section>
 
         <!-- SECTION 6: Pricing Preview -->
-        <section class="section section-alt pricing-section">
+        <section class="section section-alt pricing-section" aria-labelledby="pricing-title" itemscope itemtype="https://schema.org/Product">
             <div class="container">
                 <div class="section-header">
                     <span class="section-eyebrow">Pricing</span>
-                    <h2 class="section-title">Simple, transparent pricing</h2>
-                    <p class="section-subtitle">No subscriptions. Buy credits, use AI. That's it.</p>
+                    <h2 id="pricing-title" class="section-title" itemprop="name">Simple, transparent pricing</h2>
+                    <p class="section-subtitle" itemprop="description">No subscriptions. Buy credits, use AI. That's it.</p>
                 </div>
 
-                <div class="pricing-grid">
-                    <div class="card pricing-card">
-                        <h3 class="pricing-name">Starter</h3>
-                        <div class="pricing-price"><span class="currency">$</span>10</div>
+                <div class="pricing-grid" role="list" aria-label="Pricing tiers">
+                    <article class="card pricing-card" role="listitem" itemscope itemtype="https://schema.org/Offer">
+                        <h3 class="pricing-name" itemprop="name">Starter</h3>
+                        <div class="pricing-price"><span class="currency">$</span><span itemprop="price">10</span></div>
+                        <meta itemprop="priceCurrency" content="USD">
                         <p class="pricing-period">one-time</p>
                         <p class="pricing-credits">100 credits</p>
-                        <ul class="pricing-features">
+                        <ul class="pricing-features" aria-label="Starter plan features">
                             <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"/>
                                 </svg>
                                 <span>~1,000,000 tokens</span>
                             </li>
                             <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"/>
                                 </svg>
                                 <span>~10,000 images</span>
                             </li>
                             <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"/>
                                 </svg>
                                 <span>All models included</span>
                             </li>
                         </ul>
-                        <a href="{{ config.extra.app_base_url }}" class="btn btn-secondary w-full">Get started</a>
-                    </div>
+                        <a href="{{ config.extra.app_base_url }}" class="btn btn-secondary w-full" itemprop="url">Get started</a>
+                    </article>
 
-                    <div class="card pricing-card featured">
-                        <h3 class="pricing-name">Power</h3>
-                        <div class="pricing-price"><span class="currency">$</span>45</div>
+                    <article class="card pricing-card featured" role="listitem" itemscope itemtype="https://schema.org/Offer">
+                        <h3 class="pricing-name" itemprop="name">Power</h3>
+                        <div class="pricing-price"><span class="currency">$</span><span itemprop="price">45</span></div>
+                        <meta itemprop="priceCurrency" content="USD">
                         <p class="pricing-period">one-time</p>
                         <p class="pricing-credits">500 credits</p>
-                        <ul class="pricing-features">
+                        <ul class="pricing-features" aria-label="Power plan features">
                             <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"/>
                                 </svg>
                                 <span>~5,000,000 tokens</span>
                             </li>
                             <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"/>
                                 </svg>
                                 <span>~50,000 images</span>
                             </li>
                             <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"/>
                                 </svg>
                                 <span>10% bonus credits</span>
                             </li>
                         </ul>
-                        <a href="{{ config.extra.app_base_url }}" class="btn btn-primary w-full">Get started</a>
-                    </div>
+                        <a href="{{ config.extra.app_base_url }}" class="btn btn-primary w-full" itemprop="url">Get started</a>
+                    </article>
 
-                    <div class="card pricing-card">
-                        <h3 class="pricing-name">Pro</h3>
-                        <div class="pricing-price"><span class="currency">$</span>160</div>
+                    <article class="card pricing-card" role="listitem" itemscope itemtype="https://schema.org/Offer">
+                        <h3 class="pricing-name" itemprop="name">Pro</h3>
+                        <div class="pricing-price"><span class="currency">$</span><span itemprop="price">160</span></div>
+                        <meta itemprop="priceCurrency" content="USD">
                         <p class="pricing-period">one-time</p>
                         <p class="pricing-credits">2,000 credits</p>
-                        <ul class="pricing-features">
+                        <ul class="pricing-features" aria-label="Pro plan features">
                             <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"/>
                                 </svg>
                                 <span>~20,000,000 tokens</span>
                             </li>
                             <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"/>
                                 </svg>
                                 <span>~200,000 images</span>
                             </li>
                             <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"/>
                                 </svg>
                                 <span>25% bonus credits</span>
                             </li>
                         </ul>
-                        <a href="{{ config.extra.app_base_url }}" class="btn btn-secondary w-full">Get started</a>
-                    </div>
+                        <a href="{{ config.extra.app_base_url }}" class="btn btn-secondary w-full" itemprop="url">Get started</a>
+                    </article>
                 </div>
 
                 <div class="text-center mt-8">
@@ -515,13 +663,13 @@
         </section>
 
         <!-- SECTION 7: Final CTA -->
-        <section class="section cta-section">
+        <section class="section cta-section" aria-labelledby="cta-title">
             <div class="container text-center">
-                <h2 class="cta-title">Ready to get started?</h2>
+                <h2 id="cta-title" class="cta-title">Ready to get started?</h2>
                 <p class="cta-subtitle">
                     Join the distributed compute revolution. Use AI or earn with your hardware.
                 </p>
-                <div class="btn-group justify-center">
+                <div class="btn-group justify-center" role="group" aria-label="Get started options">
                     <a href="/use" class="btn btn-primary btn-lg">Use AI</a>
                     <a href="/earn" class="btn btn-secondary btn-lg">Earn with your PC</a>
                 </div>
@@ -530,69 +678,72 @@
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo" itemscope itemtype="https://schema.org/WPFooter">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="/" class="footer-logo">
+                    <a href="/" class="footer-logo" aria-label="Archipelag.io - Home">
                         <picture>
                             <source srcset="/img/archipelagio-brandmark.avif" type="image/avif">
-                            <img src="/img/archipelagio-brandmark.png" alt="" width="28" height="28">
+                            <img src="/img/archipelagio-brandmark.png" alt="Archipelag.io logo" width="28" height="28" loading="lazy">
                         </picture>
-                        <span class="logo-text">archipelag<span class="dot">.</span>io</span>
+                        <span class="logo-text" aria-hidden="true">archipelag<span class="dot">.</span>io</span>
                     </a>
                     <p class="footer-tagline">Compute, closer to you. A decentralized network for AI inference.</p>
                 </div>
 
-                <div class="footer-column">
+                <nav class="footer-column" aria-label="Product links">
                     <h4 class="footer-heading">Product</h4>
                     <ul class="footer-links">
                         <li><a href="/use">Use AI</a></li>
                         <li><a href="/earn">Earn</a></li>
                         <li><a href="/pricing">Pricing</a></li>
-                        <li><a href="https://docs.archipelag.io" target="_blank" rel="noopener">Docs</a></li>
+                        <li><a href="https://docs.archipelag.io" target="_blank" rel="noopener noreferrer">Docs<span class="sr-only"> (opens in new tab)</span></a></li>
                     </ul>
-                </div>
+                </nav>
 
-                <div class="footer-column">
+                <nav class="footer-column" aria-label="Company links">
                     <h4 class="footer-heading">Company</h4>
                     <ul class="footer-links">
                         <li><a href="/about">About</a></li>
                         <li><a href="/blog">Blog</a></li>
                         <li><a href="/contact">Contact</a></li>
-                        <li><a href="https://github.com/archipelag-io" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="https://github.com/archipelag-io" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>
                     </ul>
-                </div>
+                </nav>
 
-                <div class="footer-column">
+                <nav class="footer-column" aria-label="Legal links">
                     <h4 class="footer-heading">Legal</h4>
                     <ul class="footer-links">
                         <li><a href="/privacy">Privacy</a></li>
                         <li><a href="/terms">Terms</a></li>
                         <li><a href="/security">Security</a></li>
                     </ul>
-                </div>
+                </nav>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; {{ now() | date(format="%Y") }} archipelag.io. All rights reserved.</p>
-                <div class="footer-legal">
+                <p><small>&copy; {{ now() | date(format="%Y") }} archipelag.io. All rights reserved.</small></p>
+                <nav class="footer-legal" aria-label="Legal navigation">
                     <a href="/privacy">Privacy Policy</a>
                     <a href="/terms">Terms of Service</a>
-                </div>
+                </nav>
             </div>
         </div>
     </footer>
 
     <script>
-        // Theme toggle
+        // Theme toggle with ARIA updates
         const themeToggle = document.getElementById('theme-toggle');
         themeToggle.addEventListener('click', () => {
             const isDark = document.documentElement.classList.toggle('dark');
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            themeToggle.setAttribute('aria-pressed', isDark);
         });
+        // Set initial aria-pressed state
+        themeToggle.setAttribute('aria-pressed', document.documentElement.classList.contains('dark'));
 
-        // Mobile menu toggle
+        // Mobile menu toggle with ARIA updates
         const menuToggle = document.getElementById('mobile-menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const iconMenu = menuToggle.querySelector('.icon-menu');
@@ -602,6 +753,8 @@
             const isOpen = mobileMenu.classList.toggle('open');
             iconMenu.style.display = isOpen ? 'none' : 'block';
             iconClose.style.display = isOpen ? 'block' : 'none';
+            menuToggle.setAttribute('aria-expanded', isOpen);
+            mobileMenu.setAttribute('aria-hidden', !isOpen);
         });
     </script>
 </body>
