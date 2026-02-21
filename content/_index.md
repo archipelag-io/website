@@ -1,5 +1,5 @@
 +++
 title = "archipelag.io"
-description = "Fast AI, closer to you. Connect to nearby compute for low-latency AI workloads."
+description = "Sovereign compute infrastructure. Run AI workloads with jurisdiction routing, verified nodes, and full data residency control."
 template = "index.html"
 +++

@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Access powerful AI models running on distributed community hardware. LLM chat with Mistral and Llama, image generation with Stable Diffusion and FLUX.">
+    <meta name="description" content="Run compliant AI workloads with jurisdiction routing, verified execution, and full audit trails. GDPR-ready inference infrastructure.">
     <meta name="author" content="{{ config.extra.author }}">
     <meta name="robots" content="index, follow">
-    <meta name="keywords" content="AI inference, LLM API, language models, image generation, Mistral, Llama, Stable Diffusion, FLUX, distributed computing">
+    <meta name="keywords" content="sovereign AI, compliant inference, jurisdiction routing, GDPR AI, verified compute, data residency, AI compliance, policy enforcement">
     <link rel="canonical" href="{{ config.base_url }}/use/">
     <meta name="theme-color" content="#0d9488">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ config.base_url }}/use/">
-    <meta property="og:title" content="Use AI - Distributed Inference | {{ config.title }}">
-    <meta property="og:description" content="Access powerful AI models running on distributed community hardware. LLM chat with Mistral and Llama, image generation with Stable Diffusion and FLUX.">
+    <meta property="og:title" content="Platform - Sovereign AI Infrastructure | {{ config.title }}">
+    <meta property="og:description" content="Run compliant AI workloads with jurisdiction routing, verified execution, and full audit trails.">
     <meta property="og:image" content="{{ config.base_url }}/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Archipelag.io - Distributed AI Inference">
+    <meta property="og:image:alt" content="Archipelag.io - Sovereign AI Infrastructure">
     <meta property="og:site_name" content="{{ config.title }}">
     <meta property="og:locale" content="en_US">
 
@@ -26,12 +26,12 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="{{ config.extra.twitter }}">
     <meta name="twitter:creator" content="{{ config.extra.twitter }}">
-    <meta name="twitter:title" content="Use AI - Distributed Inference | {{ config.title }}">
-    <meta name="twitter:description" content="Access powerful AI models running on distributed community hardware. LLM chat and image generation.">
+    <meta name="twitter:title" content="Platform - Sovereign AI Infrastructure | {{ config.title }}">
+    <meta name="twitter:description" content="Run compliant AI workloads with jurisdiction routing and verified execution.">
     <meta name="twitter:image" content="{{ config.base_url }}/og-image.png">
-    <meta name="twitter:image:alt" content="Archipelag.io - Distributed AI Inference">
+    <meta name="twitter:image:alt" content="Archipelag.io - Sovereign AI Infrastructure">
 
-    <title>Use AI | {{ config.title }}</title>
+    <title>Platform | {{ config.title }}</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -52,8 +52,8 @@
                 "@type": "WebPage",
                 "@id": "{{ config.base_url }}/use/",
                 "url": "{{ config.base_url }}/use/",
-                "name": "Use AI - Distributed Inference",
-                "description": "Access powerful AI models running on distributed community hardware. LLM chat with Mistral and Llama, image generation with Stable Diffusion and FLUX.",
+                "name": "Platform - Sovereign AI Infrastructure",
+                "description": "Run compliant AI workloads with jurisdiction routing, verified execution, and full audit trails.",
                 "isPartOf": {
                     "@id": "{{ config.base_url }}/#website"
                 },
@@ -69,7 +69,7 @@
                         {
                             "@type": "ListItem",
                             "position": 2,
-                            "name": "Use AI",
+                            "name": "Platform",
                             "item": "{{ config.base_url }}/use/"
                         }
                     ]
@@ -77,26 +77,16 @@
             },
             {
                 "@type": "SoftwareApplication",
-                "name": "Archipelag.io AI API",
+                "name": "Archipelag.io Platform",
                 "applicationCategory": "DeveloperApplication",
                 "operatingSystem": "Web",
-                "offers": {
-                    "@type": "Offer",
-                    "price": "0.10",
-                    "priceCurrency": "USD",
-                    "priceSpecification": {
-                        "@type": "UnitPriceSpecification",
-                        "price": "0.10",
-                        "priceCurrency": "USD",
-                        "unitText": "per credit"
-                    }
-                },
                 "featureList": [
-                    "LLM Chat with Mistral 7B and Llama models",
-                    "Image Generation with Stable Diffusion XL and FLUX",
-                    "OpenAI-compatible REST API",
-                    "Real-time streaming responses",
-                    "Python and JavaScript SDKs"
+                    "Jurisdiction-routed AI inference",
+                    "GDPR-compliant execution",
+                    "Verified node attestation",
+                    "Complete audit trails",
+                    "Python and JavaScript SDKs",
+                    "Policy-as-code enforcement"
                 ]
             }
         ]
@@ -128,8 +118,8 @@
                 </a>
 
                 <nav class="header-nav" role="navigation" aria-label="Main navigation">
-                    <a href="/use" class="nav-link active" aria-current="page">Use AI</a>
-                    <a href="/earn" class="nav-link">Earn</a>
+                    <a href="/use" class="nav-link active" aria-current="page">Platform</a>
+                    <a href="/earn" class="nav-link">Host</a>
                     <a href="/pricing" class="nav-link">Pricing</a>
                     <a href="/about" class="nav-link">About</a>
                 </nav>
@@ -151,7 +141,7 @@
                             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                         </svg>
                     </button>
-                    <a href="{{ config.extra.app_base_url }}" class="btn btn-primary btn-sm md:block sm:hidden">Get Started</a>
+                    <a href="/#waitlist" class="btn btn-primary btn-sm md:block sm:hidden">Join Waitlist</a>
                     <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
                         <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -170,12 +160,12 @@
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
             <nav class="mobile-nav" aria-label="Mobile navigation">
-                <a href="/use" class="nav-link active" aria-current="page">Use AI</a>
-                <a href="/earn" class="nav-link">Earn</a>
+                <a href="/use" class="nav-link active" aria-current="page">Platform</a>
+                <a href="/earn" class="nav-link">Host</a>
                 <a href="/pricing" class="nav-link">Pricing</a>
                 <a href="/about" class="nav-link">About</a>
             </nav>
-            <a href="{{ config.extra.app_base_url }}" class="btn btn-primary w-full">Get Started</a>
+            <a href="/#waitlist" class="btn btn-primary w-full">Join Waitlist</a>
         </div>
     </header>
 
@@ -183,21 +173,21 @@
         <!-- Hero -->
         <section class="hero-section" aria-labelledby="hero-title">
             <div class="container">
-                <span class="section-eyebrow">For AI Users</span>
-                <h1 id="hero-title" class="hero-title">AI inference, closer to you</h1>
+                <span class="section-eyebrow">For Compliance-First Teams</span>
+                <h1 id="hero-title" class="hero-title">Run AI workloads you can trust</h1>
                 <p class="hero-subtitle">
-                    Access powerful language models and image generators running on community hardware.
-                    Fast responses, fair pricing, no cloud provider markup.
+                    Jurisdiction-routed inference with verified execution and complete audit trails.
+                    Define compliance policies in code. The platform enforces them at the infrastructure level.
                 </p>
                 <div class="hero-cta">
-                    <a href="{{ config.extra.app_base_url }}" class="btn btn-primary btn-lg">Start using AI</a>
-                    <a href="https://docs.archipelag.io" class="btn btn-secondary btn-lg" target="_blank" rel="noopener">View docs</a>
+                    <a href="/#waitlist" class="btn btn-primary btn-lg">Join the Waitlist</a>
+                    <a href="#capabilities" class="btn btn-secondary btn-lg">See capabilities</a>
                 </div>
             </div>
         </section>
 
         <!-- Capabilities -->
-        <section class="section section-alt" aria-labelledby="capabilities-title">
+        <section id="capabilities" class="section section-alt" aria-labelledby="capabilities-title">
             <div class="container">
                 <div class="section-header">
                     <span class="section-eyebrow">Capabilities</span>
@@ -213,14 +203,18 @@
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="font-brand text-xl mb-2" itemprop="name">LLM Chat</h3>
-                                <p class="text-secondary" itemprop="description">Conversational AI for any task</p>
+                                <h3 class="font-brand text-xl mb-2" itemprop="name">LLM Inference</h3>
+                                <p class="text-secondary" itemprop="description">Conversational AI with jurisdiction controls</p>
                             </div>
                         </div>
-                        <ul class="preview-list" aria-label="LLM Chat features">
+                        <ul class="preview-list" aria-label="LLM Inference features">
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                                 <span>Mistral 7B, Llama 2/3, and more</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Jurisdiction-routed to EU/CH nodes</span>
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -228,11 +222,7 @@
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>Multi-turn conversations</span>
-                            </li>
-                            <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>~0.0001 credits/token</span>
+                                <span>Full execution audit trail</span>
                             </li>
                         </ul>
                     </article>
@@ -241,32 +231,31 @@
                         <div class="flex items-start gap-4 mb-6">
                             <div class="icon icon-xl text-accent" aria-hidden="true">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <circle cx="8.5" cy="8.5" r="1.5"/>
-                                    <path d="M21 15l-5-5L5 21" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                    <path d="M8 21h8m-4-4v4" stroke-linecap="round"/>
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="font-brand text-xl mb-2" itemprop="name">Image Generation</h3>
-                                <p class="text-secondary" itemprop="description">Create images from text prompts</p>
+                                <h3 class="font-brand text-xl mb-2" itemprop="name">Batch Processing</h3>
+                                <p class="text-secondary" itemprop="description">Large-scale workloads with compliance guarantees</p>
                             </div>
                         </div>
-                        <ul class="preview-list" aria-label="Image Generation features">
+                        <ul class="preview-list" aria-label="Batch Processing features">
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>Stable Diffusion XL, FLUX</span>
+                                <span>Process datasets within jurisdiction</span>
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>Multiple resolutions up to 1024px</span>
+                                <span>GDPR-compliant data handling</span>
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>Batch generation support</span>
+                                <span>Parallel execution across verified nodes</span>
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>~0.01 credits/image</span>
+                                <span>Results never leave specified region</span>
                             </li>
                         </ul>
                     </article>
@@ -285,23 +274,23 @@
                 <ol class="grid grid-4 gap-6" role="list" aria-label="Getting started steps">
                     <li class="step-card flex-col items-center text-center">
                         <span class="step-number mb-4" aria-hidden="true">1</span>
-                        <h3 class="step-title">Create account</h3>
-                        <p class="step-desc">Sign up with email or GitHub in seconds.</p>
+                        <h3 class="step-title">Define policy</h3>
+                        <p class="step-desc">Set jurisdiction, compliance framework, and data residency rules.</p>
                     </li>
                     <li class="step-card flex-col items-center text-center">
                         <span class="step-number mb-4" aria-hidden="true">2</span>
-                        <h3 class="step-title">Add credits</h3>
-                        <p class="step-desc">Purchase credit packages starting at $10.</p>
+                        <h3 class="step-title">Submit workload</h3>
+                        <p class="step-desc">Use the API or SDK with your policy attached to every request.</p>
                     </li>
                     <li class="step-card flex-col items-center text-center">
                         <span class="step-number mb-4" aria-hidden="true">3</span>
-                        <h3 class="step-title">Submit request</h3>
-                        <p class="step-desc">Use the web UI or call our API.</p>
+                        <h3 class="step-title">Verified execution</h3>
+                        <p class="step-desc">Workloads route to attested nodes within your jurisdiction.</p>
                     </li>
                     <li class="step-card flex-col items-center text-center">
                         <span class="step-number mb-4" aria-hidden="true">4</span>
-                        <h3 class="step-title">Get results</h3>
-                        <p class="step-desc">Responses stream from the nearest host.</p>
+                        <h3 class="step-title">Audited results</h3>
+                        <p class="step-desc">Complete execution logs ready for regulatory review.</p>
                     </li>
                 </ol>
             </div>
@@ -313,20 +302,20 @@
                 <div class="split">
                     <div class="preview-content">
                         <span class="section-eyebrow">For Developers</span>
-                        <h2 id="developer-title" class="preview-title">Simple REST API</h2>
+                        <h2 id="developer-title" class="preview-title">Policy-as-code SDK</h2>
                         <p class="preview-desc">
-                            Integrate Archipelag.io into your applications with our OpenAI-compatible API.
-                            Python and JavaScript SDKs available.
+                            Define compliance policies directly in your API calls. Jurisdiction routing,
+                            verification levels, and audit requirements are first-class parameters.
                         </p>
 
-                        <ul class="preview-list" aria-label="API features">
+                        <ul class="preview-list" aria-label="SDK features">
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                                 <span>OpenAI-compatible endpoints</span>
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>Streaming support</span>
+                                <span>Policy parameter on every request</span>
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -334,16 +323,14 @@
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>Webhook callbacks</span>
+                                <span>Audit trail in response metadata</span>
                             </li>
                         </ul>
-
-                        <a href="https://docs.archipelag.io/api" class="btn btn-primary" target="_blank" rel="noopener">API Reference</a>
                     </div>
 
                     <div class="flex flex-col gap-4 p-8">
                         <figure class="code-block">
-                            <figcaption class="sr-only">Python SDK example</figcaption>
+                            <figcaption class="sr-only">Python SDK example with policy</figcaption>
                             <pre><code># Python SDK
 from archipelag import Client
 
@@ -353,13 +340,20 @@ response = client.chat.create(
     model="mistral-7b",
     messages=[
         {"role": "user", "content": "Hello!"}
-    ]
+    ],
+    policy={
+        "jurisdiction": "eu-west",
+        "compliance": "gdpr",
+        "verification": "tier-2"
+    }
 )
-print(response.content)</code></pre>
+print(response.content)
+print(response.audit.node_id)
+print(response.audit.jurisdiction)</code></pre>
                         </figure>
 
                         <figure class="code-block">
-                            <figcaption class="sr-only">JavaScript SDK example</figcaption>
+                            <figcaption class="sr-only">JavaScript SDK example with policy</figcaption>
                             <pre><code>// JavaScript SDK
 import { Archipelag } from 'archipelag';
 
@@ -369,62 +363,27 @@ const response = await client.chat.create({
   model: 'mistral-7b',
   messages: [
     { role: 'user', content: 'Hello!' }
-  ]
-});
-console.log(response.content);</code></pre>
+  ],
+  policy: {
+    jurisdiction: 'ch',
+    compliance: 'gdpr',
+    verification: 'tier-2'
+  }
+});</code></pre>
                         </figure>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Pricing snippet -->
-        <section class="section" aria-labelledby="pricing-title">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-eyebrow">Pricing</span>
-                    <h2 id="pricing-title" class="section-title">Pay only for what you use</h2>
-                    <p class="section-subtitle">No subscriptions or commitments. Credits never expire.</p>
-                </div>
-
-                <div class="card max-w-2xl mx-auto">
-                    <div class="table-wrapper">
-                        <table class="table" aria-label="Usage rates">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Workload</th>
-                                    <th scope="col">Rate</th>
-                                    <th scope="col">Example</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>LLM Chat (7B models)</td>
-                                    <td>~0.0001 credits/token</td>
-                                    <td>1M tokens = 100 credits</td>
-                                </tr>
-                                <tr>
-                                    <td>Image Generation</td>
-                                    <td>~0.01 credits/image</td>
-                                    <td>1,000 images = 10 credits</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="text-center mt-8">
-                    <a href="/pricing" class="btn btn-secondary">View full pricing</a>
-                </div>
-            </div>
-        </section>
-
         <!-- CTA -->
-        <section class="section section-alt cta-section" aria-labelledby="cta-title">
+        <section class="section cta-section" aria-labelledby="cta-title">
             <div class="container text-center">
-                <h2 id="cta-title" class="cta-title">Ready to start?</h2>
-                <p class="cta-subtitle">Create an account and get 10 free credits to try it out.</p>
-                <a href="{{ config.extra.app_base_url }}" class="btn btn-primary btn-lg">Start using AI</a>
+                <h2 id="cta-title" class="cta-title">Ready to run compliant AI?</h2>
+                <p class="cta-subtitle">Join the waitlist for early access to sovereign compute infrastructure.</p>
+                <div class="btn-group justify-center">
+                    <a href="/#waitlist" class="btn btn-primary btn-lg">Join the Waitlist</a>
+                </div>
             </div>
         </section>
     </main>
@@ -441,16 +400,15 @@ console.log(response.content);</code></pre>
                         </picture>
                         <span class="logo-text">archipelag<span class="dot">.</span>io</span>
                     </a>
-                    <p class="footer-tagline">Compute, closer to you. A decentralized network for AI inference.</p>
+                    <p class="footer-tagline">Sovereign compute infrastructure. Your data, your jurisdiction, your rules.</p>
                 </div>
 
                 <nav class="footer-column" aria-label="Product links">
                     <h4 class="footer-heading">Product</h4>
                     <ul class="footer-links">
-                        <li><a href="/use">Use AI</a></li>
-                        <li><a href="/earn">Earn</a></li>
+                        <li><a href="/use">Platform</a></li>
+                        <li><a href="/earn">Host</a></li>
                         <li><a href="/pricing">Pricing</a></li>
-                        <li><a href="https://docs.archipelag.io" target="_blank" rel="noopener">Docs</a></li>
                     </ul>
                 </nav>
 

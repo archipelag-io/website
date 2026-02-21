@@ -97,8 +97,8 @@
                 </a>
 
                 <nav class="header-nav" role="navigation" aria-label="Main navigation">
-                    <a href="/use" class="nav-link">Use AI</a>
-                    <a href="/earn" class="nav-link">Earn</a>
+                    <a href="/use" class="nav-link">Platform</a>
+                    <a href="/earn" class="nav-link">Host</a>
                     <a href="/pricing" class="nav-link">Pricing</a>
                     <a href="/about" class="nav-link{% if current_path == '/about/' %} active{% endif %}">About</a>
                 </nav>
@@ -120,7 +120,7 @@
                             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                         </svg>
                     </button>
-                    <a href="{{ config.extra.app_base_url }}" class="btn btn-primary btn-sm md:block sm:hidden">Get Started</a>
+                    <a href="/#waitlist" class="btn btn-primary btn-sm md:block sm:hidden">Join Waitlist</a>
                     <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
                         <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -139,12 +139,12 @@
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
             <nav class="mobile-nav" aria-label="Mobile navigation">
-                <a href="/use" class="nav-link">Use AI</a>
-                <a href="/earn" class="nav-link">Earn</a>
+                <a href="/use" class="nav-link">Platform</a>
+                <a href="/earn" class="nav-link">Host</a>
                 <a href="/pricing" class="nav-link">Pricing</a>
                 <a href="/about" class="nav-link">About</a>
             </nav>
-            <a href="{{ config.extra.app_base_url }}" class="btn btn-primary w-full">Get Started</a>
+            <a href="/#waitlist" class="btn btn-primary w-full">Join Waitlist</a>
         </div>
     </header>
 
@@ -184,16 +184,15 @@
                         </picture>
                         <span class="logo-text">archipelag<span class="dot">.</span>io</span>
                     </a>
-                    <p class="footer-tagline">Compute, closer to you. A decentralized network for AI inference.</p>
+                    <p class="footer-tagline">Sovereign compute infrastructure. Your data, your jurisdiction, your rules.</p>
                 </div>
 
                 <nav class="footer-column" aria-label="Product links">
                     <h4 class="footer-heading">Product</h4>
                     <ul class="footer-links">
-                        <li><a href="/use">Use AI</a></li>
-                        <li><a href="/earn">Earn</a></li>
+                        <li><a href="/use">Platform</a></li>
+                        <li><a href="/earn">Host</a></li>
                         <li><a href="/pricing">Pricing</a></li>
-                        <li><a href="https://docs.archipelag.io" target="_blank" rel="noopener">Docs</a></li>
                     </ul>
                 </nav>
 

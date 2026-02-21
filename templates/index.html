@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Primary Meta Tags -->
-    <title>{{ config.title }} - Decentralized AI Compute Network</title>
-    <meta name="title" content="{{ config.title }} - Decentralized AI Compute Network">
+    <title>{{ config.title }} - Sovereign Compute Infrastructure</title>
+    <meta name="title" content="{{ config.title }} - Sovereign Compute Infrastructure">
     <meta name="description" content="{{ config.description }}">
-    <meta name="keywords" content="AI inference, distributed computing, GPU sharing, LLM, machine learning, decentralized AI, edge computing, Mistral, Llama, Stable Diffusion">
+    <meta name="keywords" content="sovereign compute, data sovereignty, jurisdiction routing, GDPR AI, verified nodes, compliant AI infrastructure, data residency, EU compute, Swiss hosting">
     <meta name="author" content="{{ config.extra.author }}">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
@@ -17,22 +17,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ config.base_url }}/">
-    <meta property="og:title" content="{{ config.title }} - Decentralized AI Compute Network">
+    <meta property="og:title" content="{{ config.title }} - Sovereign Compute Infrastructure">
     <meta property="og:description" content="{{ config.description }}">
     <meta property="og:image" content="{{ config.base_url }}/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Archipelag.io - Compute, closer to you">
+    <meta property="og:image:alt" content="Archipelag.io - Sovereign Compute Infrastructure">
     <meta property="og:site_name" content="{{ config.title }}">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="{{ config.base_url }}/">
-    <meta name="twitter:title" content="{{ config.title }} - Decentralized AI Compute Network">
+    <meta name="twitter:title" content="{{ config.title }} - Sovereign Compute Infrastructure">
     <meta name="twitter:description" content="{{ config.description }}">
     <meta name="twitter:image" content="{{ config.base_url }}/og-image.png">
-    <meta name="twitter:image:alt" content="Archipelag.io - Compute, closer to you">
+    <meta name="twitter:image:alt" content="Archipelag.io - Sovereign Compute Infrastructure">
     <meta name="twitter:site" content="@archipelagio">
     <meta name="twitter:creator" content="@archipelagio">
 
@@ -93,18 +93,13 @@
                 "description": "{{ config.description }}",
                 "publisher": {
                     "@id": "{{ config.base_url }}/#organization"
-                },
-                "potentialAction": {
-                    "@type": "SearchAction",
-                    "target": "{{ config.base_url }}/search?q={search_term_string}",
-                    "query-input": "required name=search_term_string"
                 }
             },
             {
                 "@type": "WebPage",
                 "@id": "{{ config.base_url }}/#webpage",
                 "url": "{{ config.base_url }}/",
-                "name": "Archipelag.io - Decentralized AI Compute Network",
+                "name": "Archipelag.io - Sovereign Compute Infrastructure",
                 "description": "{{ config.description }}",
                 "isPartOf": {
                     "@id": "{{ config.base_url }}/#website"
@@ -126,11 +121,6 @@
                     "@type": "Offer",
                     "price": "0",
                     "priceCurrency": "USD"
-                },
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "4.8",
-                    "ratingCount": "150"
                 }
             },
             {
@@ -141,31 +131,31 @@
                         "name": "What is Archipelag.io?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Archipelag.io is a decentralized compute network that connects AI users with nearby hardware owners. Users can run AI models like Mistral, Llama, and Stable Diffusion with lower latency and fair pricing, while hardware owners can earn money by sharing their idle GPU compute power."
+                            "text": "Archipelag.io is sovereign compute infrastructure that routes AI workloads to verified nodes in specific jurisdictions. It gives compliance-first teams full control over where their data is processed, with GDPR-ready execution and complete audit trails."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "How much can I earn by sharing my GPU?",
+                        "name": "How does jurisdiction routing work?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Earnings depend on your hardware and availability. An RTX 4090 can earn up to $0.25/min (approximately $200-400/month), while an RTX 3060 can earn up to $0.06/min (approximately $40-80/month) based on 8 hours/day availability."
+                            "text": "When you submit a workload, you specify a jurisdiction policy (e.g., EU-West, Switzerland). The coordinator routes your job exclusively to verified nodes operating within that jurisdiction, ensuring your data never leaves the specified region."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "What AI models are supported?",
+                        "name": "What verification levels do compute providers go through?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Archipelag.io supports LLM chat models including Mistral 7B, Llama 2/3, and image generation models including Stable Diffusion XL and FLUX. More models are continuously being added."
+                            "text": "Compute providers go through three verification tiers: Tier 1 (identity verification and hardware attestation), Tier 2 (facility audit and compliance training), and Tier 3 (dedicated infrastructure with SLA guarantees for enterprise workloads)."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Is it safe to share my computer's GPU?",
+                        "name": "Is Archipelag.io GDPR compliant?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Yes. All workloads run in sandboxed Docker containers with strict resource limits. Only network-approved, signed workloads can execute. Connections are outbound-only and encrypted, ensuring your system remains secure."
+                            "text": "Yes. Archipelag.io is designed for GDPR compliance from the ground up. Jurisdiction routing ensures data residency requirements are met, verified nodes provide processing guarantees, and complete audit trails document every execution for regulatory reporting."
                         }
                     }
                 ]
@@ -198,8 +188,8 @@
                 </a>
 
                 <nav class="header-nav" role="navigation" aria-label="Main navigation">
-                    <a href="/use" class="nav-link">Use AI</a>
-                    <a href="/earn" class="nav-link">Earn</a>
+                    <a href="/use" class="nav-link">Platform</a>
+                    <a href="/earn" class="nav-link">Host</a>
                     <a href="/pricing" class="nav-link">Pricing</a>
                     <a href="/about" class="nav-link">About</a>
                 </nav>
@@ -221,7 +211,7 @@
                             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                         </svg>
                     </button>
-                    <a href="{{ config.extra.app_base_url }}" class="btn btn-primary btn-sm md:block sm:hidden">Get Started</a>
+                    <a href="#waitlist" class="btn btn-primary btn-sm md:block sm:hidden">Join Waitlist</a>
                     <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
                         <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -240,152 +230,57 @@
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
             <nav class="mobile-nav" role="navigation" aria-label="Mobile navigation">
-                <a href="/use" class="nav-link">Use AI</a>
-                <a href="/earn" class="nav-link">Earn</a>
+                <a href="/use" class="nav-link">Platform</a>
+                <a href="/earn" class="nav-link">Host</a>
                 <a href="/pricing" class="nav-link">Pricing</a>
                 <a href="/about" class="nav-link">About</a>
             </nav>
-            <a href="{{ config.extra.app_base_url }}" class="btn btn-primary w-full">Get Started</a>
+            <a href="#waitlist" class="btn btn-primary w-full">Join Waitlist</a>
         </div>
     </header>
 
     <main id="main-content" role="main" itemprop="mainContentOfPage">
         <!-- SECTION 1: Hero -->
         <section class="hero-section" aria-labelledby="hero-title">
-            <!-- Archipelago map background with islands and cargo ships -->
-            <div class="archipelago-map" aria-hidden="true">
-                <!-- Cargo ships - many small dots traveling between ports -->
-                <svg class="shipping-lanes" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
-                    <!-- Ships traveling various routes between islands -->
-                    <!-- Route cluster: West islands to Central -->
-                    <circle class="ship" r="1.5"><animateMotion dur="25s" repeatCount="indefinite" path="M100,150 Q200,120 350,180 Q450,220 500,200" /></circle>
-                    <circle class="ship" r="1"><animateMotion dur="32s" repeatCount="indefinite" path="M120,180 Q220,150 380,200 Q480,180 520,160" /></circle>
-                    <circle class="ship" r="1.5"><animateMotion dur="28s" repeatCount="indefinite" path="M80,200 Q180,160 320,190 Q420,210 480,190" /></circle>
-                    <circle class="ship" r="1"><animateMotion dur="35s" repeatCount="indefinite" path="M140,160 Q250,130 400,170 Q500,150 550,180" /></circle>
-
-                    <!-- Route cluster: Central to East islands -->
-                    <circle class="ship" r="1.5"><animateMotion dur="30s" repeatCount="indefinite" path="M500,180 Q600,150 750,200 Q900,180 1000,220" /></circle>
-                    <circle class="ship" r="1"><animateMotion dur="26s" repeatCount="indefinite" path="M520,200 Q650,170 800,190 Q920,210 1050,180" /></circle>
-                    <circle class="ship" r="1.5"><animateMotion dur="33s" repeatCount="indefinite" path="M480,160 Q580,190 720,160 Q850,200 980,170" /></circle>
-                    <circle class="ship" r="1"><animateMotion dur="29s" repeatCount="indefinite" path="M540,190 Q680,160 820,180 Q950,150 1080,200" /></circle>
-
-                    <!-- Route cluster: North to South passages -->
-                    <circle class="ship" r="1.5"><animateMotion dur="27s" repeatCount="indefinite" path="M200,100 Q250,200 300,320 Q350,400 400,450" /></circle>
-                    <circle class="ship" r="1"><animateMotion dur="34s" repeatCount="indefinite" path="M600,80 Q620,180 650,300 Q680,400 720,480" /></circle>
-                    <circle class="ship" r="1.5"><animateMotion dur="31s" repeatCount="indefinite" path="M900,120 Q880,220 850,340 Q820,420 800,500" /></circle>
-                    <circle class="ship" r="1"><animateMotion dur="24s" repeatCount="indefinite" path="M400,90 Q420,180 450,280 Q480,380 500,460" /></circle>
-
-                    <!-- Route cluster: Southwest to Northeast diagonal -->
-                    <circle class="ship" r="1.5"><animateMotion dur="40s" repeatCount="indefinite" path="M50,450 Q200,380 400,300 Q650,200 900,120 Q1050,80 1150,50" /></circle>
-                    <circle class="ship" r="1"><animateMotion dur="45s" repeatCount="indefinite" path="M80,480 Q250,400 450,320 Q700,220 950,140 Q1100,90 1180,70" /></circle>
-                    <circle class="ship" r="1.5"><animateMotion dur="38s" repeatCount="indefinite" path="M30,420 Q180,350 380,280 Q620,180 880,110 Q1020,70 1120,40" /></circle>
-
-                    <!-- Route cluster: Northwest to Southeast diagonal -->
-                    <circle class="ship" r="1"><animateMotion dur="42s" repeatCount="indefinite" path="M50,80 Q200,150 400,250 Q650,350 900,450 Q1050,500 1150,550" /></circle>
-                    <circle class="ship" r="1.5"><animateMotion dur="36s" repeatCount="indefinite" path="M80,50 Q250,130 480,240 Q720,360 950,470 Q1100,520 1180,560" /></circle>
-                    <circle class="ship" r="1"><animateMotion dur="48s" repeatCount="indefinite" path="M30,100 Q180,180 380,280 Q600,380 850,480 Q1000,530 1100,570" /></circle>
-
-                    <!-- Scattered shorter routes -->
-                    <circle class="ship" r="1.5"><animateMotion dur="18s" repeatCount="indefinite" path="M150,250 Q250,220 350,260 Q420,290 480,270" /></circle>
-                    <circle class="ship" r="1"><animateMotion dur="20s" repeatCount="indefinite" path="M700,280 Q780,250 860,290 Q920,320 980,300" /></circle>
-                    <circle class="ship" r="1.5"><animateMotion dur="22s" repeatCount="indefinite" path="M300,380 Q400,350 500,390 Q580,420 650,400" /></circle>
-                    <circle class="ship" r="1"><animateMotion dur="16s" repeatCount="indefinite" path="M800,380 Q880,350 960,390 Q1020,420 1080,400" /></circle>
-                    <circle class="ship" r="1.5"><animateMotion dur="19s" repeatCount="indefinite" path="M180,320 Q260,290 340,330 Q400,360 460,340" /></circle>
-                    <circle class="ship" r="1"><animateMotion dur="21s" repeatCount="indefinite" path="M550,350 Q630,320 710,360 Q770,390 830,370" /></circle>
-
-                    <!-- Additional cross-traffic -->
-                    <circle class="ship" r="1"><animateMotion dur="50s" repeatCount="indefinite" path="M1150,300 Q950,280 750,320 Q550,280 350,320 Q150,280 50,300" /></circle>
-                    <circle class="ship" r="1.5"><animateMotion dur="55s" repeatCount="indefinite" path="M1180,250 Q980,220 780,260 Q580,220 380,260 Q180,220 20,250" /></circle>
-                    <circle class="ship" r="1"><animateMotion dur="52s" repeatCount="indefinite" path="M1100,400 Q900,380 700,420 Q500,380 300,420 Q100,380 0,400" /></circle>
-
-                    <!-- More scattered ships for density -->
-                    <circle class="ship" r="1"><animateMotion dur="23s" repeatCount="indefinite" path="M250,150 Q350,180 450,150 Q550,180 650,150" /></circle>
-                    <circle class="ship" r="1.5"><animateMotion dur="26s" repeatCount="indefinite" path="M750,180 Q850,150 950,180 Q1050,150 1100,180" /></circle>
-                    <circle class="ship" r="1"><animateMotion dur="24s" repeatCount="indefinite" path="M100,350 Q200,380 300,350 Q400,380 500,350" /></circle>
-                    <circle class="ship" r="1.5"><animateMotion dur="28s" repeatCount="indefinite" path="M600,420 Q700,450 800,420 Q900,450 1000,420" /></circle>
-                    <circle class="ship" r="1"><animateMotion dur="30s" repeatCount="indefinite" path="M350,480 Q450,450 550,480 Q650,450 750,480" /></circle>
-                    <circle class="ship" r="1.5"><animateMotion dur="22s" repeatCount="indefinite" path="M200,80 Q300,110 400,80 Q500,110 600,80" /></circle>
-                    <circle class="ship" r="1"><animateMotion dur="25s" repeatCount="indefinite" path="M700,100 Q800,130 900,100 Q1000,130 1100,100" /></circle>
-                    <circle class="ship" r="1.5"><animateMotion dur="27s" repeatCount="indefinite" path="M50,500 Q150,470 250,500 Q350,470 450,500" /></circle>
-                    <circle class="ship" r="1"><animateMotion dur="29s" repeatCount="indefinite" path="M550,520 Q650,490 750,520 Q850,490 950,520" /></circle>
-                </svg>
-
-                <!-- Islands -->
-                <div class="island island-lg island-1">
-                    <svg viewBox="0 0 120 80" fill="currentColor">
-                        <ellipse cx="60" cy="50" rx="55" ry="25" opacity="0.6"/>
-                        <ellipse cx="50" cy="45" rx="40" ry="20"/>
-                        <ellipse cx="75" cy="48" rx="30" ry="18"/>
-                    </svg>
-                </div>
-                <div class="island island-md island-2">
-                    <svg viewBox="0 0 80 60" fill="currentColor">
-                        <ellipse cx="40" cy="35" rx="35" ry="18" opacity="0.6"/>
-                        <ellipse cx="35" cy="32" rx="28" ry="15"/>
-                    </svg>
-                </div>
-                <div class="island island-sm island-3">
-                    <svg viewBox="0 0 50 40" fill="currentColor">
-                        <ellipse cx="25" cy="22" rx="20" ry="12"/>
-                    </svg>
-                </div>
-                <div class="island island-md island-4">
-                    <svg viewBox="0 0 90 70" fill="currentColor">
-                        <ellipse cx="45" cy="40" rx="40" ry="22" opacity="0.6"/>
-                        <ellipse cx="40" cy="36" rx="32" ry="18"/>
-                        <ellipse cx="60" cy="42" rx="25" ry="14"/>
-                    </svg>
-                </div>
-                <div class="island island-sm island-5">
-                    <svg viewBox="0 0 40 30" fill="currentColor">
-                        <ellipse cx="20" cy="18" rx="16" ry="10"/>
-                    </svg>
-                </div>
-                <div class="island island-lg island-6">
-                    <svg viewBox="0 0 140 90" fill="currentColor">
-                        <ellipse cx="70" cy="55" rx="65" ry="30" opacity="0.6"/>
-                        <ellipse cx="55" cy="48" rx="45" ry="22"/>
-                        <ellipse cx="90" cy="52" rx="35" ry="20"/>
-                        <ellipse cx="70" cy="42" rx="25" ry="15"/>
-                    </svg>
-                </div>
-                <div class="island island-xs island-7">
-                    <svg viewBox="0 0 30 24" fill="currentColor">
-                        <ellipse cx="15" cy="14" rx="12" ry="8"/>
-                    </svg>
-                </div>
-                <div class="island island-sm island-8">
-                    <svg viewBox="0 0 45 35" fill="currentColor">
-                        <ellipse cx="22" cy="20" rx="18" ry="11"/>
-                    </svg>
-                </div>
-                <div class="island island-xs island-9">
-                    <svg viewBox="0 0 25 20" fill="currentColor">
-                        <ellipse cx="12" cy="12" rx="10" ry="7"/>
-                    </svg>
-                </div>
-                <div class="island island-md island-10">
-                    <svg viewBox="0 0 70 55" fill="currentColor">
-                        <ellipse cx="35" cy="32" rx="30" ry="18" opacity="0.6"/>
-                        <ellipse cx="30" cy="28" rx="24" ry="14"/>
-                    </svg>
-                </div>
-            </div>
             <div class="container">
-                <h1 id="hero-title" class="hero-title hero-title-animated" itemprop="headline">Compute, <span class="accent">closer to you</span>.</h1>
+                <!-- Trust Badges -->
+                <div class="trust-badges" role="group" aria-label="Compliance badges">
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        GDPR Compliant
+                    </span>
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Jurisdiction Routed
+                    </span>
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Verified Nodes
+                    </span>
+                </div>
+
+                <h1 id="hero-title" class="hero-title hero-title-animated" itemprop="headline">Your data. Your jurisdiction.<br><span class="accent">Your compute.</span></h1>
                 <p class="hero-subtitle" itemprop="description">
-                    Run AI models on a decentralized network of local hosts.
-                    Lower latency, fair pricing, community-powered.
+                    Run AI workloads on verified infrastructure with full jurisdiction control.
+                    Data residency guarantees, compliance-ready execution, complete audit trails.
                 </p>
                 <div class="hero-cta" role="group" aria-label="Get started options">
-                    <a href="/use" class="btn btn-primary btn-lg">Use AI</a>
-                    <a href="/earn" class="btn btn-secondary btn-lg">Earn with your PC</a>
+                    <a href="#waitlist" class="btn btn-primary btn-lg">Join the Waitlist</a>
+                    <a href="#how-it-works" class="btn btn-secondary btn-lg">See How It Works</a>
                 </div>
             </div>
         </section>
 
         <!-- SECTION 1b: Stats Bento -->
-        <section class="section-sm" aria-label="Platform statistics">
+        <section class="section-sm" aria-label="Platform capabilities">
             <div class="container">
                 <div class="antigrid-wrapper">
                     <div class="antigrid antigrid-3">
@@ -394,12 +289,12 @@
                             <span class="stat-label">Local latency</span>
                         </div>
                         <div class="antigrid-card antigrid-stat">
-                            <span class="stat-value">3x</span>
-                            <span class="stat-label">Cost savings vs cloud</span>
+                            <span class="stat-value">EU/CH</span>
+                            <span class="stat-label">Jurisdiction routing</span>
                         </div>
                         <div class="antigrid-card antigrid-stat">
-                            <span class="stat-value">100%</span>
-                            <span class="stat-label">Open workloads</span>
+                            <span class="stat-value">Verified</span>
+                            <span class="stat-label">Node attestation</span>
                         </div>
                     </div>
                 </div>
@@ -407,77 +302,77 @@
         </section>
 
         <!-- SECTION 2: How It Works (Split) -->
-        <section class="section section-alt-flat split-section" aria-labelledby="how-it-works-title">
+        <section id="how-it-works" class="section section-alt-flat split-section" aria-labelledby="how-it-works-title">
             <div class="container">
                 <div class="section-header">
                     <span class="section-eyebrow">How it works</span>
-                    <h2 id="how-it-works-title" class="section-title">Two ways to participate</h2>
+                    <h2 id="how-it-works-title" class="section-title">Sovereign compute for every role</h2>
                 </div>
 
                 <div class="antigrid-wrapper">
                     <div class="antigrid antigrid-2">
-                        <!-- For Users -->
+                        <!-- For Compliance-First Teams -->
                         <article class="antigrid-card split-content" aria-labelledby="users-title">
-                            <h3 id="users-title" class="split-title">For AI users</h3>
-                            <p class="split-desc">Access powerful AI models without the cloud markup.</p>
+                            <h3 id="users-title" class="split-title">For compliance-first teams</h3>
+                            <p class="split-desc">Run AI workloads with full jurisdiction control and audit trails.</p>
 
-                            <ol class="split-steps" role="list" aria-label="Steps for AI users">
+                            <ol class="split-steps" role="list" aria-label="Steps for teams">
                                 <li class="step-card">
                                     <span class="step-number" aria-hidden="true">1</span>
                                     <div class="step-content">
-                                        <h4 class="step-title">Create an account</h4>
-                                        <p class="step-desc">Sign up in seconds with email or GitHub.</p>
+                                        <h4 class="step-title">Define your policy</h4>
+                                        <p class="step-desc">Set jurisdiction, compliance framework, and data residency requirements.</p>
                                     </div>
                                 </li>
                                 <li class="step-card">
                                     <span class="step-number" aria-hidden="true">2</span>
                                     <div class="step-content">
-                                        <h4 class="step-title">Add credits</h4>
-                                        <p class="step-desc">Purchase credit packages starting at $10.</p>
+                                        <h4 class="step-title">Submit workloads</h4>
+                                        <p class="step-desc">Use our API or SDK with built-in policy enforcement.</p>
                                     </div>
                                 </li>
                                 <li class="step-card">
                                     <span class="step-number" aria-hidden="true">3</span>
                                     <div class="step-content">
-                                        <h4 class="step-title">Start using AI</h4>
-                                        <p class="step-desc">Chat with LLMs, generate images, or call the API.</p>
+                                        <h4 class="step-title">Verified execution</h4>
+                                        <p class="step-desc">Workloads run on attested nodes within your jurisdiction. Every step is logged.</p>
                                     </div>
                                 </li>
                             </ol>
 
-                            <a href="/use" class="btn btn-primary">Try it now</a>
+                            <a href="/use" class="btn btn-primary">Explore the platform</a>
                         </article>
 
-                        <!-- For Hosts -->
+                        <!-- For Verified Compute Providers -->
                         <article class="antigrid-card split-content" aria-labelledby="hosts-title">
-                            <h3 id="hosts-title" class="split-title">For compute hosts</h3>
-                            <p class="split-desc">Turn your idle GPU into passive income.</p>
+                            <h3 id="hosts-title" class="split-title">For verified compute providers</h3>
+                            <p class="split-desc">Join a trusted network serving compliance-critical workloads.</p>
 
-                            <ol class="split-steps" role="list" aria-label="Steps for compute hosts">
+                            <ol class="split-steps" role="list" aria-label="Steps for compute providers">
                                 <li class="step-card">
                                     <span class="step-number" aria-hidden="true">1</span>
                                     <div class="step-content">
-                                        <h4 class="step-title">Download the agent</h4>
-                                        <p class="step-desc">Quick install on Windows, Mac, or Linux.</p>
+                                        <h4 class="step-title">Apply and verify</h4>
+                                        <p class="step-desc">Complete identity verification and hardware attestation.</p>
                                     </div>
                                 </li>
                                 <li class="step-card">
                                     <span class="step-number" aria-hidden="true">2</span>
                                     <div class="step-content">
-                                        <h4 class="step-title">Configure your limits</h4>
-                                        <p class="step-desc">Set when to share and how much to offer.</p>
+                                        <h4 class="step-title">Configure your node</h4>
+                                        <p class="step-desc">Set jurisdiction, availability, and compliance capabilities.</p>
                                     </div>
                                 </li>
                                 <li class="step-card">
                                     <span class="step-number" aria-hidden="true">3</span>
                                     <div class="step-content">
-                                        <h4 class="step-title">Start earning</h4>
-                                        <p class="step-desc">Receive monthly payouts via Stripe.</p>
+                                        <h4 class="step-title">Serve verified workloads</h4>
+                                        <p class="step-desc">Earn revenue by processing compliant AI workloads.</p>
                                     </div>
                                 </li>
                             </ol>
 
-                            <a href="/earn" class="btn btn-primary">Start earning</a>
+                            <a href="/earn" class="btn btn-primary">Become a provider</a>
                         </article>
                     </div>
                 </div>
@@ -489,7 +384,7 @@
             <div class="container">
                 <div class="section-header">
                     <span class="section-eyebrow">Why Archipelag.io</span>
-                    <h2 id="features-title" class="section-title">Built for the next era of compute</h2>
+                    <h2 id="features-title" class="section-title">Built for sovereignty from day one</h2>
                 </div>
 
                 <div class="antigrid-wrapper">
@@ -497,21 +392,36 @@
                         <article class="antigrid-card antigrid-feature" role="listitem">
                             <div class="feature-icon" aria-hidden="true">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </div>
-                            <h3 class="feature-title">Lower Latency</h3>
-                            <p class="feature-desc">Requests route to nearby hosts. Less distance means faster responses.</p>
+                            <h3 class="feature-title">Jurisdiction Routing</h3>
+                            <p class="feature-desc">Route workloads to specific jurisdictions. EU, Switzerland, or custom regions. Your data stays where you say.</p>
                         </article>
 
                         <article class="antigrid-card antigrid-feature" role="listitem">
                             <div class="feature-icon" aria-hidden="true">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83" stroke-linecap="round"/>
+                                    <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </div>
-                            <h3 class="feature-title">Fair Pricing</h3>
-                            <p class="feature-desc">No cloud provider margins. Pay hosts directly for compute used.</p>
+                            <h3 class="feature-title">Node Verification</h3>
+                            <p class="feature-desc">Every compute provider is verified. Identity attestation, hardware checks, and compliance certification.</p>
+                        </article>
+
+                        <article class="antigrid-card antigrid-feature" role="listitem">
+                            <div class="feature-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <polyline points="14 2 14 8 20 8" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <line x1="16" y1="13" x2="8" y2="13" stroke-linecap="round"/>
+                                    <line x1="16" y1="17" x2="8" y2="17" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <h3 class="feature-title">Policy Enforcement</h3>
+                            <p class="feature-desc">Define compliance policies in code. GDPR, AI Act, SOC 2. Policies are enforced at the infrastructure level.</p>
                         </article>
 
                         <article class="antigrid-card antigrid-feature" role="listitem">
@@ -521,19 +431,8 @@
                                     <path d="M7 11V7a5 5 0 0110 0v4" stroke-linecap="round"/>
                                 </svg>
                             </div>
-                            <h3 class="feature-title">Secure</h3>
-                            <p class="feature-desc">Sandboxed execution, signed workloads, encrypted connections.</p>
-                        </article>
-
-                        <article class="antigrid-card antigrid-feature" role="listitem">
-                            <div class="feature-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <rect x="2" y="3" width="20" height="14" rx="2"/>
-                                    <path d="M8 21h8m-4-4v4" stroke-linecap="round"/>
-                                </svg>
-                            </div>
-                            <h3 class="feature-title">AI-Ready</h3>
-                            <p class="feature-desc">Optimized for LLM inference and image generation workloads.</p>
+                            <h3 class="feature-title">Data Residency</h3>
+                            <p class="feature-desc">Data never leaves your specified region. Encrypted in transit, processed locally, no cross-border transfers.</p>
                         </article>
 
                         <article class="antigrid-card antigrid-feature" role="listitem">
@@ -543,19 +442,18 @@
                                     <path d="M12 6v6l4 2" stroke-linecap="round"/>
                                 </svg>
                             </div>
-                            <h3 class="feature-title">Transparent</h3>
-                            <p class="feature-desc">See where your jobs run. Track host reputation and performance.</p>
+                            <h3 class="feature-title">Audit Trail</h3>
+                            <p class="feature-desc">Complete execution logs for every workload. Who processed it, where, when, and how. Ready for regulatory review.</p>
                         </article>
 
                         <article class="antigrid-card antigrid-feature" role="listitem">
                             <div class="feature-icon" aria-hidden="true">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <circle cx="12" cy="12" r="3"/>
-                                    <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41" stroke-linecap="round"/>
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </div>
-                            <h3 class="feature-title">Local-First</h3>
-                            <p class="feature-desc">Your data stays regional. Support your local compute community.</p>
+                            <h3 class="feature-title">Compliance-First</h3>
+                            <p class="feature-desc">Designed for regulated industries. Healthcare, finance, government. Sovereignty is not an afterthought.</p>
                         </article>
                     </div>
                 </div>
@@ -568,53 +466,61 @@
                 <div class="antigrid-wrapper">
                     <div class="antigrid antigrid-2">
                         <div class="antigrid-card preview-content">
-                            <span class="section-eyebrow">For Users</span>
-                            <h2 id="users-preview-title" class="preview-title">AI inference, closer to you</h2>
+                            <span class="section-eyebrow">For Teams</span>
+                            <h2 id="users-preview-title" class="preview-title">Run compliant AI workloads</h2>
                             <p class="preview-desc">
-                                Access state-of-the-art language models and image generators
-                                running on community hardware. Fast, affordable, private.
+                                Submit inference jobs with jurisdiction and compliance policies built into every request.
+                                The platform enforces your rules at the infrastructure level.
                             </p>
 
-                            <ul class="preview-list" role="list" aria-label="User features">
+                            <ul class="preview-list" role="list" aria-label="Platform features">
                                 <li>
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                         <polyline points="20 6 9 17 4 12"/>
                                     </svg>
-                                    <span>LLM chat with Mistral, Llama, and more</span>
+                                    <span>LLM inference with jurisdiction controls</span>
                                 </li>
                                 <li>
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                         <polyline points="20 6 9 17 4 12"/>
                                     </svg>
-                                    <span>Image generation with Stable Diffusion, FLUX</span>
+                                    <span>Batch processing with compliance guarantees</span>
                                 </li>
                                 <li>
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                         <polyline points="20 6 9 17 4 12"/>
                                     </svg>
-                                    <span>REST API and SDK access (Python, JavaScript)</span>
+                                    <span>Python and JavaScript SDKs</span>
                                 </li>
                                 <li>
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                         <polyline points="20 6 9 17 4 12"/>
                                     </svg>
-                                    <span>Pay only for what you use</span>
+                                    <span>Complete audit trail for every execution</span>
                                 </li>
                             </ul>
 
-                            <a href="/use" class="btn btn-primary">Start using AI</a>
+                            <a href="/use" class="btn btn-primary">Explore the platform</a>
                         </div>
 
                         <div class="antigrid-card flex items-center justify-center">
-                            <figure class="code-block w-full" role="figure" aria-label="API example">
-                                <pre><code>curl -X POST https://api.archipelag.io/v1/chat \
-  -H "Authorization: Bearer $API_KEY" \
-  -d '{
-    "model": "mistral-7b",
-    "messages": [
-      {"role": "user", "content": "Hello!"}
-    ]
-  }'</code></pre>
+                            <figure class="code-block w-full" role="figure" aria-label="SDK example with policy">
+                                <pre><code># Python SDK with jurisdiction policy
+from archipelag import Client
+
+client = Client(api_key="your-key")
+
+response = client.chat.create(
+    model="mistral-7b",
+    messages=[
+        {"role": "user", "content": "Hello!"}
+    ],
+    policy={
+        "jurisdiction": "eu-west",
+        "compliance": "gdpr",
+        "verification": "tier-2"
+    }
+)</code></pre>
                             </figure>
                         </div>
                     </div>
@@ -630,34 +536,29 @@
                         <div class="antigrid-card flex items-center justify-center">
                             <div class="w-full">
                                 <div class="table-wrapper">
-                                    <table class="table" aria-label="GPU earnings estimates">
+                                    <table class="table" aria-label="Verification levels">
                                         <thead>
                                             <tr>
-                                                <th scope="col">GPU</th>
-                                                <th scope="col">Rate</th>
-                                                <th scope="col">Est. Monthly</th>
+                                                <th scope="col">Level</th>
+                                                <th scope="col">Requirements</th>
+                                                <th scope="col">Access</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>RTX 4090</td>
-                                                <td>up to $0.25/min</td>
-                                                <td>$200-400</td>
+                                                <td><strong>Tier 1</strong></td>
+                                                <td>Identity + hardware attestation</td>
+                                                <td>Standard workloads</td>
                                             </tr>
                                             <tr>
-                                                <td>RTX 4080</td>
-                                                <td>up to $0.18/min</td>
-                                                <td>$140-280</td>
+                                                <td><strong>Tier 2</strong></td>
+                                                <td>Facility audit + compliance training</td>
+                                                <td>GDPR workloads</td>
                                             </tr>
                                             <tr>
-                                                <td>RTX 3080</td>
-                                                <td>up to $0.12/min</td>
-                                                <td>$80-150</td>
-                                            </tr>
-                                            <tr>
-                                                <td>RTX 3060</td>
-                                                <td>up to $0.06/min</td>
-                                                <td>$40-80</td>
+                                                <td><strong>Tier 3</strong></td>
+                                                <td>Dedicated infrastructure + SLA</td>
+                                                <td>Enterprise + regulated</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -666,149 +567,86 @@
                         </div>
 
                         <div class="antigrid-card preview-content">
-                            <span class="section-eyebrow">For Hosts</span>
-                            <h2 id="hosts-preview-title" class="preview-title">Turn idle hardware into income</h2>
+                            <span class="section-eyebrow">For Providers</span>
+                            <h2 id="hosts-preview-title" class="preview-title">Become a verified compute provider</h2>
                             <p class="preview-desc">
-                                Your gaming PC or workstation can earn money while you sleep.
-                                Join the network and get paid for compute you're not using.
+                                Join a trusted network serving compliance-critical AI workloads.
+                                Verified providers earn premium rates for sovereign compute.
                             </p>
 
-                            <ul class="preview-list" role="list" aria-label="Host features">
+                            <ul class="preview-list" role="list" aria-label="Provider features">
                                 <li>
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                         <polyline points="20 6 9 17 4 12"/>
                                     </svg>
-                                    <span>Set your own availability schedule</span>
+                                    <span>Three verification tiers with increasing access</span>
                                 </li>
                                 <li>
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                         <polyline points="20 6 9 17 4 12"/>
                                     </svg>
-                                    <span>Sandboxed workloads, no arbitrary code</span>
+                                    <span>Premium rates for compliance-ready infrastructure</span>
                                 </li>
                                 <li>
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                         <polyline points="20 6 9 17 4 12"/>
                                     </svg>
-                                    <span>Monthly payouts via Stripe ($25 min)</span>
+                                    <span>Trust score drives workload priority</span>
                                 </li>
                                 <li>
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                         <polyline points="20 6 9 17 4 12"/>
                                     </svg>
-                                    <span>Build reputation for better job priority</span>
+                                    <span>Sandboxed execution, signed workloads only</span>
                                 </li>
                             </ul>
 
-                            <a href="/earn" class="btn btn-primary">Download agent</a>
+                            <a href="/earn" class="btn btn-primary">Apply to host</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 6: Pricing Preview -->
-        <section class="section section-alt-flat pricing-section" aria-labelledby="pricing-title" itemscope itemtype="https://schema.org/Product">
+        <!-- SECTION 6: Waitlist + Design Partner -->
+        <section id="waitlist" class="section section-alt-flat" aria-labelledby="waitlist-title">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-eyebrow">Pricing</span>
-                    <h2 id="pricing-title" class="section-title" itemprop="name">Simple, transparent pricing</h2>
-                    <p class="section-subtitle" itemprop="description">No subscriptions. Buy credits, use AI. That's it.</p>
+                    <span class="section-eyebrow">Early Access</span>
+                    <h2 id="waitlist-title" class="section-title">Sovereign compute is coming</h2>
+                    <p class="section-subtitle">Join the waitlist for early access, or apply to become a design partner.</p>
                 </div>
 
                 <div class="antigrid-wrapper">
-                    <div class="antigrid antigrid-3" role="list" aria-label="Pricing tiers">
-                        <article class="antigrid-card pricing-card" role="listitem" itemscope itemtype="https://schema.org/Offer">
-                            <h3 class="pricing-name" itemprop="name">Starter</h3>
-                            <div class="pricing-price"><span class="currency">$</span><span itemprop="price">10</span></div>
-                            <meta itemprop="priceCurrency" content="USD">
-                            <p class="pricing-period">one-time</p>
-                            <p class="pricing-credits">100 credits</p>
-                            <ul class="pricing-features" aria-label="Starter plan features">
-                                <li>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                        <polyline points="20 6 9 17 4 12"/>
-                                    </svg>
-                                    <span>~1,000,000 tokens</span>
-                                </li>
-                                <li>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                        <polyline points="20 6 9 17 4 12"/>
-                                    </svg>
-                                    <span>~10,000 images</span>
-                                </li>
-                                <li>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                        <polyline points="20 6 9 17 4 12"/>
-                                    </svg>
-                                    <span>All models included</span>
-                                </li>
-                            </ul>
-                            <a href="{{ config.extra.app_base_url }}" class="btn btn-secondary w-full" itemprop="url">Get started</a>
-                        </article>
+                    <div class="antigrid antigrid-2">
+                        <div class="antigrid-card" style="padding: var(--space-10); text-align: center;">
+                            <h3 class="font-brand text-2xl mb-4">Join the Waitlist</h3>
+                            <p class="text-secondary mb-6">Be the first to know when sovereign compute launches.</p>
 
-                        <article class="antigrid-card pricing-card featured" role="listitem" itemscope itemtype="https://schema.org/Offer">
-                            <h3 class="pricing-name" itemprop="name">Power</h3>
-                            <div class="pricing-price"><span class="currency">$</span><span itemprop="price">45</span></div>
-                            <meta itemprop="priceCurrency" content="USD">
-                            <p class="pricing-period">one-time</p>
-                            <p class="pricing-credits">500 credits</p>
-                            <ul class="pricing-features" aria-label="Power plan features">
-                                <li>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                        <polyline points="20 6 9 17 4 12"/>
-                                    </svg>
-                                    <span>~5,000,000 tokens</span>
-                                </li>
-                                <li>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                        <polyline points="20 6 9 17 4 12"/>
-                                    </svg>
-                                    <span>~50,000 images</span>
-                                </li>
-                                <li>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                        <polyline points="20 6 9 17 4 12"/>
-                                    </svg>
-                                    <span>10% bonus credits</span>
-                                </li>
-                            </ul>
-                            <a href="{{ config.extra.app_base_url }}" class="btn btn-primary w-full" itemprop="url">Get started</a>
-                        </article>
+                            <form class="waitlist-form" id="waitlist-form" action="https://buttondown.email/api/emails/embed-subscribe/raskell" method="post" target="_blank">
+                                <input type="email" name="email" placeholder="you@company.com" required aria-label="Email address">
+                                <button type="submit">Join waitlist</button>
+                            </form>
 
-                        <article class="antigrid-card pricing-card" role="listitem" itemscope itemtype="https://schema.org/Offer">
-                            <h3 class="pricing-name" itemprop="name">Pro</h3>
-                            <div class="pricing-price"><span class="currency">$</span><span itemprop="price">160</span></div>
-                            <meta itemprop="priceCurrency" content="USD">
-                            <p class="pricing-period">one-time</p>
-                            <p class="pricing-credits">2,000 credits</p>
-                            <ul class="pricing-features" aria-label="Pro plan features">
-                                <li>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                        <polyline points="20 6 9 17 4 12"/>
-                                    </svg>
-                                    <span>~20,000,000 tokens</span>
-                                </li>
-                                <li>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                        <polyline points="20 6 9 17 4 12"/>
-                                    </svg>
-                                    <span>~200,000 images</span>
-                                </li>
-                                <li>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                        <polyline points="20 6 9 17 4 12"/>
-                                    </svg>
-                                    <span>25% bonus credits</span>
-                                </li>
-                            </ul>
-                            <a href="{{ config.extra.app_base_url }}" class="btn btn-secondary w-full" itemprop="url">Get started</a>
-                        </article>
+                            <div class="subscribe-success" id="waitlist-success" style="display: none;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; color: var(--accent); display: inline;">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>You're on the list.</span>
+                            </div>
+
+                            <p class="text-sm text-tertiary mt-4">No spam. Unsubscribe anytime.</p>
+                        </div>
+
+                        <div class="antigrid-card design-partner-card" style="display: flex; flex-direction: column; justify-content: center;">
+                            <h3 class="font-brand text-2xl mb-4">Design Partner Program</h3>
+                            <p class="text-secondary mb-6">
+                                Work directly with our team to shape sovereign compute for your compliance requirements.
+                                Priority access, dedicated support, custom integrations.
+                            </p>
+                            <a href="mailto:partners@archipelag.io" class="btn btn-primary">Apply to be a Design Partner</a>
+                        </div>
                     </div>
-                </div>
-
-                <div class="text-center mt-8">
-                    <a href="/pricing" class="btn btn-ghost">View full pricing details</a>
                 </div>
             </div>
         </section>
@@ -816,13 +654,13 @@
         <!-- SECTION 7: Final CTA -->
         <section class="section cta-section" aria-labelledby="cta-title">
             <div class="container text-center">
-                <h2 id="cta-title" class="cta-title">Ready to get started?</h2>
+                <h2 id="cta-title" class="cta-title">Sovereign compute starts here</h2>
                 <p class="cta-subtitle">
-                    Join the distributed compute revolution. Use AI or earn with your hardware.
+                    Your data deserves infrastructure that respects jurisdiction. Join the movement.
                 </p>
                 <div class="btn-group justify-center" role="group" aria-label="Get started options">
-                    <a href="/use" class="btn btn-primary btn-lg">Use AI</a>
-                    <a href="/earn" class="btn btn-secondary btn-lg">Earn with your PC</a>
+                    <a href="#waitlist" class="btn btn-primary btn-lg">Join the Waitlist</a>
+                    <a href="mailto:hello@archipelag.io" class="btn btn-secondary btn-lg">Contact Us</a>
                 </div>
             </div>
         </section>
@@ -840,16 +678,15 @@
                         </picture>
                         <span class="logo-text" aria-hidden="true">archipelag<span class="dot">.</span>io</span>
                     </a>
-                    <p class="footer-tagline">Compute, closer to you. A decentralized network for AI inference.</p>
+                    <p class="footer-tagline">Sovereign compute infrastructure. Your data, your jurisdiction, your rules.</p>
                 </div>
 
                 <nav class="footer-column" aria-label="Product links">
                     <h4 class="footer-heading">Product</h4>
                     <ul class="footer-links">
-                        <li><a href="/use">Use AI</a></li>
-                        <li><a href="/earn">Earn</a></li>
+                        <li><a href="/use">Platform</a></li>
+                        <li><a href="/earn">Host</a></li>
                         <li><a href="/pricing">Pricing</a></li>
-                        <li><a href="https://docs.archipelag.io" target="_blank" rel="noopener noreferrer">Docs<span class="sr-only"> (opens in new tab)</span></a></li>
                     </ul>
                 </nav>
 
@@ -907,6 +744,18 @@
             menuToggle.setAttribute('aria-expanded', isOpen);
             mobileMenu.setAttribute('aria-hidden', !isOpen);
         });
+
+        // Waitlist form
+        const waitlistForm = document.getElementById('waitlist-form');
+        const waitlistSuccess = document.getElementById('waitlist-success');
+        if (waitlistForm) {
+            waitlistForm.addEventListener('submit', () => {
+                setTimeout(() => {
+                    waitlistForm.style.display = 'none';
+                    waitlistSuccess.style.display = 'block';
+                }, 100);
+            });
+        }
     </script>
 </body>
 </html>

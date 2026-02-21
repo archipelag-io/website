@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Simple, transparent pricing for AI inference. No subscriptions. Buy credits starting at $10, use them anytime. Credits never expire.">
+    <meta name="description" content="Start free, scale with compliance. Sovereign compute infrastructure with jurisdiction routing and verified execution.">
     <meta name="author" content="{{ config.extra.author }}">
     <meta name="robots" content="index, follow">
-    <meta name="keywords" content="AI pricing, LLM costs, image generation pricing, compute credits, pay per use, no subscription">
+    <meta name="keywords" content="sovereign compute pricing, compliant AI pricing, GDPR compute costs, jurisdiction routing pricing, enterprise AI infrastructure">
     <link rel="canonical" href="{{ config.base_url }}/pricing/">
     <meta name="theme-color" content="#0d9488">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ config.base_url }}/pricing/">
-    <meta property="og:title" content="Pricing - Simple & Transparent | {{ config.title }}">
-    <meta property="og:description" content="Simple, transparent pricing for AI inference. No subscriptions. Buy credits starting at $10, use them anytime. Credits never expire.">
+    <meta property="og:title" content="Pricing - Start Free, Scale with Compliance | {{ config.title }}">
+    <meta property="og:description" content="Start free, scale with compliance. Sovereign compute infrastructure with jurisdiction routing and verified execution.">
     <meta property="og:image" content="{{ config.base_url }}/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -26,8 +26,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="{{ config.extra.twitter }}">
     <meta name="twitter:creator" content="{{ config.extra.twitter }}">
-    <meta name="twitter:title" content="Pricing - Simple & Transparent | {{ config.title }}">
-    <meta name="twitter:description" content="No subscriptions. Buy credits starting at $10. Credits never expire.">
+    <meta name="twitter:title" content="Pricing - Start Free, Scale with Compliance | {{ config.title }}">
+    <meta name="twitter:description" content="Start free, scale with compliance. Credits never expire.">
     <meta name="twitter:image" content="{{ config.base_url }}/og-image.png">
     <meta name="twitter:image:alt" content="Archipelag.io Pricing">
 
@@ -53,7 +53,7 @@
                 "@id": "{{ config.base_url }}/pricing/",
                 "url": "{{ config.base_url }}/pricing/",
                 "name": "Pricing",
-                "description": "Simple, transparent pricing for AI inference. No subscriptions. Credits never expire.",
+                "description": "Start free, scale with compliance. Sovereign compute infrastructure.",
                 "isPartOf": {
                     "@id": "{{ config.base_url }}/#website"
                 },
@@ -77,29 +77,29 @@
             },
             {
                 "@type": "Product",
-                "name": "Archipelag.io Credits",
-                "description": "Credits for AI inference on the Archipelag.io network",
+                "name": "Archipelag.io Sovereign Compute",
+                "description": "Sovereign compute infrastructure with jurisdiction routing and verified execution",
                 "offers": [
                     {
                         "@type": "Offer",
                         "name": "Starter",
                         "price": "10.00",
                         "priceCurrency": "USD",
-                        "description": "100 credits - ~1,000,000 tokens or ~10,000 images"
+                        "description": "100 credits - Tier 1 verified nodes, standard jurisdiction routing"
                     },
                     {
                         "@type": "Offer",
-                        "name": "Power",
+                        "name": "Team",
                         "price": "45.00",
                         "priceCurrency": "USD",
-                        "description": "500 credits + 10% bonus - ~5,000,000 tokens or ~50,000 images"
+                        "description": "500 credits + 10% bonus - GDPR execution, Tier 2 nodes, audit trails"
                     },
                     {
                         "@type": "Offer",
-                        "name": "Pro",
-                        "price": "160.00",
+                        "name": "Enterprise",
+                        "price": "0",
                         "priceCurrency": "USD",
-                        "description": "2,000 credits + 25% bonus - ~20,000,000 tokens or ~200,000 images"
+                        "description": "Custom pricing - Dedicated node pools, Tier 3 nodes, SLA guarantees"
                     }
                 ]
             },
@@ -108,42 +108,42 @@
                 "mainEntity": [
                     {
                         "@type": "Question",
-                        "name": "Do credits expire?",
+                        "name": "How does jurisdiction routing work?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "No. Credits never expire. Use them whenever you need them."
+                            "text": "When you submit a workload, you specify a jurisdiction policy. The platform routes your job exclusively to verified nodes within that jurisdiction. Your data never leaves the specified region."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Can I get a refund?",
+                        "name": "What are verification levels?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Unused credits can be refunded within 30 days of purchase. Contact support."
+                            "text": "Compute providers go through three verification tiers: Tier 1 (identity + hardware attestation), Tier 2 (facility audit + compliance training), and Tier 3 (dedicated infrastructure + SLA). Higher tiers serve more sensitive workloads."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "What payment methods do you accept?",
+                        "name": "Is Archipelag.io GDPR compliant?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "We accept credit cards, debit cards, and bank transfers via Stripe."
+                            "text": "Yes. The platform is designed for GDPR compliance. Jurisdiction routing ensures data residency, verified nodes provide processing guarantees, and audit trails document every execution."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "How are host payouts calculated?",
+                        "name": "Are you SOC 2 certified?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Hosts earn based on compute time used. Rates vary by hardware tier and karma score."
+                            "text": "SOC 2 certification is on our Q4 2026 roadmap. Enterprise tier customers will have access to our compliance documentation and can request audit reports."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Is there a free tier?",
+                        "name": "How does this relate to the EU AI Act?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "New accounts receive 10 free credits to try the service."
+                            "text": "Archipelag.io helps teams meet AI Act requirements through verified execution, audit trails, and transparency reporting. Our compliance toolkit (Q4 2026) will include AI Act-specific templates and documentation."
                         }
                     }
                 ]
@@ -177,8 +177,8 @@
                 </a>
 
                 <nav class="header-nav" role="navigation" aria-label="Main navigation">
-                    <a href="/use" class="nav-link">Use AI</a>
-                    <a href="/earn" class="nav-link">Earn</a>
+                    <a href="/use" class="nav-link">Platform</a>
+                    <a href="/earn" class="nav-link">Host</a>
                     <a href="/pricing" class="nav-link active" aria-current="page">Pricing</a>
                     <a href="/about" class="nav-link">About</a>
                 </nav>
@@ -200,7 +200,7 @@
                             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                         </svg>
                     </button>
-                    <a href="{{ config.extra.app_base_url }}" class="btn btn-primary btn-sm md:block sm:hidden">Get Started</a>
+                    <a href="/#waitlist" class="btn btn-primary btn-sm md:block sm:hidden">Join Waitlist</a>
                     <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
                         <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -219,12 +219,12 @@
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
             <nav class="mobile-nav" aria-label="Mobile navigation">
-                <a href="/use" class="nav-link">Use AI</a>
-                <a href="/earn" class="nav-link">Earn</a>
+                <a href="/use" class="nav-link">Platform</a>
+                <a href="/earn" class="nav-link">Host</a>
                 <a href="/pricing" class="nav-link active" aria-current="page">Pricing</a>
                 <a href="/about" class="nav-link">About</a>
             </nav>
-            <a href="{{ config.extra.app_base_url }}" class="btn btn-primary w-full">Get Started</a>
+            <a href="/#waitlist" class="btn btn-primary w-full">Join Waitlist</a>
         </div>
     </header>
 
@@ -232,10 +232,10 @@
         <!-- Hero -->
         <section class="hero-section" aria-labelledby="hero-title">
             <div class="container">
-                <h1 id="hero-title" class="hero-title">Simple, transparent pricing</h1>
+                <h1 id="hero-title" class="hero-title">Start free, scale with compliance</h1>
                 <p class="hero-subtitle">
-                    No subscriptions. Buy credits, use AI, that's it.
-                    Credits never expire. Pay only for what you use.
+                    Sovereign compute infrastructure priced for teams of every size.
+                    Credits never expire. Compliance included at every tier.
                 </p>
             </div>
         </section>
@@ -244,8 +244,8 @@
         <section class="section pricing-section" aria-labelledby="packages-title">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-eyebrow">For AI Users</span>
-                    <h2 id="packages-title" class="section-title">Credit packages</h2>
+                    <span class="section-eyebrow">Plans</span>
+                    <h2 id="packages-title" class="section-title">Choose your tier</h2>
                 </div>
 
                 <div class="pricing-grid" role="list" aria-label="Pricing plans">
@@ -258,11 +258,11 @@
                         <ul class="pricing-features" aria-label="Starter plan features">
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>~1,000,000 tokens</span>
+                                <span>Tier 1 verified nodes</span>
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>~10,000 images</span>
+                                <span>Standard jurisdiction routing</span>
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -273,255 +273,112 @@
                                 <span>API access</span>
                             </li>
                         </ul>
-                        <a href="{{ config.extra.app_base_url }}" class="btn btn-secondary w-full" itemprop="url">Get started</a>
+                        <a href="/#waitlist" class="btn btn-secondary w-full" itemprop="url">Join Waitlist</a>
                     </article>
 
                     <article class="card pricing-card featured" role="listitem" itemscope itemtype="https://schema.org/Offer">
-                        <h3 class="pricing-name" itemprop="name">Power</h3>
+                        <h3 class="pricing-name" itemprop="name">Team</h3>
                         <div class="pricing-price"><span class="currency">$</span><span itemprop="price">45</span></div>
                         <meta itemprop="priceCurrency" content="USD">
                         <p class="pricing-period">one-time</p>
                         <p class="pricing-credits">500 credits</p>
-                        <ul class="pricing-features" aria-label="Power plan features">
+                        <ul class="pricing-features" aria-label="Team plan features">
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>~5,000,000 tokens</span>
+                                <span>Tier 2 GDPR-compliant nodes</span>
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>~50,000 images</span>
+                                <span>EU/CH jurisdiction routing</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Full audit trails</span>
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                                 <span>10% bonus credits</span>
                             </li>
-                            <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>Priority routing</span>
-                            </li>
                         </ul>
-                        <a href="{{ config.extra.app_base_url }}" class="btn btn-primary w-full" itemprop="url">Get started</a>
+                        <a href="/#waitlist" class="btn btn-primary w-full" itemprop="url">Join Waitlist</a>
                     </article>
 
                     <article class="card pricing-card" role="listitem" itemscope itemtype="https://schema.org/Offer">
-                        <h3 class="pricing-name" itemprop="name">Pro</h3>
-                        <div class="pricing-price"><span class="currency">$</span><span itemprop="price">160</span></div>
-                        <meta itemprop="priceCurrency" content="USD">
-                        <p class="pricing-period">one-time</p>
-                        <p class="pricing-credits">2,000 credits</p>
-                        <ul class="pricing-features" aria-label="Pro plan features">
+                        <h3 class="pricing-name" itemprop="name">Enterprise</h3>
+                        <div class="pricing-price" style="font-size: var(--text-2xl);">Custom</div>
+                        <p class="pricing-period">annual</p>
+                        <p class="pricing-credits">Custom volume</p>
+                        <ul class="pricing-features" aria-label="Enterprise plan features">
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>~20,000,000 tokens</span>
+                                <span>Tier 3 dedicated node pools</span>
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>~200,000 images</span>
+                                <span>SLA guarantees</span>
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>25% bonus credits</span>
+                                <span>SOC 2 + AI Act readiness</span>
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>Priority support</span>
+                                <span>Dedicated support</span>
                             </li>
                         </ul>
-                        <a href="{{ config.extra.app_base_url }}" class="btn btn-secondary w-full" itemprop="url">Get started</a>
+                        <a href="mailto:enterprise@archipelag.io" class="btn btn-secondary w-full" itemprop="url">Contact Sales</a>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Usage Rates -->
-        <section class="section section-alt" aria-labelledby="rates-title">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-eyebrow">Usage Rates</span>
-                    <h2 id="rates-title" class="section-title">What things cost</h2>
-                </div>
-
-                <div class="grid grid-2 gap-8 max-w-4xl mx-auto">
-                    <div class="card">
-                        <h3 class="font-brand text-xl mb-4">LLM Chat</h3>
-                        <div class="table-wrapper">
-                            <table class="table" aria-label="LLM chat pricing">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Model</th>
-                                        <th scope="col">Rate</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Mistral 7B</td>
-                                        <td>~0.0001 cr/token</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Llama 2 13B</td>
-                                        <td>~0.00015 cr/token</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Llama 3 70B</td>
-                                        <td>~0.0003 cr/token</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <h3 class="font-brand text-xl mb-4">Image Generation</h3>
-                        <div class="table-wrapper">
-                            <table class="table" aria-label="Image generation pricing">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Model</th>
-                                        <th scope="col">Rate</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>SDXL (512px)</td>
-                                        <td>~0.01 cr/image</td>
-                                    </tr>
-                                    <tr>
-                                        <td>SDXL (1024px)</td>
-                                        <td>~0.02 cr/image</td>
-                                    </tr>
-                                    <tr>
-                                        <td>FLUX</td>
-                                        <td>~0.03 cr/image</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <p class="text-center text-sm text-tertiary mt-6">Rates are approximate and may vary based on network conditions. 1 credit = $0.10</p>
-            </div>
-        </section>
-
-        <!-- Host Earnings -->
-        <section class="section" aria-labelledby="host-earnings-title">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-eyebrow">For Hosts</span>
-                    <h2 id="host-earnings-title" class="section-title">Earning potential</h2>
-                    <p class="section-subtitle">Earnings depend on hardware, availability, and network demand.</p>
-                </div>
-
-                <div class="card max-w-3xl mx-auto">
-                    <div class="table-wrapper">
-                        <table class="table" aria-label="Host earnings by GPU">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Hardware</th>
-                                    <th scope="col">Base Rate</th>
-                                    <th scope="col">Est. Monthly*</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>RTX 4090</td>
-                                    <td>up to $0.25/min</td>
-                                    <td>$200-400</td>
-                                </tr>
-                                <tr>
-                                    <td>RTX 4080</td>
-                                    <td>up to $0.18/min</td>
-                                    <td>$140-280</td>
-                                </tr>
-                                <tr>
-                                    <td>RTX 3080</td>
-                                    <td>up to $0.12/min</td>
-                                    <td>$80-150</td>
-                                </tr>
-                                <tr>
-                                    <td>RTX 3070</td>
-                                    <td>up to $0.08/min</td>
-                                    <td>$50-100</td>
-                                </tr>
-                                <tr>
-                                    <td>RTX 3060</td>
-                                    <td>up to $0.06/min</td>
-                                    <td>$40-80</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p class="text-sm text-tertiary mt-4">*Based on 8 hours/day availability. Actual earnings vary.</p>
-                </div>
-
-                <div class="grid grid-3 gap-6 max-w-3xl mx-auto mt-12">
-                    <article class="card text-center p-6">
-                        <div class="font-brand text-2xl mb-2">+5%</div>
-                        <p class="text-sm text-secondary">99%+ uptime bonus</p>
-                    </article>
-                    <article class="card text-center p-6">
-                        <div class="font-brand text-2xl mb-2">+10%</div>
-                        <p class="text-sm text-secondary">Low latency bonus</p>
-                    </article>
-                    <article class="card text-center p-6">
-                        <div class="font-brand text-2xl mb-2">+15%</div>
-                        <p class="text-sm text-secondary">24/7 availability bonus</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Enterprise -->
-        <section class="section section-alt" aria-labelledby="enterprise-title">
+        <!-- Design Partner Program -->
+        <section class="section section-alt" aria-labelledby="partner-title">
             <div class="container">
                 <div class="split">
                     <div class="preview-content">
-                        <span class="section-eyebrow">Enterprise</span>
-                        <h2 id="enterprise-title" class="preview-title">Custom solutions for teams</h2>
+                        <span class="section-eyebrow">Early Access</span>
+                        <h2 id="partner-title" class="preview-title">Design Partner Program</h2>
                         <p class="preview-desc">
-                            Need dedicated compute, custom SLAs, or volume pricing?
-                            We offer enterprise plans for organizations with higher requirements.
+                            Work directly with our engineering team to shape sovereign compute for your specific compliance requirements. Design partners get priority access, dedicated support, and custom integrations.
                         </p>
 
-                        <ul class="preview-list" aria-label="Enterprise features">
+                        <ul class="preview-list" aria-label="Design partner benefits">
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>Dedicated node pools</span>
+                                <span>Priority access to the platform</span>
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>Custom SLA guarantees</span>
+                                <span>Direct line to the engineering team</span>
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>Volume discounts (50k+ credits)</span>
+                                <span>Custom compliance framework integration</span>
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>Priority support</span>
-                            </li>
-                            <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>On-premises hybrid deployment</span>
+                                <span>Shape the product roadmap</span>
                             </li>
                         </ul>
 
-                        <a href="mailto:enterprise@archipelag.io" class="btn btn-primary">Contact sales</a>
+                        <a href="mailto:partners@archipelag.io" class="btn btn-primary">Apply to be a Design Partner</a>
                     </div>
 
                     <div class="flex items-center justify-center p-8">
                         <figure class="card w-full p-8 text-center">
                             <div class="icon icon-xl text-accent mx-auto mb-4" aria-hidden="true">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M1 21h22" stroke-linecap="round"/>
-                                    <path d="M9 7h1m5 0h1M9 11h1m5 0h1M9 15h1m5 0h1" stroke-linecap="round"/>
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </div>
                             <figcaption>
-                                <div class="font-brand text-xl mb-2">Enterprise</div>
-                                <p class="text-secondary mb-4">Custom pricing</p>
-                                <p class="text-sm text-tertiary">Contact us for a tailored solution</p>
+                                <div class="font-brand text-xl mb-2">Design Partners</div>
+                                <p class="text-secondary mb-4">Limited spots available</p>
+                                <p class="text-sm text-tertiary">For teams with specific compliance requirements</p>
                             </figcaption>
                         </figure>
                     </div>
@@ -529,8 +386,50 @@
             </div>
         </section>
 
+        <!-- Enterprise Section -->
+        <section class="section" aria-labelledby="enterprise-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow">Enterprise</span>
+                    <h2 id="enterprise-title" class="section-title">Built for regulated industries</h2>
+                    <p class="section-subtitle">Sovereign compute infrastructure for healthcare, finance, government, and any team that can't compromise on compliance.</p>
+                </div>
+
+                <div class="grid grid-3 gap-6 max-w-4xl mx-auto">
+                    <article class="card p-6">
+                        <h3 class="font-brand text-lg mb-3">Dedicated Node Pools</h3>
+                        <p class="text-sm text-secondary">Reserved Tier 3 verified infrastructure exclusively for your organization. No shared resources.</p>
+                    </article>
+                    <article class="card p-6">
+                        <h3 class="font-brand text-lg mb-3">SLA Guarantees</h3>
+                        <p class="text-sm text-secondary">99.9% uptime commitments with financial backing. Dedicated escalation paths and incident response.</p>
+                    </article>
+                    <article class="card p-6">
+                        <h3 class="font-brand text-lg mb-3">Compliance Toolkit</h3>
+                        <p class="text-sm text-secondary">Pre-built templates for GDPR, SOC 2, and AI Act reporting. Audit-ready documentation generated automatically.</p>
+                    </article>
+                    <article class="card p-6">
+                        <h3 class="font-brand text-lg mb-3">Custom Jurisdictions</h3>
+                        <p class="text-sm text-secondary">Define custom routing zones beyond standard EU/CH. Country-specific or even city-level data residency.</p>
+                    </article>
+                    <article class="card p-6">
+                        <h3 class="font-brand text-lg mb-3">Priority Support</h3>
+                        <p class="text-sm text-secondary">Named account manager, direct Slack channel, and priority engineering support for integrations.</p>
+                    </article>
+                    <article class="card p-6">
+                        <h3 class="font-brand text-lg mb-3">Volume Pricing</h3>
+                        <p class="text-sm text-secondary">Custom credit packages with volume discounts. Annual commitments with predictable billing.</p>
+                    </article>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="mailto:enterprise@archipelag.io" class="btn btn-primary btn-lg">Contact Sales</a>
+                </div>
+            </div>
+        </section>
+
         <!-- FAQ -->
-        <section class="section" aria-labelledby="faq-title">
+        <section class="section section-alt" aria-labelledby="faq-title">
             <div class="container">
                 <div class="section-header">
                     <span class="section-eyebrow">FAQ</span>
@@ -539,33 +438,39 @@
 
                 <div class="max-w-2xl mx-auto" itemscope itemtype="https://schema.org/FAQPage">
                     <article class="card mb-4 p-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                        <h3 class="font-brand text-lg mb-2" itemprop="name">Do credits expire?</h3>
+                        <h3 class="font-brand text-lg mb-2" itemprop="name">How does jurisdiction routing work?</h3>
                         <p class="text-secondary" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                            <span itemprop="text">No. Credits never expire. Use them whenever you need them.</span>
+                            <span itemprop="text">When you submit a workload, you specify a jurisdiction policy (e.g., EU-West, Switzerland). The platform routes your job exclusively to verified nodes within that jurisdiction. Your data never leaves the specified region during processing.</span>
                         </p>
                     </article>
                     <article class="card mb-4 p-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                        <h3 class="font-brand text-lg mb-2" itemprop="name">Can I get a refund?</h3>
+                        <h3 class="font-brand text-lg mb-2" itemprop="name">What are verification levels?</h3>
                         <p class="text-secondary" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                            <span itemprop="text">Unused credits can be refunded within 30 days of purchase. Contact support.</span>
+                            <span itemprop="text">Compute providers go through three verification tiers. Tier 1: identity + hardware attestation for standard workloads. Tier 2: facility audit + compliance training for GDPR workloads. Tier 3: dedicated infrastructure + SLA for enterprise and regulated workloads.</span>
                         </p>
                     </article>
                     <article class="card mb-4 p-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                        <h3 class="font-brand text-lg mb-2" itemprop="name">What payment methods do you accept?</h3>
+                        <h3 class="font-brand text-lg mb-2" itemprop="name">Is Archipelag.io GDPR compliant?</h3>
                         <p class="text-secondary" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                            <span itemprop="text">We accept credit cards, debit cards, and bank transfers via Stripe.</span>
+                            <span itemprop="text">Yes. The platform is designed for GDPR compliance from the ground up. Jurisdiction routing ensures data residency, verified nodes provide processing guarantees, and complete audit trails document every execution for regulatory reporting.</span>
                         </p>
                     </article>
                     <article class="card mb-4 p-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                        <h3 class="font-brand text-lg mb-2" itemprop="name">How are host payouts calculated?</h3>
+                        <h3 class="font-brand text-lg mb-2" itemprop="name">Are you SOC 2 certified?</h3>
                         <p class="text-secondary" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                            <span itemprop="text">Hosts earn based on compute time used. Rates vary by hardware tier and karma score.</span>
+                            <span itemprop="text">SOC 2 certification is on our Q4 2026 roadmap. Enterprise tier customers will have access to our compliance documentation and can request audit reports as we progress through certification.</span>
+                        </p>
+                    </article>
+                    <article class="card mb-4 p-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="font-brand text-lg mb-2" itemprop="name">How does this help with the EU AI Act?</h3>
+                        <p class="text-secondary" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <span itemprop="text">Archipelag.io helps teams meet AI Act requirements through verified execution, audit trails, and transparency reporting. Our compliance toolkit (Q4 2026) will include AI Act-specific templates and documentation for regulatory submissions.</span>
                         </p>
                     </article>
                     <article class="card p-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                        <h3 class="font-brand text-lg mb-2" itemprop="name">Is there a free tier?</h3>
+                        <h3 class="font-brand text-lg mb-2" itemprop="name">Do credits expire?</h3>
                         <p class="text-secondary" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                            <span itemprop="text">New accounts receive 10 free credits to try the service.</span>
+                            <span itemprop="text">No. Credits never expire. Use them whenever you need them.</span>
                         </p>
                     </article>
                 </div>
@@ -573,13 +478,13 @@
         </section>
 
         <!-- CTA -->
-        <section class="section section-alt cta-section" aria-labelledby="cta-title">
+        <section class="section cta-section" aria-labelledby="cta-title">
             <div class="container text-center">
-                <h2 id="cta-title" class="cta-title">Ready to get started?</h2>
-                <p class="cta-subtitle">Create an account and get 10 free credits to try it out.</p>
+                <h2 id="cta-title" class="cta-title">Ready to run sovereign compute?</h2>
+                <p class="cta-subtitle">Join the waitlist or talk to our team about your compliance requirements.</p>
                 <div class="btn-group justify-center">
-                    <a href="{{ config.extra.app_base_url }}" class="btn btn-primary btn-lg">Start using AI</a>
-                    <a href="/earn" class="btn btn-secondary btn-lg">Become a host</a>
+                    <a href="/#waitlist" class="btn btn-primary btn-lg">Join the Waitlist</a>
+                    <a href="mailto:enterprise@archipelag.io" class="btn btn-secondary btn-lg">Contact Sales</a>
                 </div>
             </div>
         </section>
@@ -597,16 +502,15 @@
                         </picture>
                         <span class="logo-text">archipelag<span class="dot">.</span>io</span>
                     </a>
-                    <p class="footer-tagline">Compute, closer to you. A decentralized network for AI inference.</p>
+                    <p class="footer-tagline">Sovereign compute infrastructure. Your data, your jurisdiction, your rules.</p>
                 </div>
 
                 <nav class="footer-column" aria-label="Product links">
                     <h4 class="footer-heading">Product</h4>
                     <ul class="footer-links">
-                        <li><a href="/use">Use AI</a></li>
-                        <li><a href="/earn">Earn</a></li>
+                        <li><a href="/use">Platform</a></li>
+                        <li><a href="/earn">Host</a></li>
                         <li><a href="/pricing">Pricing</a></li>
-                        <li><a href="https://docs.archipelag.io" target="_blank" rel="noopener">Docs</a></li>
                     </ul>
                 </nav>
 

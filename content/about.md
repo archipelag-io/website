@@ -1,84 +1,80 @@
 +++
 title = "About"
-description = "Learn about Archipelag.io's mission to democratize compute access through distributed networks."
+description = "Archipelag.io builds sovereign compute infrastructure rooted in Swiss and European data protection heritage."
 +++
 
 # About Archipelag.io
 
 ## Our Mission
 
-We're building a distributed compute network that connects AI users with nearby hardware owners, creating a faster, more affordable alternative to centralized cloud providers.
+We're building compute infrastructure that respects data sovereignty. Every organization should be able to run AI workloads with full control over where their data is processed, who processes it, and how it's handled.
+
+Sovereignty is not a feature. It's the foundation.
 
 ## The Problem
 
-Traditional cloud computing centralizes resources in distant data centers, leading to:
-- **High latency** from geographic distance
-- **Expensive pricing** due to infrastructure overhead
-- **Vendor lock-in** with limited provider choice
-- **Underutilized hardware** sitting idle in homes and offices
+AI adoption is accelerating, but data sovereignty is falling behind:
+
+- **Jurisdiction gaps** — Cloud providers process data across borders with limited transparency
+- **Compliance burden** — Teams spend months navigating GDPR, AI Act, and sector-specific regulations
+- **Trust deficit** — Organizations can't verify where their data is actually processed
+- **Vendor lock-in** — Centralized providers control pricing, availability, and data access
+
+For regulated industries — healthcare, finance, government — these aren't inconveniences. They're blockers.
 
 ## Our Solution
 
-Archipelag.io creates a peer-to-peer compute marketplace that:
+Archipelag.io creates a distributed compute network where:
 
-- **Reduces latency** by connecting users to nodes within 50km
-- **Lowers costs** through efficient resource utilization
-- **Increases privacy** with local processing and zero-knowledge execution
-- **Generates income** for hardware owners through idle compute sharing
+- **Jurisdiction routing** ensures workloads run in specific regions — EU, Switzerland, or custom zones
+- **Verified nodes** are operated by attested providers with documented compliance capabilities
+- **Policy enforcement** happens at the infrastructure level, not as an afterthought
+- **Audit trails** document every execution for regulatory review
 
-## How It Works
+## Swiss and European Roots
 
-### For Users
-1. Submit AI workloads through our web interface or API
-2. Get automatically routed to the nearest available node
-3. Receive streaming results with sub-100ms latency
-4. Pay only for actual compute time used
+We're built on the data protection heritage of Switzerland and the European Union. These jurisdictions set the global standard for privacy and data sovereignty. Our infrastructure inherits that tradition:
 
-### For Hosts
-1. Install our lightweight agent on your PC
-2. Set availability preferences and power limits
-3. Earn automatically when your hardware processes workloads
-4. Receive monthly payouts via Stripe
+- Swiss Federal Act on Data Protection (FADP)
+- EU General Data Protection Regulation (GDPR)
+- EU AI Act compliance readiness
+- Data residency guarantees with no cross-border transfers
 
 ## Technology
 
 Our platform is built on:
-- **Rust agents** for efficient, secure edge computing
-- **Elixir/Phoenix** for the coordination layer
-- **WireGuard** for secure, outbound-only connections
-- **Container isolation** for workload security
-- **NATS messaging** for real-time coordination
+- **Rust agents** for efficient, secure edge computing with hardware attestation
+- **Elixir/Phoenix** for the coordination layer with real-time streaming
+- **NATS messaging** for reliable, low-latency job dispatch
+- **Container isolation** with signed workloads and seccomp profiles
+- **Cryptographic verification** for node identity and execution integrity
 
 ## Security & Privacy
 
-- **Zero-knowledge execution**: Hosts never see your data
+- **Verified providers**: Every node operator goes through identity and compliance verification
+- **Signed workloads**: Only network-approved containers can execute
 - **Encrypted communication**: All traffic secured with mTLS
-- **Signed workloads**: Only verified containers can run
-- **Hardware isolation**: Strict resource limits and sandboxing
-- **Regular audits**: Continuous security monitoring
+- **Hardware isolation**: Strict resource limits, sandboxed execution
+- **Audit logging**: Complete execution records for regulatory review
 
 ## Team
 
-We're a small team of distributed systems engineers with backgrounds in cloud infrastructure, cryptocurrency networks, and AI deployment. We believe the future of computing is distributed, private, and community-owned.
-
-## Funding & Sustainability
-
-Archipelag.io is bootstrapped and revenue-funded. We take a small platform fee (10-15%) from transactions to cover infrastructure costs and continued development. The majority of value flows directly to hardware providers and users.
+We're a small team of distributed systems engineers with backgrounds in cloud infrastructure, data protection, and AI deployment. We believe the future of computing is sovereign, verifiable, and community-operated.
 
 ## Roadmap
 
-- **Q1 2026**: Public beta with GPU-based AI workloads
-- **Q2 2026**: Image generation workloads and expanded coverage
-- **Q3 2026**: Mobile app and additional model support
-- **Q4 2026**: Enterprise features and custom deployments
+- **Q1 2026**: Private beta with verified compute providers and jurisdiction routing
+- **Q2 2026**: Verification program launch, expanded EU/CH coverage
+- **Q3 2026**: Additional jurisdictions, compliance framework integrations
+- **Q4 2026**: SOC 2 certification, AI Act compliance toolkit
 
 ## Contact
 
-- **Email**: [hello@archipelag.io](mailto:hello@archipelag.io)
-- **Technical support**: [support@archipelag.io](mailto:support@archipelag.io)
-- **Business inquiries**: [business@archipelag.io](mailto:business@archipelag.io)
+- **General**: [hello@archipelag.io](mailto:hello@archipelag.io)
+- **Design partners**: [partners@archipelag.io](mailto:partners@archipelag.io)
+- **Host applications**: [hosts@archipelag.io](mailto:hosts@archipelag.io)
 - **Security reports**: [security@archipelag.io](mailto:security@archipelag.io)
 
 ---
 
-*Interested in joining our network? [Start using AI](/use) or [begin hosting compute](/earn) today.*
+*Ready to run sovereign compute? [Join the waitlist](/#waitlist) or [apply to become a provider](/earn).*

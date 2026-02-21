@@ -1,5 +1,5 @@
 +++
 title = "Pricing"
-description = "Simple, transparent pricing for AI users and compute hosts. Buy credits, use AI, that's it."
+description = "Start free, scale with compliance. Sovereign compute infrastructure with jurisdiction routing and verified execution."
 template = "pricing.html"
 +++
