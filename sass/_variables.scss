@@ -1,4 +1,11 @@
 // ============================================
+// DESIGN SYSTEM TOKEN IMPORT
+// Source: @archipelag/ui (archipelag-ui/dist/scss/_tokens.scss)
+// ============================================
+
+@import '../../archipelag-ui/dist/scss/tokens';
+
+// ============================================
 // FONTS
 // ============================================
 
@@ -53,46 +60,39 @@
 }
 
 // ============================================
-// DESIGN TOKENS
-// Clean, minimal palette inspired by zed.dev
+// DESIGN TOKENS (CSS custom properties)
+// Maps DS SCSS variables to CSS vars for runtime theming
 // ============================================
 
 :root {
-  // Neutrals - warm off-whites and deep darks
+  // Neutrals
   --white: #ffffff;
-  --off-white: #fafaf9;
-  --cream: #f5f5f4;
-  --stone-100: #e7e5e4;
-  --stone-200: #d6d3d1;
-  --stone-300: #a8a29e;
-  --stone-400: #78716c;
-  --stone-500: #57534e;
-  --stone-600: #44403c;
-  --stone-700: #292524;
-  --stone-800: #1c1917;
-  --stone-900: #0c0a09;
+  --off-white: #{$aui-stone-50};
+  --cream: #{$aui-stone-100};
+  --stone-100: #{$aui-stone-200};
+  --stone-200: #{$aui-stone-300};
+  --stone-300: #{$aui-stone-400};
+  --stone-400: #{$aui-stone-500};
+  --stone-500: #{$aui-stone-600};
+  --stone-600: #{$aui-stone-700};
+  --stone-700: #{$aui-stone-800};
+  --stone-800: #{$aui-stone-900};
+  --stone-900: #{$aui-stone-950};
 
-  // Accent - ocean teal palette
-  --accent: #0d9488;
-  --accent-light: #14b8a6;
-  --accent-muted: #99f6e4;
-  --accent-dark: #0f766e;
+  // Accent
+  --accent: #{$aui-teal-600};
+  --accent-light: #{$aui-teal-500};
+  --accent-muted: #{$aui-teal-200};
+  --accent-dark: #{$aui-teal-700};
 
-  // Professional palette - amber, indigo, darker cyan
-  --coral: #d97706;
-  --coral-light: #f59e0b;
-  --coral-muted: #fde68a;
+  // Professional palette
+  --coral: #{$aui-coral-600};
+  --coral-light: #{$aui-coral-500};
+  --lagoon: #{$aui-lagoon-600};
+  --lagoon-light: #{$aui-lagoon-500};
+  --deep-ocean: #1e3a5f;
   --sunset-pink: #6366f1;
   --sunset-purple: #4f46e5;
-  --lagoon: #0891b2;
-  --lagoon-light: #06b6d4;
-  --deep-ocean: #1e3a5f;
-  --sand: #fef3c7;
-
-  // Glow colors (indigo/teal professional)
-  --glow-primary: rgba(45, 212, 191, 0.4);
-  --glow-secondary: rgba(99, 102, 241, 0.3);
-  --glow-coral: rgba(217, 119, 6, 0.3);
 
   // Semantic
   --bg: var(--white);
@@ -105,38 +105,40 @@
   --border-subtle: var(--stone-100);
 
   // Typography
-  --font-body: 'iA Writer Quattro S', 'iA Writer Mono', 'SF Mono', ui-monospace, monospace;
-  --font-brand: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: #{$aui-font-body};
+  --font-brand: #{$aui-font-brand};
 
   // Scale
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.25rem;
-  --text-2xl: 1.5rem;
-  --text-3xl: 2rem;
-  --text-4xl: 2.5rem;
-  --text-5xl: 3rem;
-  --text-6xl: 3.75rem;
+  --text-xs: #{$aui-text-xs};
+  --text-sm: #{$aui-text-sm};
+  --text-base: #{$aui-text-base};
+  --text-lg: #{$aui-text-lg};
+  --text-xl: #{$aui-text-xl};
+  --text-2xl: #{$aui-text-2xl};
+  --text-3xl: #{$aui-text-3xl};
+  --text-4xl: #{$aui-text-4xl};
+  --text-5xl: #{$aui-text-5xl};
+  --text-6xl: #{$aui-text-6xl};
 
   // Spacing
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.25rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
-  --space-10: 2.5rem;
-  --space-12: 3rem;
-  --space-16: 4rem;
-  --space-20: 5rem;
-  --space-24: 6rem;
-  --space-32: 8rem;
+  --space-1: #{$aui-space-1};
+  --space-2: #{$aui-space-2};
+  --space-3: #{$aui-space-3};
+  --space-4: #{$aui-space-4};
+  --space-5: #{$aui-space-5};
+  --space-6: #{$aui-space-6};
+  --space-8: #{$aui-space-8};
+  --space-10: #{$aui-space-10};
+  --space-12: #{$aui-space-12};
+  --space-16: #{$aui-space-16};
+  --space-20: #{$aui-space-20};
+  --space-24: #{$aui-space-24};
+  --space-32: #{$aui-space-32};
+  --space-40: 10rem;
+  --space-48: 12rem;
 
   // Radius
-  --radius-sm: 4px;
+  --radius-sm: #{$aui-radius-sm};
   --radius-md: 8px;
   --radius-lg: 12px;
   --radius-xl: 16px;
@@ -146,13 +148,13 @@
   --radius-5xl: 48px;
   --radius-full: 9999px;
 
-  // Surface elevation (layered depth)
+  // Surface elevation
   --surface-0: var(--bg);
   --surface-1: var(--bg-subtle);
   --surface-2: var(--bg-muted);
   --surface-border: var(--border);
 
-  // Anti-grid system - made more prominent
+  // Anti-grid system
   --antigrid-gap: var(--space-2);
   --antigrid-radius: var(--radius-4xl);
   --antigrid-radius-lg: var(--radius-5xl);
@@ -160,28 +162,21 @@
   --antigrid-padding-lg: var(--space-10);
 
   // Shadows
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-sm: #{$aui-shadow-sm};
+  --shadow-md: #{$aui-shadow-md};
+  --shadow-lg: #{$aui-shadow-lg};
 
   // Transitions
-  --transition-fast: 0.15s ease;
-  --transition-base: 0.2s ease;
-  --transition-slow: 0.3s ease;
+  --transition-fast: #{$aui-duration-fast} ease;
+  --transition-base: #{$aui-duration-base} ease;
+  --transition-slow: #{$aui-duration-slow} ease;
 
   // Gradients
   --gradient-ocean: linear-gradient(135deg, var(--accent) 0%, var(--lagoon) 100%);
   --gradient-sunset: linear-gradient(135deg, var(--sunset-purple) 0%, var(--sunset-pink) 50%, var(--accent) 100%);
-  --gradient-depth: linear-gradient(180deg, var(--lagoon) 0%, var(--accent) 50%, var(--deep-ocean) 100%);
-  --gradient-surface: linear-gradient(180deg, rgba(45, 212, 191, 0.1) 0%, transparent 100%);
-
-  // Animated wave colors
-  --wave-1: rgba(13, 148, 136, 0.15);
-  --wave-2: rgba(6, 182, 212, 0.1);
-  --wave-3: rgba(45, 212, 191, 0.08);
 }
 
-// Dark mode - activated via .dark class on html
+// Dark mode
 html.dark {
   --bg: var(--stone-900);
   --bg-subtle: var(--stone-800);
@@ -194,26 +189,11 @@ html.dark {
   --accent: #2dd4bf;
   --accent-light: #5eead4;
   --accent-dark: #14b8a6;
-
-  // Professional colors adjust for dark mode
   --lagoon: #06b6d4;
-  --lagoon-light: #22d3ee;
   --coral: #f59e0b;
-  --coral-light: #fbbf24;
 
-  // Enhanced glows for dark mode
-  --glow-primary: rgba(45, 212, 191, 0.5);
-  --glow-secondary: rgba(99, 102, 241, 0.4);
-  --glow-coral: rgba(245, 158, 11, 0.4);
-
-  // Surface elevation for dark mode
   --surface-0: var(--stone-900);
   --surface-1: var(--stone-800);
   --surface-2: var(--stone-700);
   --surface-border: var(--stone-700);
-
-  // Darker wave colors for dark mode
-  --wave-1: rgba(45, 212, 191, 0.12);
-  --wave-2: rgba(34, 211, 238, 0.08);
-  --wave-3: rgba(45, 212, 191, 0.05);
 }

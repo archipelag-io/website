@@ -1,16 +1,25 @@
 // ============================================
 // ARCHIPELAG.IO STYLES
+// Powered by @archipelag/ui design system
 // ============================================
 
-// Import partials
+// Design system tokens + site variables
 @import 'variables';
+
+// Layout utilities
 @import 'layout';
+
+// Components (buttons, cards, anti-grid)
 @import 'components';
+
+// Section layouts (hero, features, header, footer)
 @import 'sections';
+
+// Minimal utilities (sr-only, skip-link, prose)
 @import 'utilities';
 
 // ============================================
-// MODERN CSS RESET
+// RESET (from design system)
 // ============================================
 
 *,
@@ -26,12 +35,14 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  min-height: 100dvh;
 }
 
 img, picture, video, canvas, svg {
@@ -57,7 +68,7 @@ body {
   line-height: 1.7;
   color: var(--text);
   background-color: var(--bg);
-  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -65,8 +76,16 @@ a {
   text-decoration: none;
 }
 
+// Headings default to brand font
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-brand);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
 // ============================================
-// LANDING PAGE (Original homepage)
+// LANDING PAGE
 // ============================================
 
 .landing {
@@ -123,7 +142,6 @@ html.dark .brand-mark img {
   color: var(--accent);
 }
 
-// Hero text (landing page specific)
 .hero {
   text-align: center;
   margin-bottom: var(--space-16);
@@ -137,8 +155,9 @@ html.dark .brand-mark img {
 
 .subscribe-label {
   display: block;
+  font-family: var(--font-brand);
   font-size: var(--text-xs);
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--text-tertiary);
@@ -157,10 +176,10 @@ html.dark .brand-mark img {
   font-size: var(--text-sm);
   color: var(--text);
   background: var(--bg);
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   border-radius: var(--radius-md);
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease;
 }
 
 .subscribe-input::placeholder {
@@ -169,11 +188,6 @@ html.dark .brand-mark img {
 
 .subscribe-input:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
-}
-
-html.dark .subscribe-input:focus {
-  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.15);
 }
 
 .subscribe-button {
@@ -181,14 +195,15 @@ html.dark .subscribe-input:focus {
   align-items: center;
   justify-content: center;
   padding: var(--space-3) var(--space-6);
+  font-family: var(--font-brand);
   font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--white);
+  font-weight: 500;
+  color: white;
   background: var(--accent);
   border: none;
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.1s ease;
+  transition: background 0.2s ease;
   white-space: nowrap;
 }
 
@@ -265,21 +280,11 @@ html.dark .subscribe-input:focus {
   color: var(--text);
 }
 
-.theme-toggle .icon-sun {
-  display: none;
-}
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: block; }
 
-.theme-toggle .icon-moon {
-  display: block;
-}
-
-html.dark .theme-toggle .icon-sun {
-  display: block;
-}
-
-html.dark .theme-toggle .icon-moon {
-  display: none;
-}
+html.dark .theme-toggle .icon-sun { display: block; }
+html.dark .theme-toggle .icon-moon { display: none; }
 
 // Landing Footer
 .landing-footer {
@@ -317,7 +322,7 @@ html.dark .theme-toggle .icon-moon {
 }
 
 // ============================================
-// RESPONSIVE (Landing page specific)
+// RESPONSIVE
 // ============================================
 
 @media (max-width: 640px) {
