@@ -1,52 +1,44 @@
 {% extends "base.html" %}
 
+{% block title %}Page Not Found | {{ config.title }}{% endblock title %}
+
 {% block content %}
-<div class="container" style="padding-top: 6rem; padding-bottom: 6rem; text-align: center;">
-    <div style="max-width: 600px; margin: 0 auto;">
-        <!-- 404 Icon -->
-        <div style="margin-bottom: 2rem;">
-            <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color: var(--color-primary-300); margin: 0 auto;">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M16 16s-1.5-2-4-2-4 2-4 2"></path>
-                <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                <line x1="15" y1="9" x2="15.01" y2="9"></line>
-            </svg>
-        </div>
+<section class="section">
+    <div class="container">
+        <div class="max-w-xl mx-auto text-center">
+            <!-- 404 Icon -->
+            <div class="mb-8">
+                <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="text-tertiary mx-auto">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M16 16s-1.5-2-4-2-4 2-4 2"></path>
+                    <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                    <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                </svg>
+            </div>
 
-        <h1 style="font-size: var(--text-6xl); font-weight: 700; margin-bottom: 1rem; color: var(--text-primary);">
-            404
-        </h1>
+            <h1 class="font-brand text-6xl font-bold mb-4">404</h1>
+            <h2 class="font-brand text-2xl font-semibold mb-4">Page not found</h2>
+            <p class="text-lg text-secondary mb-12">
+                The page you're looking for seems to have wandered off the network.
+                Let's get you back on track.
+            </p>
 
-        <h2 style="font-size: var(--text-2xl); font-weight: 600; margin-bottom: 1rem; color: var(--text-primary);">
-            Page not found
-        </h2>
+            <div class="btn-group justify-center mb-16">
+                <a href="/" class="btn btn-primary btn-lg">Go Home</a>
+                <a href="/use" class="btn btn-secondary btn-lg">Explore Platform</a>
+            </div>
 
-        <p style="font-size: var(--text-lg); color: var(--text-secondary); margin-bottom: 3rem;">
-            The page you're looking for seems to have wandered off the network.
-            Let's get you back on track.
-        </p>
-
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-            <a href="/" class="btn btn-primary btn-lg">
-                Go Home
-            </a>
-            <a href="{{ config.extra.use_ai_url }}" class="btn btn-secondary btn-lg">
-                Try AI
-            </a>
-        </div>
-
-        <!-- Helpful links -->
-        <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-light);">
-            <h3 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: 1rem; color: var(--text-primary);">
-                Popular pages
-            </h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; text-align: center;">
-                <a href="/pricing" style="color: var(--color-primary-600); font-weight: 500;">Pricing</a>
-                <a href="/about" style="color: var(--color-primary-600); font-weight: 500;">About</a>
-                <a href="/contact" style="color: var(--color-primary-600); font-weight: 500;">Contact</a>
-                <a href="https://docs.archipelag.io" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary-600); font-weight: 500;">Documentation</a>
+            <!-- Helpful links -->
+            <div class="border-t pt-8">
+                <h3 class="font-brand text-lg font-semibold mb-4">Popular pages</h3>
+                <div class="grid grid-4 gap-4 text-center">
+                    <a href="/pricing" class="text-accent font-medium">Pricing</a>
+                    <a href="/about" class="text-accent font-medium">About</a>
+                    <a href="/contact" class="text-accent font-medium">Contact</a>
+                    <a href="https://docs.archipelag.io" target="_blank" rel="noopener noreferrer" class="text-accent font-medium">Documentation</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 {% endblock content %}

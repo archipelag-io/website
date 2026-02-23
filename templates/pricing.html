@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "base.html" %}
+
+{% block title %}Pricing | {{ config.title }}{% endblock title %}
+
+{% block head_meta %}
     <meta name="description" content="Start free, scale with compliance. Sovereign compute infrastructure with jurisdiction routing and verified execution.">
-    <meta name="author" content="{{ config.extra.author }}">
     <meta name="robots" content="index, follow">
     <meta name="keywords" content="sovereign compute pricing, compliant AI pricing, GDPR compute costs, jurisdiction routing pricing, enterprise AI infrastructure">
     <link rel="canonical" href="{{ config.base_url }}/pricing/">
-    <meta name="theme-color" content="#0d9488">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -30,19 +28,9 @@
     <meta name="twitter:description" content="Start free, scale with compliance. Credits never expire.">
     <meta name="twitter:image" content="{{ config.base_url }}/og-image.png">
     <meta name="twitter:image:alt" content="Archipelag.io Pricing">
+{% endblock head_meta %}
 
-    <title>Pricing | {{ config.title }}</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="/main.css">
-
+{% block head_extra %}
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
@@ -151,84 +139,9 @@
         ]
     }
     </script>
+{% endblock head_extra %}
 
-    <!-- Prevent flash of wrong theme -->
-    <script>
-        if (localStorage.getItem('theme') === 'dark' ||
-            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        }
-    </script>
-</head>
-<body>
-    <!-- Skip to main content -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-
-    <!-- Header -->
-    <header class="site-header" role="banner">
-        <div class="container">
-            <div class="header-inner">
-                <a href="/" class="header-logo" aria-label="Archipelag.io home">
-                    <picture>
-                        <source srcset="/img/archipelagio-brandmark.avif" type="image/avif">
-                        <img src="/img/archipelagio-brandmark.png" alt="" width="32" height="32" aria-hidden="true">
-                    </picture>
-                    <span class="logo-text">archipelag<span class="dot">.</span>io</span>
-                </a>
-
-                <nav class="header-nav" role="navigation" aria-label="Main navigation">
-                    <a href="/use" class="nav-link">Platform</a>
-                    <a href="/earn" class="nav-link">Host</a>
-                    <a href="/pricing" class="nav-link active" aria-current="page">Pricing</a>
-                    <a href="/about" class="nav-link">About</a>
-                </nav>
-
-                <div class="header-actions">
-                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
-                        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                        </svg>
-                        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <circle cx="12" cy="12" r="5"></circle>
-                            <line x1="12" y1="1" x2="12" y2="3"></line>
-                            <line x1="12" y1="21" x2="12" y2="23"></line>
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                            <line x1="1" y1="12" x2="3" y2="12"></line>
-                            <line x1="21" y1="12" x2="23" y2="12"></line>
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                        </svg>
-                    </button>
-                    <a href="/#waitlist" class="btn btn-primary btn-sm md:block sm:hidden">Join Waitlist</a>
-                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
-                        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <line x1="3" y1="6" x2="21" y2="6"></line>
-                            <line x1="3" y1="12" x2="21" y2="12"></line>
-                            <line x1="3" y1="18" x2="21" y2="18"></line>
-                        </svg>
-                        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;" aria-hidden="true">
-                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                            <line x1="6" y1="6" x2="18" y2="18"></line>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-            <nav class="mobile-nav" aria-label="Mobile navigation">
-                <a href="/use" class="nav-link">Platform</a>
-                <a href="/earn" class="nav-link">Host</a>
-                <a href="/pricing" class="nav-link active" aria-current="page">Pricing</a>
-                <a href="/about" class="nav-link">About</a>
-            </nav>
-            <a href="/#waitlist" class="btn btn-primary w-full">Join Waitlist</a>
-        </div>
-    </header>
-
-    <main id="main-content" role="main">
+{% block content %}
         <!-- Hero -->
         <section class="hero-section" aria-labelledby="hero-title">
             <div class="container">
@@ -244,7 +157,7 @@
         <section class="section pricing-section" aria-labelledby="packages-title">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-eyebrow">Plans</span>
+                    <span class="section-eyebrow-numbered"><span class="number">01</span> &mdash; Plans</span>
                     <h2 id="packages-title" class="section-title">Choose your tier</h2>
                 </div>
 
@@ -337,7 +250,7 @@
             <div class="container">
                 <div class="split">
                     <div class="preview-content">
-                        <span class="section-eyebrow">Early Access</span>
+                        <span class="section-eyebrow-numbered"><span class="number">02</span> &mdash; Early Access</span>
                         <h2 id="partner-title" class="preview-title">Design Partner Program</h2>
                         <p class="preview-desc">
                             Work directly with our engineering team to shape sovereign compute for your specific compliance requirements. Design partners get priority access, dedicated support, and custom integrations.
@@ -362,7 +275,7 @@
                             </li>
                         </ul>
 
-                        <a href="mailto:partners@archipelag.io" class="btn btn-primary">Apply to be a Design Partner</a>
+                        <a href="mailto:partners@archipelag.io" class="btn btn-primary btn-lg">Apply to be a Design Partner</a>
                     </div>
 
                     <div class="flex items-center justify-center p-8">
@@ -390,7 +303,7 @@
         <section class="section" aria-labelledby="enterprise-title">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-eyebrow">Enterprise</span>
+                    <span class="section-eyebrow-numbered"><span class="number">03</span> &mdash; Enterprise</span>
                     <h2 id="enterprise-title" class="section-title">Built for regulated industries</h2>
                     <p class="section-subtitle">Sovereign compute infrastructure for healthcare, finance, government, and any team that can't compromise on compliance.</p>
                 </div>
@@ -432,7 +345,7 @@
         <section class="section section-alt" aria-labelledby="faq-title">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-eyebrow">FAQ</span>
+                    <span class="section-eyebrow-numbered"><span class="number">04</span> &mdash; FAQ</span>
                     <h2 id="faq-title" class="section-title">Common questions</h2>
                 </div>
 
@@ -494,85 +407,4 @@
                 </div>
             </div>
         </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="site-footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="/" class="footer-logo" aria-label="Archipelag.io home">
-                        <picture>
-                            <source srcset="/img/archipelagio-brandmark.avif" type="image/avif">
-                            <img src="/img/archipelagio-brandmark.png" alt="" width="28" height="28" aria-hidden="true">
-                        </picture>
-                        <span class="logo-text">archipelag<span class="dot">.</span>io</span>
-                    </a>
-                    <p class="footer-tagline">Sovereign compute infrastructure. Your data, your jurisdiction, your rules.</p>
-                </div>
-
-                <nav class="footer-column" aria-label="Product links">
-                    <h4 class="footer-heading">Product</h4>
-                    <ul class="footer-links">
-                        <li><a href="/use">Platform</a></li>
-                        <li><a href="/earn">Host</a></li>
-                        <li><a href="/pricing">Pricing</a></li>
-                    </ul>
-                </nav>
-
-                <nav class="footer-column" aria-label="Company links">
-                    <h4 class="footer-heading">Company</h4>
-                    <ul class="footer-links">
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="https://github.com/archipelag-io" target="_blank" rel="noopener">GitHub</a></li>
-                    </ul>
-                </nav>
-
-                <nav class="footer-column" aria-label="Legal links">
-                    <h4 class="footer-heading">Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="/privacy">Privacy</a></li>
-                        <li><a href="/terms">Terms</a></li>
-                        <li><a href="/security">Security</a></li>
-                        <li><a href="/trust-safety">Trust &amp; Safety</a></li>
-                    </ul>
-                </nav>
-            </div>
-
-            <div class="footer-bottom">
-                <p><small>&copy; {{ now() | date(format="%Y") }} archipelag.io. All rights reserved.</small></p>
-                <div class="footer-legal">
-                    <a href="/privacy">Privacy Policy</a>
-                    <a href="/terms">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Theme toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        themeToggle.addEventListener('click', () => {
-            const isDark = document.documentElement.classList.toggle('dark');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            themeToggle.setAttribute('aria-pressed', isDark);
-        });
-
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('mobile-menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const iconMenu = menuToggle.querySelector('.icon-menu');
-        const iconClose = menuToggle.querySelector('.icon-close');
-
-        menuToggle.addEventListener('click', () => {
-            const isOpen = mobileMenu.classList.toggle('open');
-            iconMenu.style.display = isOpen ? 'none' : 'block';
-            iconClose.style.display = isOpen ? 'block' : 'none';
-            menuToggle.setAttribute('aria-expanded', isOpen);
-            mobileMenu.setAttribute('aria-hidden', !isOpen);
-        });
-    </script>
-</body>
-</html>
+{% endblock content %}

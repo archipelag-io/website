@@ -1,261 +1,208 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-            name="description"
-            content="{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}"
-        />
-        <meta name="author" content="{{ config.extra.author }}" />
+<!DOCTYPE html>
+<html lang="en"{% block html_attrs %}{% endblock html_attrs %}>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="{{ config.extra.author }}">
+    <meta name="theme-color" content="#0d9488" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#2dd4bf" media="(prefers-color-scheme: dark)">
 
-        <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="website" />
-        <meta
-            property="og:url"
-            content="{{ config.base_url }}{% if current_path %}{{ current_path }}{% else %}/{% endif %}"
-        />
-        <meta
-            property="og:title"
-            content="{% if page.title %}{{ page.title }} | {{ config.title }}{% else %}{{ config.title }}{% endif %}"
-        />
-        <meta
-            property="og:description"
-            content="{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}"
-        />
-        <meta
-            property="og:image"
-            content="{{ config.base_url }}/og-image.png"
-        />
+    <title>{% block title %}{% if page.title %}{{ page.title }} | {{ config.title }}{% else %}{{ config.title }}{% endif %}{% endblock title %}</title>
 
-        <!-- Twitter -->
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta
-            property="twitter:url"
-            content="{{ config.base_url }}{% if current_path %}{{ current_path }}{% else %}/{% endif %}"
-        />
-        <meta
-            property="twitter:title"
-            content="{% if page.title %}{{ page.title }} | {{ config.title }}{% else %}{{ config.title }}{% endif %}"
-        />
-        <meta
-            property="twitter:description"
-            content="{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}"
-        />
-        <meta
-            property="twitter:image"
-            content="{{ config.base_url }}/og-image.png"
-        />
+    {% block head_meta %}
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ config.base_url }}{% if current_path %}{{ current_path }}{% else %}/{% endif %}">
 
-        <title>
-            {% if page.title %}{{ page.title }} | {{ config.title }}{% else %}{{
-            config.title }}{% endif %}
-        </title>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ config.base_url }}{% if current_path %}{{ current_path }}{% else %}/{% endif %}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} | {{ config.title }}{% else %}{{ config.title }}{% endif %}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}">
+    <meta property="og:image" content="{{ config.base_url }}/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="{{ config.title }}">
+    <meta property="og:locale" content="en_US">
 
-        <!-- Favicon -->
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/apple-touch-icon.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/site.webmanifest" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="{{ config.extra.twitter }}">
+    <meta name="twitter:creator" content="{{ config.extra.twitter }}">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {{ config.title }}{% else %}{{ config.title }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}">
+    <meta name="twitter:image" content="{{ config.base_url }}/og-image.png">
+    {% endblock head_meta %}
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ get_url(path='main.css') }}" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
 
-        <!-- Preload critical assets -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Styles -->
+    <link rel="stylesheet" href="/main.css">
 
-        {% block extra_head %}{% endblock extra_head %}
-    </head>
-    <body>
-        <!-- Header -->
-        <header class="header">
-            <div class="container">
-                <nav class="nav">
-                    <a href="/" class="logo">
-                        <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <circle cx="6" cy="6" r="3" fill="currentColor" />
-                            <circle cx="18" cy="6" r="3" fill="currentColor" />
-                            <circle cx="12" cy="18" r="3" fill="currentColor" />
-                            <path
-                                d="M6 9v6l6 3 6-3V9"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                fill="none"
-                            />
+    {% block head_extra %}{% endblock head_extra %}
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark' ||
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+</head>
+<body{% block body_attrs %}{% endblock body_attrs %}>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="container">
+            <div class="header-inner">
+                <a href="/" class="header-logo" aria-label="Archipelag.io - Home">
+                    <picture>
+                        <source srcset="/img/archipelagio-brandmark.avif" type="image/avif">
+                        <img src="/img/archipelagio-brandmark.png" alt="Archipelag.io logo" width="32" height="32" loading="eager">
+                    </picture>
+                    <span class="logo-text" aria-hidden="true">archipelag<span class="dot">.</span>io</span>
+                </a>
+
+                <nav class="header-nav" role="navigation" aria-label="Main navigation">
+                    {% for item in config.extra.nav_items %}
+                    <a href="{{ item.url }}" class="nav-link{% if current_path %}{% if current_path is starting_with(item.url) %} active{% endif %}{% endif %}"{% if current_path %}{% if current_path is starting_with(item.url) %} aria-current="page"{% endif %}{% endif %}>{{ item.name }}</a>
+                    {% endfor %}
+                </nav>
+
+                <div class="header-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+                        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                         </svg>
-                        Archipelag.io
-                    </a>
-
-                    <ul class="nav-links">
-                        <li>
-                            <a
-                                href="{{ config.extra.use_ai_url }}"
-                                class="nav-link"
-                                >Use AI</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="{{ config.extra.earn_url }}"
-                                class="nav-link"
-                                >Earn with your PC</a
-                            >
-                        </li>
-                        <li>
-                            <a href="/pricing" class="nav-link">Pricing</a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://docs.archipelag.io"
-                                class="nav-link"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                >Docs</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="{{ config.extra.app_base_url }}/auth/signin"
-                                class="btn btn-secondary btn-sm"
-                                >Sign in</a
-                            >
-                        </li>
-                    </ul>
-
-                    <!-- Mobile menu button (placeholder for future JS enhancement) -->
-                    <button class="mobile-menu-button" style="display: none">
-                        <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
+                        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                    <a href="/#waitlist" class="btn btn-primary btn-sm md:block sm:hidden">Join Waitlist</a>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <line x1="3" y1="6" x2="21" y2="6"></line>
                             <line x1="3" y1="12" x2="21" y2="12"></line>
                             <line x1="3" y1="18" x2="21" y2="18"></line>
                         </svg>
+                        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;" aria-hidden="true">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
                     </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+            <nav class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+                {% for item in config.extra.nav_items %}
+                <a href="{{ item.url }}" class="nav-link{% if current_path %}{% if current_path is starting_with(item.url) %} active{% endif %}{% endif %}"{% if current_path %}{% if current_path is starting_with(item.url) %} aria-current="page"{% endif %}{% endif %}>{{ item.name }}</a>
+                {% endfor %}
+            </nav>
+            <a href="/#waitlist" class="btn btn-primary w-full">Join Waitlist</a>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        {% block content %}{% endblock content %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="footer-logo" aria-label="Archipelag.io - Home">
+                        <picture>
+                            <source srcset="/img/archipelagio-brandmark.avif" type="image/avif">
+                            <img src="/img/archipelagio-brandmark.png" alt="Archipelag.io logo" width="28" height="28" loading="lazy">
+                        </picture>
+                        <span class="logo-text" aria-hidden="true">archipelag<span class="dot">.</span>io</span>
+                    </a>
+                    <p class="footer-tagline">Sovereign compute infrastructure. Your data, your jurisdiction, your rules.</p>
+                </div>
+
+                <nav class="footer-column" aria-label="Product links">
+                    <h4 class="footer-heading">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="/use">Platform</a></li>
+                        <li><a href="/earn">Host</a></li>
+                        <li><a href="/pricing">Pricing</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-column" aria-label="Company links">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="https://github.com/archipelag-io" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-column" aria-label="Legal links">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacy">Privacy</a></li>
+                        <li><a href="/terms">Terms</a></li>
+                        <li><a href="/security">Security</a></li>
+                        <li><a href="/trust-safety">Trust &amp; Safety</a></li>
+                    </ul>
                 </nav>
             </div>
-        </header>
 
-        <!-- Main Content -->
-        <main>{% block content %}{% endblock content %}</main>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-section">
-                        <h4>Product</h4>
-                        <ul class="footer-links">
-                            <li>
-                                <a href="{{ config.extra.use_ai_url }}"
-                                    >Use AI</a
-                                >
-                            </li>
-                            <li>
-                                <a href="{{ config.extra.earn_url }}"
-                                    >Earn with your PC</a
-                                >
-                            </li>
-                            <li><a href="/pricing">Pricing</a></li>
-                            <li>
-                                <a
-                                    href="https://docs.archipelag.io"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >Documentation</a
-                                >
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-section">
-                        <h4>Company</h4>
-                        <ul class="footer-links">
-                            <li><a href="/about">About</a></li>
-                            <li><a href="/blog">Blog</a></li>
-                            <li><a href="/careers">Careers</a></li>
-                            <li><a href="/contact">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-section">
-                        <h4>Resources</h4>
-                        <ul class="footer-links">
-                            <li>
-                                <a
-                                    href="https://docs.archipelag.io/api"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >API Reference</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="https://docs.archipelag.io/guides"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >Guides</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="https://status.archipelag.io"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >System Status</a
-                                >
-                            </li>
-                            <li><a href="/contact">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-section">
-                        <h4>Legal</h4>
-                        <ul class="footer-links">
-                            <li><a href="/privacy">Privacy Policy</a></li>
-                            <li><a href="/terms">Terms of Service</a></li>
-                            <li><a href="/security">Security</a></li>
-                            <li><a href="/cookies">Cookie Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="footer-bottom">
-                    <p>
-                        &copy; {{ now() | date(format="%Y") }} Archipelag.io.
-                        All rights reserved.
-                    </p>
-                </div>
+            <div class="footer-bottom">
+                <p><small>&copy; {{ now() | date(format="%Y") }} archipelag.io. All rights reserved.</small></p>
+                <nav class="footer-legal" aria-label="Legal navigation">
+                    <a href="/privacy">Privacy Policy</a>
+                    <a href="/terms">Terms of Service</a>
+                </nav>
             </div>
-        </footer>
+        </div>
+    </footer>
 
-        {% block extra_js %}{% endblock extra_js %}
-    </body>
+    <script>
+        // Theme toggle with ARIA updates
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            themeToggle.setAttribute('aria-pressed', isDark);
+        });
+        themeToggle.setAttribute('aria-pressed', document.documentElement.classList.contains('dark'));
+
+        // Mobile menu toggle with ARIA updates
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconMenu = menuToggle.querySelector('.icon-menu');
+        const iconClose = menuToggle.querySelector('.icon-close');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('open');
+            iconMenu.style.display = isOpen ? 'none' : 'block';
+            iconClose.style.display = isOpen ? 'block' : 'none';
+            menuToggle.setAttribute('aria-expanded', isOpen);
+            mobileMenu.setAttribute('aria-hidden', !isOpen);
+        });
+    </script>
+
+    {% block scripts %}{% endblock scripts %}
+</body>
 </html>

@@ -89,6 +89,23 @@
   margin-bottom: var(--space-4);
 }
 
+// Numbered section eyebrow (PrimeIntellect-style monospace numbering)
+.section-eyebrow-numbered {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-4);
+
+  .number {
+    color: var(--accent);
+    font-weight: 700;
+    margin-right: var(--space-2);
+  }
+}
+
 .section-title {
   font-family: var(--font-brand);
   font-size: var(--text-3xl);
