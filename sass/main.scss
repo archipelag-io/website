@@ -68,7 +68,7 @@ body {
   line-height: 1.7;
   color: var(--text);
   background-color: var(--bg);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-feature-settings: 'tnum';
 }
 
 a {
@@ -79,7 +79,7 @@ a {
 // Headings default to brand font
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-brand);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.03em;
 }
@@ -126,8 +126,12 @@ h1, h2, h3, h4, h5, h6 {
   object-fit: contain;
 }
 
-html.dark .brand-mark img {
+.brand-mark img {
   filter: invert(1);
+}
+
+html.light .brand-mark img {
+  filter: none;
 }
 
 .brand-wordmark {
@@ -175,8 +179,8 @@ html.dark .brand-mark img {
   padding: var(--space-3) var(--space-4);
   font-size: var(--text-sm);
   color: var(--text);
-  background: var(--bg);
-  border: 1.5px solid var(--border);
+  background: var(--surface-1);
+  border: 1px solid var(--border);
   border-radius: var(--radius-md);
   outline: none;
   transition: border-color 0.2s ease;
@@ -280,11 +284,12 @@ html.dark .brand-mark img {
   color: var(--text);
 }
 
-.theme-toggle .icon-sun { display: none; }
-.theme-toggle .icon-moon { display: block; }
+// Dark-first: sun icon shows by default (click to go light), moon shows in light mode
+.theme-toggle .icon-sun { display: block; }
+.theme-toggle .icon-moon { display: none; }
 
-html.dark .theme-toggle .icon-sun { display: block; }
-html.dark .theme-toggle .icon-moon { display: none; }
+html.light .theme-toggle .icon-sun { display: none; }
+html.light .theme-toggle .icon-moon { display: block; }
 
 // Landing Footer
 .landing-footer {
@@ -387,5 +392,5 @@ html.dark .theme-toggle .icon-moon { display: none; }
 
 ::selection {
   background: var(--accent-muted);
-  color: var(--stone-900);
+  color: var(--text);
 }

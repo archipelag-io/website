@@ -46,7 +46,7 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-brand);
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.2;
     letter-spacing: -0.03em;
     margin-top: 2em;
@@ -87,10 +87,11 @@
   }
 
   pre {
-    background: var(--stone-800);
-    color: var(--stone-100);
+    background: var(--surface-1);
+    color: var(--text-secondary);
     padding: var(--space-4);
     border-radius: var(--radius-md);
+    border: 1px solid var(--border);
     overflow-x: auto;
     margin: 1.5em 0;
     code { background: transparent; padding: 0; }

@@ -42,18 +42,26 @@
   font-display: swap;
 }
 
-/* IA Writer Quattro S - body typeface */
+/* IBM Plex Mono - body typeface (technical/monospace feel) */
 @font-face {
-  font-family: 'iA Writer Quattro S';
-  src: url('https://cdn.jsdelivr.net/gh/AshKyd/iawrtqt@1.0.3/fonts/iAWriterQuattroS-Regular.woff2') format('woff2');
+  font-family: 'IBM Plex Mono';
+  src: url('https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5/files/ibm-plex-mono-latin-400-normal.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'iA Writer Quattro S';
-  src: url('https://cdn.jsdelivr.net/gh/AshKyd/iawrtqt@1.0.3/fonts/iAWriterQuattroS-Bold.woff2') format('woff2');
+  font-family: 'IBM Plex Mono';
+  src: url('https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5/files/ibm-plex-mono-latin-500-normal.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5/files/ibm-plex-mono-latin-700-normal.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -61,52 +69,38 @@
 
 // ============================================
 // DESIGN TOKENS (CSS custom properties)
-// Maps DS SCSS variables to CSS vars for runtime theming
+// Dark-first: :root is dark, html.light overrides
 // ============================================
 
 :root {
-  // Neutrals
-  --white: #ffffff;
-  --off-white: #{$aui-stone-50};
-  --cream: #{$aui-stone-100};
-  --stone-100: #{$aui-stone-200};
-  --stone-200: #{$aui-stone-300};
-  --stone-300: #{$aui-stone-400};
-  --stone-400: #{$aui-stone-500};
-  --stone-500: #{$aui-stone-600};
-  --stone-600: #{$aui-stone-700};
-  --stone-700: #{$aui-stone-800};
-  --stone-800: #{$aui-stone-900};
-  --stone-900: #{$aui-stone-950};
+  // Core palette — dark
+  --bg: #0a0a0a;
+  --bg-subtle: #111111;
+  --bg-muted: #1a1a1a;
+  --text: #fafafa;
+  --text-secondary: #a0a0a0;
+  --text-tertiary: #666666;
+  --border: #1f1f1f;
+  --border-subtle: #151515;
 
-  // Accent
-  --accent: #{$aui-teal-600};
-  --accent-light: #{$aui-teal-500};
-  --accent-muted: #{$aui-teal-200};
-  --accent-dark: #{$aui-teal-700};
+  // Accent — teal, used sparingly
+  --accent: #2dd4bf;
+  --accent-light: #5eead4;
+  --accent-muted: rgba(45, 212, 191, 0.15);
+  --accent-dark: #14b8a6;
 
   // Professional palette
-  --coral: #{$aui-coral-600};
+  --coral: #f59e0b;
   --coral-light: #{$aui-coral-500};
-  --lagoon: #{$aui-lagoon-600};
+  --lagoon: #06b6d4;
   --lagoon-light: #{$aui-lagoon-500};
   --deep-ocean: #1e3a5f;
   --sunset-pink: #6366f1;
   --sunset-purple: #4f46e5;
 
-  // Semantic
-  --bg: var(--white);
-  --bg-subtle: var(--off-white);
-  --bg-muted: var(--cream);
-  --text: var(--stone-800);
-  --text-secondary: var(--stone-500);
-  --text-tertiary: var(--stone-400);
-  --border: var(--stone-200);
-  --border-subtle: var(--stone-100);
-
   // Typography
-  --font-body: #{$aui-font-body};
-  --font-brand: #{$aui-font-brand};
+  --font-body: 'IBM Plex Mono', 'Fira Mono', monospace;
+  --font-brand: 'Satoshi', system-ui, sans-serif;
 
   // Scale
   --text-xs: #{$aui-text-xs};
@@ -137,34 +131,34 @@
   --space-40: 10rem;
   --space-48: 12rem;
 
-  // Radius
-  --radius-sm: #{$aui-radius-sm};
+  // Radius — flattened, PrimeIntellect-style small consistent radii
+  --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
-  --radius-xl: 16px;
-  --radius-2xl: 24px;
-  --radius-3xl: 32px;
-  --radius-4xl: 40px;
-  --radius-5xl: 48px;
+  --radius-xl: 12px;
+  --radius-2xl: 12px;
+  --radius-3xl: 12px;
+  --radius-4xl: 12px;
+  --radius-5xl: 12px;
   --radius-full: 9999px;
 
   // Surface elevation
-  --surface-0: var(--bg);
-  --surface-1: var(--bg-subtle);
-  --surface-2: var(--bg-muted);
-  --surface-border: var(--border);
+  --surface-0: #0a0a0a;
+  --surface-1: #111111;
+  --surface-2: #1a1a1a;
+  --surface-border: #1f1f1f;
 
   // Anti-grid system
   --antigrid-gap: var(--space-2);
-  --antigrid-radius: var(--radius-4xl);
-  --antigrid-radius-lg: var(--radius-5xl);
+  --antigrid-radius: 12px;
+  --antigrid-radius-lg: 16px;
   --antigrid-padding: var(--space-8);
   --antigrid-padding-lg: var(--space-10);
 
-  // Shadows
-  --shadow-sm: #{$aui-shadow-sm};
-  --shadow-md: #{$aui-shadow-md};
-  --shadow-lg: #{$aui-shadow-lg};
+  // Shadows — very subtle on dark backgrounds
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
 
   // Transitions
   --transition-fast: #{$aui-duration-fast} ease;
@@ -176,24 +170,29 @@
   --gradient-sunset: linear-gradient(135deg, var(--sunset-purple) 0%, var(--sunset-pink) 50%, var(--accent) 100%);
 }
 
-// Dark mode
-html.dark {
-  --bg: var(--stone-900);
-  --bg-subtle: var(--stone-800);
-  --bg-muted: var(--stone-700);
-  --text: var(--stone-100);
-  --text-secondary: var(--stone-400);
-  --text-tertiary: var(--stone-500);
-  --border: var(--stone-700);
-  --border-subtle: var(--stone-800);
-  --accent: #2dd4bf;
-  --accent-light: #5eead4;
-  --accent-dark: #14b8a6;
-  --lagoon: #06b6d4;
-  --coral: #f59e0b;
+// Light mode (opt-in)
+html.light {
+  --bg: #ffffff;
+  --bg-subtle: #fafafa;
+  --bg-muted: #f5f5f5;
+  --text: #171717;
+  --text-secondary: #525252;
+  --text-tertiary: #a3a3a3;
+  --border: #e5e5e5;
+  --border-subtle: #f0f0f0;
+  --accent: #0d9488;
+  --accent-light: #14b8a6;
+  --accent-dark: #0f766e;
+  --accent-muted: rgba(13, 148, 136, 0.15);
+  --lagoon: #{$aui-lagoon-600};
+  --coral: #{$aui-coral-600};
 
-  --surface-0: var(--stone-900);
-  --surface-1: var(--stone-800);
-  --surface-2: var(--stone-700);
-  --surface-border: var(--stone-700);
+  --surface-0: #ffffff;
+  --surface-1: #fafafa;
+  --surface-2: #f5f5f5;
+  --surface-border: #e5e5e5;
+
+  --shadow-sm: #{$aui-shadow-sm};
+  --shadow-md: #{$aui-shadow-md};
+  --shadow-lg: #{$aui-shadow-lg};
 }
