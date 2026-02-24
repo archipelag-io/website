@@ -1,0 +1,155 @@
+// Vendored from archipelag-ui/dist/scss/_tokens.scss
+// Keep in sync with the design system — symlinks don't work in Zola builds
+
+$aui-stone-50: #fafaf9;
+$aui-stone-100: #f5f5f4;
+$aui-stone-200: #e7e5e4;
+$aui-stone-300: #d6d3d1;
+$aui-stone-400: #a8a29e;
+$aui-stone-500: #78716c;
+$aui-stone-600: #57534e;
+$aui-stone-700: #44403c;
+$aui-stone-800: #292524;
+$aui-stone-900: #1c1917;
+$aui-stone-950: #0c0a09;
+$aui-teal-50: #f0fdfa;
+$aui-teal-100: #ccfbf1;
+$aui-teal-200: #99f6e4;
+$aui-teal-300: #5eead4;
+$aui-teal-400: #2dd4bf;
+$aui-teal-500: #14b8a6;
+$aui-teal-600: #0d9488;
+$aui-teal-700: #0f766e;
+$aui-teal-800: #115e59;
+$aui-teal-900: #134e4a;
+$aui-coral-50: #fffbeb;
+$aui-coral-100: #fef3c7;
+$aui-coral-200: #fde68a;
+$aui-coral-300: #fcd34d;
+$aui-coral-400: #fbbf24;
+$aui-coral-500: #f59e0b;
+$aui-coral-600: #d97706;
+$aui-coral-700: #b45309;
+$aui-coral-800: #92400e;
+$aui-coral-900: #78350f;
+$aui-lagoon-50: #ecfeff;
+$aui-lagoon-100: #cffafe;
+$aui-lagoon-200: #a5f3fc;
+$aui-lagoon-300: #67e8f9;
+$aui-lagoon-400: #22d3ee;
+$aui-lagoon-500: #06b6d4;
+$aui-lagoon-600: #0891b2;
+$aui-lagoon-700: #0e7490;
+$aui-lagoon-800: #155e75;
+$aui-lagoon-900: #164e63;
+
+// Light theme semantic
+$aui-bg: #ffffff;
+$aui-bg-subtle: #fafaf9;
+$aui-bg-muted: #f5f5f4;
+$aui-bg-emphasis: #e7e5e4;
+$aui-text: #1c1917;
+$aui-text-secondary: #57534e;
+$aui-text-tertiary: #78716c;
+$aui-text-muted: #a8a29e;
+$aui-border: #e7e5e4;
+$aui-border-subtle: #f5f5f4;
+$aui-accent: #0d9488;
+$aui-accent-light: #14b8a6;
+$aui-accent-bg: #f0fdfa;
+$aui-accent-border: #99f6e4;
+
+// Dark theme semantic
+$aui-dark-bg: #0c0a09;
+$aui-dark-bg-subtle: #1c1917;
+$aui-dark-bg-muted: #292524;
+$aui-dark-bg-emphasis: #44403c;
+$aui-dark-text: #fafaf9;
+$aui-dark-text-secondary: #a8a29e;
+$aui-dark-text-tertiary: #78716c;
+$aui-dark-text-muted: #57534e;
+$aui-dark-border: #44403c;
+$aui-dark-border-subtle: #292524;
+$aui-dark-accent: #2dd4bf;
+$aui-dark-accent-light: #5eead4;
+$aui-dark-accent-bg: #134e4a;
+$aui-dark-accent-border: #0f766e;
+
+// Typography
+$aui-font-brand: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
+$aui-font-body: 'iA Writer Quattro S', 'iA Writer Mono', 'SF Mono', ui-monospace, monospace;
+$aui-font-mono: 'iA Writer Mono', 'SF Mono', ui-monospace, monospace;
+$aui-text-xs: 0.75rem;
+$aui-text-sm: 0.875rem;
+$aui-text-base: 1rem;
+$aui-text-lg: 1.125rem;
+$aui-text-xl: 1.25rem;
+$aui-text-2xl: 1.5rem;
+$aui-text-3xl: 2rem;
+$aui-text-4xl: 2.5rem;
+$aui-text-5xl: 3rem;
+$aui-text-6xl: 3.75rem;
+$aui-text-7xl: 4.5rem;
+
+// Spacing
+$aui-space-0: 0;
+$aui-space-1: 0.25rem;
+$aui-space-2: 0.5rem;
+$aui-space-3: 0.75rem;
+$aui-space-4: 1rem;
+$aui-space-5: 1.25rem;
+$aui-space-6: 1.5rem;
+$aui-space-7: 1.75rem;
+$aui-space-8: 2rem;
+$aui-space-9: 2.25rem;
+$aui-space-10: 2.5rem;
+$aui-space-11: 2.75rem;
+$aui-space-12: 3rem;
+$aui-space-14: 3.5rem;
+$aui-space-16: 4rem;
+$aui-space-20: 5rem;
+$aui-space-24: 6rem;
+$aui-space-28: 7rem;
+$aui-space-32: 8rem;
+$aui-space-36: 9rem;
+$aui-space-40: 10rem;
+$aui-space-44: 11rem;
+$aui-space-48: 12rem;
+$aui-space-52: 13rem;
+$aui-space-56: 14rem;
+$aui-space-60: 15rem;
+$aui-space-64: 16rem;
+$aui-space-0_5: 0.125rem;
+$aui-space-1_5: 0.375rem;
+$aui-space-2_5: 0.625rem;
+$aui-space-3_5: 0.875rem;
+
+// Border radius
+$aui-radius-none: 0;
+$aui-radius-sm: 4px;
+$aui-radius-md: 6px;
+$aui-radius-DEFAULT: 8px;
+$aui-radius-lg: 12px;
+$aui-radius-xl: 16px;
+$aui-radius-2xl: 24px;
+$aui-radius-3xl: 32px;
+$aui-radius-4xl: 40px;
+$aui-radius-5xl: 48px;
+$aui-radius-full: 9999px;
+
+// Shadows
+$aui-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+$aui-shadow-DEFAULT: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+$aui-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+$aui-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+$aui-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+$aui-shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+$aui-shadow-glow-teal: 0 0 20px rgba(13, 148, 136, 0.3);
+$aui-shadow-glow-coral: 0 0 20px rgba(217, 119, 6, 0.3);
+$aui-shadow-none: none;
+
+// Transitions
+$aui-duration-fast: 150ms;
+$aui-duration-base: 200ms;
+$aui-duration-slow: 300ms;
+$aui-duration-slower: 500ms;
