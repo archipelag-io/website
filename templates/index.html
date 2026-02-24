@@ -144,6 +144,56 @@
                         }
                     }
                 ]
+            },
+            {
+                "@type": "HowTo",
+                "name": "How to use Archipelag.io as an AI user",
+                "description": "Get started using AI on the Archipelag.io decentralized compute network in three steps.",
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "position": 1,
+                        "name": "Create an account",
+                        "text": "Sign up with email or GitHub in seconds."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "position": 2,
+                        "name": "Add credits",
+                        "text": "Buy credit packages starting at $10. No subscriptions."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "position": 3,
+                        "name": "Get results",
+                        "text": "Responses stream from the nearest available host."
+                    }
+                ]
+            },
+            {
+                "@type": "HowTo",
+                "name": "How to earn with Archipelag.io as a host",
+                "description": "Turn your idle GPU hardware into income by hosting AI workloads on the Archipelag.io network.",
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "position": 1,
+                        "name": "Download the agent",
+                        "text": "Available for Windows, Mac, and Linux."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "position": 2,
+                        "name": "Configure and verify",
+                        "text": "Set your availability and complete identity verification."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "position": 3,
+                        "name": "Start earning",
+                        "text": "Jobs arrive automatically. Earnings accrue in real-time."
+                    }
+                ]
             }
         ]
     }
@@ -429,12 +479,7 @@ from archipelag import Client
 
 client = Client(api_key="your-key")
 
-response = client.chat.create(
-    model="mistral-7b",
-    messages=[
-        {"role": "user", "content": "Hello!"}
-    ]
-)
+response = client.chat("Hello!")
 print(response.content)</code></pre>
                             </figure>
                         </div>

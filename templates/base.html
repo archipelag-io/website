@@ -186,7 +186,7 @@
         });
         themeToggle.setAttribute('aria-pressed', !document.documentElement.classList.contains('light'));
 
-        // Mobile menu toggle with ARIA updates
+        // Mobile menu toggle with ARIA updates and focus trap
         const menuToggle = document.getElementById('mobile-menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const iconMenu = menuToggle.querySelector('.icon-menu');
@@ -198,6 +198,33 @@
             iconClose.style.display = isOpen ? 'block' : 'none';
             menuToggle.setAttribute('aria-expanded', isOpen);
             mobileMenu.setAttribute('aria-hidden', !isOpen);
+            if (isOpen) {
+                const firstLink = mobileMenu.querySelector('a');
+                if (firstLink) firstLink.focus();
+            }
+        });
+
+        // Focus trap for mobile menu
+        document.addEventListener('keydown', (e) => {
+            if (!mobileMenu.classList.contains('open')) return;
+            if (e.key === 'Escape') {
+                menuToggle.click();
+                menuToggle.focus();
+                return;
+            }
+            if (e.key === 'Tab') {
+                const focusable = mobileMenu.querySelectorAll('a[href], button, [tabindex]:not([tabindex="-1"])');
+                const allFocusable = [menuToggle, ...focusable];
+                const first = allFocusable[0];
+                const last = allFocusable[allFocusable.length - 1];
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            }
         });
     </script>
 
