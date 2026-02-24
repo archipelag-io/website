@@ -2,7 +2,7 @@
 
 # Site metadata
 title = "Archipelag.io"
-description = "Sovereign compute infrastructure. Run AI workloads with jurisdiction routing, verified nodes, and full data residency control."
+description = "Compute, closer to you. Run AI on a decentralized network of community hosts — fast, fair, and local."
 base_url = "https://archipelag.io"
 
 # Build settings
@@ -28,14 +28,14 @@ output_dir = "public"
 # Site metadata
 author = "Archipelag.io"
 email = "hello@archipelag.io"
-tagline = "Your data. Your jurisdiction. Your compute."
+tagline = "Compute, closer to you."
 waitlist_url = "https://buttondown.email/api/emails/embed-subscribe/raskell"
 design_partner_email = "partners@archipelag.io"
 
 # Navigation
 nav_items = [
-    { name = "Platform", url = "/use" },
-    { name = "Host", url = "/earn" },
+    { name = "Use AI", url = "/use" },
+    { name = "Earn", url = "/earn" },
     { name = "Pricing", url = "/pricing" },
     { name = "About", url = "/about" },
 ]

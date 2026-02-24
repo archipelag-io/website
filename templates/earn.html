@@ -1,22 +1,22 @@
 {% extends "base.html" %}
 
-{% block title %}Host | {{ config.title }}{% endblock title %}
+{% block title %}Earn | {{ config.title }}{% endblock title %}
 
 {% block head_meta %}
-    <meta name="description" content="Become a verified compute provider on the Archipelag.io network. Verified nodes serve compliant AI workloads and earn revenue.">
+    <meta name="description" content="Turn your idle GPU into income. Earn money by contributing compute power to the Archipelag.io network. RTX 4090 hosts can earn up to $400/month.">
     <meta name="robots" content="index, follow">
-    <meta name="keywords" content="compute provider, verified hosting, sovereign compute, GDPR hosting, AI infrastructure, node verification, trusted compute">
+    <meta name="keywords" content="GPU income, passive income, RTX 4090, compute hosting, earn money, distributed computing, AI hosting, community compute">
     <link rel="canonical" href="{{ config.base_url }}/earn/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ config.base_url }}/earn/">
-    <meta property="og:title" content="Host - Become a Verified Provider | {{ config.title }}">
-    <meta property="og:description" content="Become a verified compute provider. Serve compliant AI workloads and earn revenue on the Archipelag.io network.">
+    <meta property="og:title" content="Earn with Your GPU | {{ config.title }}">
+    <meta property="og:description" content="Turn your idle GPU into income. Earn money by contributing compute power to the Archipelag.io network.">
     <meta property="og:image" content="{{ config.base_url }}/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Archipelag.io - Verified Compute Provider">
+    <meta property="og:image:alt" content="Archipelag.io - Earn with your GPU">
     <meta property="og:site_name" content="{{ config.title }}">
     <meta property="og:locale" content="en_US">
 
@@ -24,10 +24,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="{{ config.extra.twitter }}">
     <meta name="twitter:creator" content="{{ config.extra.twitter }}">
-    <meta name="twitter:title" content="Host - Become a Verified Provider | {{ config.title }}">
-    <meta name="twitter:description" content="Become a verified compute provider. Serve compliant AI workloads and earn revenue.">
+    <meta name="twitter:title" content="Earn with Your GPU | {{ config.title }}">
+    <meta name="twitter:description" content="Turn your idle GPU into income. RTX 4090 hosts can earn up to $400/month.">
     <meta name="twitter:image" content="{{ config.base_url }}/og-image.png">
-    <meta name="twitter:image:alt" content="Archipelag.io - Verified Compute Provider">
+    <meta name="twitter:image:alt" content="Archipelag.io - Earn with your GPU">
 {% endblock head_meta %}
 
 {% block head_extra %}
@@ -40,8 +40,8 @@
                 "@type": "WebPage",
                 "@id": "{{ config.base_url }}/earn/",
                 "url": "{{ config.base_url }}/earn/",
-                "name": "Host - Become a Verified Provider",
-                "description": "Become a verified compute provider on the Archipelag.io network. Verified nodes serve compliant AI workloads.",
+                "name": "Earn with Your GPU",
+                "description": "Turn your idle GPU into income. Earn money by contributing compute power to the Archipelag.io network.",
                 "isPartOf": {
                     "@id": "{{ config.base_url }}/#website"
                 },
@@ -72,62 +72,68 @@
         <!-- Hero -->
         <section class="hero-section" aria-labelledby="hero-title">
             <div class="container">
-                <span class="section-eyebrow">For Compute Providers</span>
-                <h1 id="hero-title" class="hero-title">Become a verified compute provider</h1>
+                <span class="section-eyebrow">For Compute Hosts</span>
+                <h1 id="hero-title" class="hero-title">Turn idle hardware into income</h1>
                 <p class="hero-subtitle">
-                    Join a trusted network serving compliance-critical AI workloads.
-                    Verified providers earn premium rates for sovereign compute.
+                    Your gaming PC or workstation can earn money while you sleep.
+                    Join the network and get paid for compute you're not using.
                 </p>
                 <div class="hero-cta">
-                    <a href="mailto:hosts@archipelag.io" class="btn btn-primary btn-lg">Apply to Host</a>
-                    <a href="#verification" class="btn btn-secondary btn-lg">View verification levels</a>
+                    <a href="/#waitlist" class="btn btn-primary btn-lg">Join the Waitlist</a>
+                    <a href="#earnings" class="btn btn-secondary btn-lg">See earnings</a>
                 </div>
             </div>
         </section>
 
-        <!-- Verification Levels -->
-        <section id="verification" class="section section-alt" aria-labelledby="verification-title">
+        <!-- Earnings -->
+        <section id="earnings" class="section section-alt" aria-labelledby="earnings-title">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-eyebrow-numbered"><span class="number">01</span> &mdash; Verification Levels</span>
-                    <h2 id="verification-title" class="section-title">Three tiers of trust</h2>
-                    <p class="section-subtitle">Higher verification unlocks access to more sensitive and higher-value workloads.</p>
+                    <span class="section-eyebrow-numbered"><span class="number">01</span> &mdash; Potential Earnings</span>
+                    <h2 id="earnings-title" class="section-title">What you could earn</h2>
+                    <p class="section-subtitle">Earnings depend on hardware, availability, and network demand. Verified hosts earn premium rates.</p>
                 </div>
 
-                <div class="card max-w-3xl mx-auto">
+                <div class="card max-w-2xl mx-auto">
                     <div class="table-wrapper">
-                        <table class="table" aria-label="Verification tiers">
+                        <table class="table" aria-label="GPU earnings potential">
                             <thead>
                                 <tr>
-                                    <th scope="col">Tier</th>
-                                    <th scope="col">Requirements</th>
-                                    <th scope="col">Workload Access</th>
+                                    <th scope="col">GPU</th>
+                                    <th scope="col">Rate</th>
+                                    <th scope="col">Est. Monthly*</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Tier 0 - Unverified</strong></td>
-                                    <td>Account registration only</td>
-                                    <td>Browse marketplace, explore platform</td>
+                                    <td>RTX 4090</td>
+                                    <td>up to $0.25/min</td>
+                                    <td>$200&ndash;400</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Tier 1 - Verified</strong></td>
-                                    <td>Government ID verification, hardware attestation, network connectivity</td>
-                                    <td>Standard AI inference workloads</td>
+                                    <td>RTX 4080</td>
+                                    <td>up to $0.18/min</td>
+                                    <td>$140&ndash;280</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Tier 2 - Compliant</strong></td>
-                                    <td>Facility audit, compliance training, jurisdiction documentation</td>
-                                    <td>GDPR-regulated workloads, EU data residency</td>
+                                    <td>RTX 3080</td>
+                                    <td>up to $0.12/min</td>
+                                    <td>$80&ndash;150</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Tier 3 - Enterprise</strong></td>
-                                    <td>Dedicated infrastructure, SLA guarantees, SOC 2 readiness</td>
-                                    <td>Enterprise, healthcare, financial workloads</td>
+                                    <td>RTX 3070</td>
+                                    <td>up to $0.08/min</td>
+                                    <td>$50&ndash;100</td>
+                                </tr>
+                                <tr>
+                                    <td>RTX 3060</td>
+                                    <td>up to $0.06/min</td>
+                                    <td>$40&ndash;80</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+                    <p class="text-sm text-tertiary mt-4">*Estimates based on 8 hours/day availability with typical network demand. Actual earnings vary.</p>
                 </div>
             </div>
         </section>
@@ -143,67 +149,67 @@
                 <ol class="grid grid-4 gap-6" role="list" aria-label="Getting started steps">
                     <li class="step-card flex-col items-center text-center">
                         <span class="step-number mb-4" aria-hidden="true">1</span>
-                        <h3 class="step-title">Apply</h3>
-                        <p class="step-desc">Submit your application with hardware and location details.</p>
+                        <h3 class="step-title">Download</h3>
+                        <p class="step-desc">Get the node agent for Windows, Mac, or Linux.</p>
                     </li>
                     <li class="step-card flex-col items-center text-center">
                         <span class="step-number mb-4" aria-hidden="true">2</span>
-                        <h3 class="step-title">Verify</h3>
-                        <p class="step-desc">Complete government ID verification and hardware attestation.</p>
+                        <h3 class="step-title">Install &amp; verify</h3>
+                        <p class="step-desc">Run the installer, connect your account, and complete ID verification.</p>
                     </li>
                     <li class="step-card flex-col items-center text-center">
                         <span class="step-number mb-4" aria-hidden="true">3</span>
                         <h3 class="step-title">Configure</h3>
-                        <p class="step-desc">Set your jurisdiction, availability, and compliance capabilities.</p>
+                        <p class="step-desc">Set your availability schedule and resource limits.</p>
                     </li>
                     <li class="step-card flex-col items-center text-center">
                         <span class="step-number mb-4" aria-hidden="true">4</span>
-                        <h3 class="step-title">Serve</h3>
-                        <p class="step-desc">Receive and process verified workloads. Earn revenue automatically.</p>
+                        <h3 class="step-title">Earn</h3>
+                        <p class="step-desc">Jobs arrive automatically. Earnings accrue in real-time.</p>
                     </li>
                 </ol>
             </div>
         </section>
 
-        <!-- Trust Score -->
-        <section class="section section-alt" aria-labelledby="trust-title">
+        <!-- Karma System -->
+        <section class="section section-alt" aria-labelledby="karma-title">
             <div class="container">
                 <div class="split">
                     <div class="preview-content">
                         <span class="section-eyebrow-numbered"><span class="number">03</span> &mdash; Reputation</span>
-                        <h2 id="trust-title" class="preview-title">The Trust Score system</h2>
+                        <h2 id="karma-title" class="preview-title">The Karma system</h2>
                         <p class="preview-desc">
-                            Your trust score reflects your reliability and compliance track record. Higher scores mean more workloads and better rates.
+                            Your karma score reflects your reliability as a host. Higher karma means more jobs and better rates.
                         </p>
 
-                        <ul class="preview-list" aria-label="Trust score features">
+                        <ul class="preview-list" aria-label="Karma system features">
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                                 <span>Starts at 50, maxes at 100</span>
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>Increases with successful verified executions</span>
+                                <span>Increases with successful jobs</span>
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>Decreases for failures or compliance issues</span>
+                                <span>Decreases for failures or timeouts</span>
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span>Higher score = workload priority + rate premium</span>
+                                <span>Higher karma = job priority + rate bonus</span>
                             </li>
                         </ul>
                     </div>
 
                     <div class="flex items-center justify-center p-8">
                         <figure class="card w-full p-8 text-center">
-                            <div class="font-brand text-6xl font-light text-accent mb-4" aria-label="Example trust score">92</div>
+                            <div class="font-brand text-6xl font-light text-accent mb-4" aria-label="Example karma score">85</div>
                             <figcaption>
-                                <div class="text-lg font-medium mb-2">Trust Score</div>
+                                <div class="text-lg font-medium mb-2">Karma Score</div>
                                 <p class="text-sm text-secondary">
-                                    Tier 2 Verified Provider<br>
-                                    142 successful jobs, 99.3% compliance rate
+                                    Based on 142 successful jobs<br>
+                                    99.3% success rate
                                 </p>
                             </figcaption>
                         </figure>
@@ -228,8 +234,8 @@
                                 <path d="M8 21h8m-4-4v4" stroke-linecap="round"/>
                             </svg>
                         </div>
-                        <h3 class="feature-title">Hardware</h3>
-                        <p class="feature-desc">NVIDIA RTX 3060+ or equivalent with 8GB+ VRAM. Hardware attestation required.</p>
+                        <h3 class="feature-title">GPU</h3>
+                        <p class="feature-desc">NVIDIA RTX 3060 or better with 8GB+ VRAM. AMD support coming soon.</p>
                     </article>
 
                     <article class="card feature-card">
@@ -239,17 +245,87 @@
                             </svg>
                         </div>
                         <h3 class="feature-title">Network</h3>
-                        <p class="feature-desc">100 Mbps+ stable connection. Low latency preferred. Static IP recommended for Tier 2+.</p>
+                        <p class="feature-desc">100 Mbps+ internet connection. Lower latency is better.</p>
                     </article>
 
                     <article class="card feature-card">
                         <div class="feature-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
+                                <rect x="4" y="4" width="16" height="16" rx="2"/>
+                                <rect x="9" y="9" width="6" height="6"/>
+                                <path d="M4 9h5M15 9h5M4 15h5M15 15h5M9 4v5M9 15v5M15 4v5M15 15v5" stroke-linecap="round"/>
                             </svg>
                         </div>
-                        <h3 class="feature-title">Compliance</h3>
-                        <p class="feature-desc">Documented jurisdiction. Willingness to complete verification. Docker required.</p>
+                        <h3 class="feature-title">Platform</h3>
+                        <p class="feature-desc">Windows 10/11, macOS 12+, or Linux. Docker required.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security -->
+        <section class="section section-alt" aria-labelledby="security-title">
+            <div class="container">
+                <div class="split">
+                    <div class="flex items-center justify-center p-8">
+                        <figure class="icon" style="width: 200px; height: 200px;" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </figure>
+                    </div>
+
+                    <div class="preview-content">
+                        <span class="section-eyebrow-numbered"><span class="number">05</span> &mdash; Security</span>
+                        <h2 id="security-title" class="preview-title">Your machine is protected</h2>
+                        <p class="preview-desc">
+                            We take security seriously. Hosts never run arbitrary user code.
+                        </p>
+
+                        <ul class="preview-list" aria-label="Security features">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Sandboxed Docker containers</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Only network-approved, signed workloads</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>No access to your files or network</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Resource limits strictly enforced</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Payouts -->
+        <section class="section" aria-labelledby="payouts-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow-numbered"><span class="number">06</span> &mdash; Payouts</span>
+                    <h2 id="payouts-title" class="section-title">Getting paid</h2>
+                </div>
+
+                <div class="grid grid-3 gap-6 max-w-3xl mx-auto">
+                    <article class="card text-center p-6">
+                        <div class="font-brand text-3xl mb-2">Monthly</div>
+                        <p class="text-sm text-secondary">Payouts processed on the 1st of each month</p>
+                    </article>
+                    <article class="card text-center p-6">
+                        <div class="font-brand text-3xl mb-2">$25 min</div>
+                        <p class="text-sm text-secondary">Minimum balance required for payout</p>
+                    </article>
+                    <article class="card text-center p-6">
+                        <div class="font-brand text-3xl mb-2">Stripe</div>
+                        <p class="text-sm text-secondary">Direct deposit or Stripe account</p>
                     </article>
                 </div>
             </div>
@@ -258,11 +334,10 @@
         <!-- CTA -->
         <section class="section section-alt cta-section" aria-labelledby="cta-title">
             <div class="container text-center">
-                <h2 id="cta-title" class="cta-title">Ready to become a verified provider?</h2>
-                <p class="cta-subtitle">Apply to join the network and start serving compliant AI workloads.</p>
+                <h2 id="cta-title" class="cta-title">Ready to start earning?</h2>
+                <p class="cta-subtitle">Join the waitlist and be first to host when the network launches.</p>
                 <div class="btn-group justify-center">
-                    <a href="mailto:hosts@archipelag.io" class="btn btn-primary btn-lg">Apply to Host</a>
-                    <a href="/#waitlist" class="btn btn-secondary btn-lg">Join the Waitlist</a>
+                    <a href="/#waitlist" class="btn btn-primary btn-lg">Join the Waitlist</a>
                 </div>
             </div>
         </section>
