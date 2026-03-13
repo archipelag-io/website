@@ -577,7 +577,7 @@ html.light .nav-dropdown-chevron {
   position: absolute;
   top: calc(100% + 6px);
   right: 0;
-  min-width: 160px;
+  min-width: 220px;
   background: var(--surface-1);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -612,6 +612,29 @@ html.light .nav-dropdown-chevron {
   white-space: nowrap;
 
   &:hover { background: var(--surface-2); }
+
+  &.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
+
+.nav-dropdown-label {
+  display: block;
+  padding: var(--space-2) var(--space-4) var(--space-1);
+  font-family: var(--font-brand);
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+
+  &:not(:first-child) {
+    border-top: 1px solid var(--border);
+    margin-top: var(--space-1);
+    padding-top: var(--space-2);
+  }
 }
 
 // Mobile menu
