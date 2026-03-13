@@ -91,32 +91,32 @@
         <section class="section" aria-labelledby="posts-title">
             <div class="container">
                 <h2 id="posts-title" class="sr-only">Blog posts</h2>
-                <div class="max-w-2xl mx-auto">
+                <div class="blog-list">
                     {% if section.pages %}
                         {% for page in section.pages %}
-                        <article class="card mb-6 p-6" itemscope itemtype="https://schema.org/BlogPosting">
-                            <a href="{{ page.permalink }}" class="block">
-                                <time class="text-sm text-tertiary" datetime="{{ page.date }}" itemprop="datePublished">
+                        <article class="blog-card card" itemscope itemtype="https://schema.org/BlogPosting">
+                            <a href="{{ page.permalink }}">
+                                <time class="blog-date" datetime="{{ page.date }}" itemprop="datePublished">
                                     {{ page.date | date(format="%B %d, %Y") }}
                                 </time>
-                                <h3 class="font-brand text-2xl mt-2 mb-3" itemprop="headline">{{ page.title }}</h3>
+                                <h3 class="blog-card-title" itemprop="headline">{{ page.title }}</h3>
                                 {% if page.description %}
-                                <p class="text-secondary" itemprop="description">{{ page.description }}</p>
+                                <p class="blog-card-desc" itemprop="description">{{ page.description }}</p>
                                 {% endif %}
-                                <span class="text-accent text-sm mt-4 inline-block">Read more &rarr;</span>
+                                <span class="blog-read-more">Read more &rarr;</span>
                             </a>
                             <meta itemprop="author" content="{{ config.extra.author }}">
                         </article>
                         {% endfor %}
                     {% else %}
-                        <div class="card p-8 text-center">
-                            <div class="icon icon-xl text-tertiary mx-auto mb-4" aria-hidden="true">
+                        <div class="blog-card card blog-empty">
+                            <div class="icon icon-xl" aria-hidden="true">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                     <path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1m2 13a2 2 0 0 1-2-2V7m2 13a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </div>
-                            <h3 class="font-brand text-xl mb-2">Coming soon</h3>
-                            <p class="text-secondary">We're working on our first posts. Check back soon!</p>
+                            <h3 class="blog-card-title">Coming soon</h3>
+                            <p class="blog-card-desc">We're working on our first posts. Check back soon!</p>
                         </div>
                     {% endif %}
                 </div>

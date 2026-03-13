@@ -1,83 +1,65 @@
 +++
 title = "Archipelag.io Enters Open Beta"
-description = "Archipelag.io is now in open beta. For the next three months, everyone can try the platform — use AI, contribute compute, and help us shape the future of distributed inference."
+description = "We're opening Archipelag.io to everyone for three months. Come use AI, lend your GPU, and help us figure out what works."
 date = 2026-03-13
 +++
 
-Today we're opening Archipelag.io to everyone. Starting now and running through **June 13, 2026**, the platform is in **open beta** — free to explore, free to break, and free to help us improve.
+There's a GPU in your computer that spends most of its life doing nothing.
 
-## What Does Open Beta Mean?
+Maybe it's a gaming rig that sits idle while you're at work. Maybe it's a workstation that renders video for two hours a day and sleeps the other twenty-two. Maybe it's a machine you built during the mining craze that's been gathering dust since ETH went proof-of-stake.
 
-During the open beta period:
+Meanwhile, someone across town is paying a cloud provider to rent a GPU in a data center three time zones away, waiting 200ms for each token of a chatbot response, and wondering why AI feels so sluggish.
 
-- **Anyone can sign up** and start using AI inference on the platform — LLM chat, image generation, and more.
-- **Anyone can become a host** by installing the node agent and contributing idle GPU compute to the network.
-- **Remuneration is virtual.** Credits, earnings, and payouts shown on the platform are fictive during the beta. No real money changes hands. This lets us stress-test the billing, karma, and payout systems without financial risk to participants.
-- **Things will break.** We're actively developing and stabilizing the platform. Expect rough edges, downtime, and changes. Your feedback during this period is invaluable.
+This is the problem we set out to fix.
 
-## Why Open Beta?
+## Taking from the rich, giving to the rest
 
-We've been building Archipelag.io for over a year — the coordinator, the node agent, workload containers, SDKs, and all the infrastructure that ties them together. Feature code exists for everything from host registration and job dispatch to container signing and regional placement.
+The way compute works today is that a handful of companies own the GPUs, and everyone else rents time on them. Prices go up, capacity gets scarce, and if you're not a Fortune 500 company with a cloud contract, you're at the back of the queue.
 
-But software only gets real when real people use it. We need:
+We thought there might be a different way. What if the people who need compute could get it from the people who already have it, just sitting around? What if your neighbor's gaming PC could serve your LLM requests with lower latency than any data center, because it's literally down the street?
 
-- **Load diversity**: Different hardware, network conditions, and usage patterns that we can't simulate in testing.
-- **UX feedback**: Where does the onboarding confuse you? What's missing from the dashboard? Which error messages are unhelpful?
-- **Edge cases**: The bugs that only surface when hundreds of people do things we didn't anticipate.
+That's Archipelag.io. A network where regular people contribute their idle CPUs and GPUs, and regular people use them. The compute is already out there, scattered across millions of homes and offices. We just built the plumbing to connect it.
 
-The open beta is our way of inviting you into the process.
+## So, open beta
 
-## What's Available
+Starting today, Archipelag.io is open to everyone for three months, through **June 13, 2026**.
 
-During the beta you'll have access to:
+Here's what that means in practice:
 
-- **LLM Chat** — Converse with Mistral 7B and Llama models, with responses streamed in real-time from nearby hosts.
-- **Image Generation** — Generate images with Stable Diffusion XL (FLUX coming soon).
-- **OpenAI-compatible API** — Drop in our API endpoint and use your existing code. Python and JavaScript SDKs available.
-- **Node Agent** — Run the host agent on Windows, macOS, or Linux to contribute your GPU and earn virtual credits.
-- **Playground & Marketplace** — Explore available models and workloads through the web UI.
+**All the money is fake.** Credits, earnings, payouts, everything financial on the platform during the beta is virtual. Nobody gets charged, nobody gets paid. We need to test the billing system, the karma scores, the payout logic, and the best way to do that is to run it all for real, just without real money attached. When we flip the switch to real billing after the beta, everyone who participated will get bonus credits as a thank-you.
 
-## What to Expect
+**Things will break.** We've been building this for over a year, and it works on our machines, in our test environments, with our carefully crafted scenarios. But we haven't seen what happens when a few hundred people with different hardware, different network conditions, and different ideas about what "use AI" means all show up at once. That's the whole point. We need you to find the bugs we can't.
 
-The beta runs for **three months** (March 13 – June 13, 2026). During this time:
+**We might reset things.** If we need to change how the database works or restructure accounts, we might have to wipe data. We'll warn you first, but don't store anything important here yet.
 
-1. **No real payments.** All credits and earnings are virtual. When we transition to production billing, beta participants will receive a bonus credit allocation as thanks.
-2. **Data may be reset.** We may need to reset accounts, credits, or job history as we iterate on the database schema and systems.
-3. **Availability is best-effort.** Host coverage depends on community participation. Some regions may have limited availability initially.
-4. **We ship fast.** Expect frequent updates, new models, and improved features throughout the beta.
+## What you can actually do
 
-## How to Participate
+You can chat with LLMs (Mistral 7B, Llama), generate images with Stable Diffusion XL, or hit our OpenAI-compatible API with your existing code. There are Python and JavaScript SDKs if you want to build on top of it.
 
-**As a user:**
-1. [Create an account](https://app.archipelag.io/auth/register) on the platform.
-2. Try the chat interface or connect via the API.
-3. [Report issues](https://github.com/archipelag-io/archipelag-io/issues) or send feedback to [hello@archipelag.io](mailto:hello@archipelag.io).
+If you've got a decent GPU (RTX 3060 or better), you can install the node agent on Windows, macOS, or Linux and start hosting. Your machine picks up inference jobs from people nearby, runs them, streams the results back. You earn virtual credits for now, real money later.
 
-**As a host:**
-1. [Download the node agent](https://github.com/archipelag-io/node-agent/releases) for your platform.
-2. Configure it with your API key and set your availability.
-3. Your GPU starts earning virtual credits as it serves inference requests.
+The web UI has a playground for trying models and a marketplace for browsing what's available.
 
-**As a developer:**
-1. Check out the [documentation](https://docs.archipelag.io) and [API reference](https://docs.archipelag.io/api).
-2. Install the [Python SDK](https://pypi.org/project/archipelag/) or [JavaScript SDK](https://www.npmjs.com/package/@archipelag/sdk).
-3. Build something and tell us about it.
+## What we're hoping to learn
 
-## What Comes After Beta?
+Honestly, we don't know exactly what will happen, and that's why we're doing this.
 
-After the beta period, we plan to:
+We want to find out if the routing works well enough, if requests actually land on nearby hosts or if they bounce around. We want to see where the onboarding loses people, which error messages are confusing, which features nobody uses. We want to know if the karma system (where hosts build reputation through reliable service) actually incentivizes good behavior or just creates busywork.
 
-- **Enable real billing** with Stripe-powered payments and host payouts.
-- **Expand model support** with more LLMs, vision models, and custom workloads.
-- **Launch the mobile agent** for iOS and Android.
-- **Grow the host network** across more regions.
+We want to hear from you. If something is broken, [open an issue](https://github.com/archipelag-io/archipelag-io/issues). If something is confusing, [email us](mailto:hello@archipelag.io). If you have an idea for something we should build, tell us.
 
-The exact timeline depends on what we learn during the beta. We're building this in public and will share updates on this blog and on [GitHub](https://github.com/archipelag-io).
+## Getting started
 
-## Thank You
+**Want to use AI?** [Sign up](https://app.archipelag.io/auth/register), open the chat, and start talking to a model. It's running on someone's GPU, probably not very far from where you're sitting.
 
-Open beta is a leap of faith — ours and yours. Thank you for trying something new, for reporting the bugs, and for believing that compute should be closer to the people who need it.
+**Want to host?** [Grab the node agent](https://github.com/archipelag-io/node-agent/releases), point it at your API key, and set when you're available. Jobs will start arriving.
 
-Let's build this together.
+**Want to build?** The [docs](https://docs.archipelag.io) have everything, including the [API reference](https://docs.archipelag.io/api) and SDK guides.
 
-— The Archipelag.io Team
+## What happens next
+
+After the beta, we plan to turn on real payments, add more models, launch mobile agents for phones and tablets, and grow the network into more regions. The specifics depend on what we learn over the next three months.
+
+We'll keep posting updates here and on [GitHub](https://github.com/archipelag-io). This is a small team building something that only works if people show up and use it. So thank you for showing up.
+
+Let's see what happens.
