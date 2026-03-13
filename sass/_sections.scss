@@ -503,7 +503,7 @@ html.light .nav-dropdown-chevron {
 .nav-dropdown-item {
   display: block;
   padding: var(--space-2) var(--space-4);
-  font-family: var(--font-body);
+  font-family: var(--font-brand);
   font-size: var(--text-xs);
   color: var(--text);
   text-decoration: none;
@@ -554,7 +554,7 @@ html.light .nav-dropdown-chevron {
 .site-footer {
   background: #0a0a0a;
   color: #a0a0a0;
-  padding: var(--space-16) 0 var(--space-8);
+  padding: var(--space-24) 0 var(--space-12);
   margin-top: var(--space-20);
 }
 
@@ -564,7 +564,7 @@ html.light .site-footer {
 }
 
 .footer-brand-row {
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-16);
 }
 
 .footer-logo {
@@ -586,18 +586,18 @@ html.light .site-footer {
 
 html.light .footer-logo img { filter: invert(1); }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-8) var(--space-6);
-  margin-bottom: var(--space-16);
+.site-footer .footer-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: var(--space-10) var(--space-8);
+  margin-bottom: var(--space-20);
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr) !important;
   }
 
   @media (min-width: 1024px) {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr) !important;
   }
 }
 
@@ -612,9 +612,11 @@ html.light .footer-logo img { filter: invert(1); }
   }
 
   .footer-links {
+    display: block !important;
     list-style: none;
     padding: 0;
     margin: 0;
+    flex-direction: column;
 
     li { margin-bottom: var(--space-3); }
 

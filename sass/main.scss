@@ -63,12 +63,11 @@ p, h1, h2, h3, h4, h5, h6 {
 // ============================================
 
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-brand);
   font-size: var(--text-base);
   line-height: 1.7;
   color: var(--text);
   background-color: var(--bg);
-  font-feature-settings: 'tnum';
 }
 
 a {

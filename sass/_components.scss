@@ -12,7 +12,7 @@
   justify-content: center;
   gap: var(--space-2);
   padding: var(--space-2) var(--space-5);
-  font-family: var(--font-body);
+  font-family: var(--font-brand);
   font-size: var(--text-xs);
   font-weight: 500;
   line-height: 1;
@@ -562,7 +562,7 @@ html.light .btn-primary {
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   font-size: var(--text-xs);
-  font-family: var(--font-body);
+  font-family: var(--font-brand);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-tertiary);
@@ -591,7 +591,7 @@ html.light .btn-primary {
   input[type="email"] {
     flex: 1;
     padding: var(--space-3) var(--space-4);
-    font-family: var(--font-body);
+    font-family: var(--font-brand);
     font-size: var(--text-sm);
     color: var(--text);
     background: var(--surface-1);
@@ -605,7 +605,7 @@ html.light .btn-primary {
 
   button[type="submit"] {
     padding: var(--space-3) var(--space-6);
-    font-family: var(--font-body);
+    font-family: var(--font-brand);
     font-size: var(--text-xs);
     font-weight: 500;
     text-transform: uppercase;
