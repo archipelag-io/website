@@ -1,0 +1,598 @@
+{% extends "base.html" %}
+
+{% block title %}Press Kit | {{ config.title }}{% endblock title %}
+
+{% block head_meta %}
+    <meta name="description" content="Brand assets, guidelines, and company information for journalists and media covering Archipelag.io.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ config.base_url }}/press/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ config.base_url }}/press/">
+    <meta property="og:title" content="Press Kit | {{ config.title }}">
+    <meta property="og:description" content="Brand assets, guidelines, and company information for journalists and media.">
+    <meta property="og:image" content="{{ config.base_url }}/og-image.png">
+    <meta property="og:site_name" content="{{ config.title }}">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Press Kit | {{ config.title }}">
+    <meta name="twitter:description" content="Brand assets, guidelines, and company information for journalists and media.">
+{% endblock head_meta %}
+
+{% block head_extra %}
+    <style>
+        .press-header {
+            padding: var(--space-20) 0 var(--space-12);
+        }
+        .press-title {
+            font-family: var(--font-brand);
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin: 0 0 var(--space-4);
+        }
+        .press-subtitle {
+            font-size: var(--text-lg);
+            color: var(--text-secondary);
+            max-width: 40rem;
+            line-height: 1.6;
+        }
+
+        .press-section {
+            padding: var(--space-12) 0;
+            border-top: 1px solid var(--border);
+        }
+        .press-section-title {
+            font-family: var(--font-brand);
+            font-size: var(--text-2xl);
+            font-weight: 400;
+            margin: 0 0 var(--space-6);
+        }
+        .press-section-subtitle {
+            font-size: var(--text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin: var(--space-8) 0 var(--space-3);
+        }
+        .press-section-subtitle:first-of-type {
+            margin-top: 0;
+        }
+
+        /* Boilerplate */
+        .press-boilerplate {
+            max-width: 40rem;
+        }
+        .press-boilerplate p {
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin: 0 0 var(--space-4);
+        }
+        .press-boilerplate .press-oneliner {
+            font-size: var(--text-lg);
+            color: var(--text);
+            font-weight: 500;
+        }
+        .press-copy-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: var(--text-xs);
+            cursor: pointer;
+            transition: border-color 0.2s, color 0.2s;
+            margin-top: var(--space-2);
+        }
+        .press-copy-btn:hover {
+            border-color: var(--text-secondary);
+            color: var(--text);
+        }
+        .press-copy-btn svg {
+            width: 0.85rem;
+            height: 0.85rem;
+        }
+
+        /* Brand name */
+        .press-brand-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-6);
+            max-width: 40rem;
+        }
+        @media (max-width: 639px) {
+            .press-brand-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .press-brand-do, .press-brand-dont {
+            padding: var(--space-4);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+        }
+        .press-brand-do-label, .press-brand-dont-label {
+            font-size: var(--text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-3);
+        }
+        .press-brand-do-label { color: #22c55e; }
+        .press-brand-dont-label { color: #ef4444; }
+        .press-brand-do ul, .press-brand-dont ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+        }
+        .press-brand-do li, .press-brand-dont li {
+            padding: 0.25rem 0;
+        }
+
+        /* Asset grid */
+        .press-asset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: var(--space-4);
+        }
+        .press-asset-card {
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+        .press-asset-card:hover {
+            border-color: var(--text-secondary);
+        }
+        .press-asset-preview {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-8) var(--space-6);
+            min-height: 140px;
+        }
+        .press-asset-preview img,
+        .press-asset-preview svg {
+            max-width: 100%;
+            max-height: 80px;
+        }
+        .press-asset-preview.dark-bg {
+            background: #0c0a09;
+        }
+        .press-asset-preview.light-bg {
+            background: #ffffff;
+        }
+        .press-asset-preview.checker-bg {
+            background-image: repeating-conic-gradient(#e7e5e4 0% 25%, transparent 0% 50%);
+            background-size: 16px 16px;
+        }
+        html:not(.light) .press-asset-preview.checker-bg {
+            background-image: repeating-conic-gradient(#292524 0% 25%, transparent 0% 50%);
+        }
+        .press-asset-info {
+            padding: var(--space-3) var(--space-4);
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .press-asset-name {
+            font-size: var(--text-sm);
+            font-weight: 500;
+        }
+        .press-asset-meta {
+            font-size: var(--text-xs);
+            color: var(--text-secondary);
+        }
+        .press-asset-dl {
+            font-size: var(--text-xs);
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .press-asset-dl:hover {
+            text-decoration: underline;
+        }
+
+        /* Color palette */
+        .press-color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: var(--space-4);
+        }
+        .press-color-card {
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+        .press-color-swatch {
+            height: 80px;
+        }
+        .press-color-info {
+            padding: var(--space-3) var(--space-4);
+        }
+        .press-color-name {
+            font-size: var(--text-sm);
+            font-weight: 500;
+            margin-bottom: 0.15rem;
+        }
+        .press-color-hex {
+            font-size: var(--text-xs);
+            color: var(--text-secondary);
+            font-family: var(--font-body);
+        }
+
+        /* Typography specimen */
+        .press-type-specimen {
+            max-width: 40rem;
+        }
+        .press-type-row {
+            padding: var(--space-4) 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .press-type-label {
+            font-size: var(--text-xs);
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-2);
+        }
+        .press-type-sample-brand {
+            font-family: var(--font-brand);
+            font-size: var(--text-3xl);
+            font-weight: 300;
+            letter-spacing: -0.02em;
+        }
+        .press-type-sample-body {
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        /* Contact */
+        .press-contact {
+            max-width: 40rem;
+        }
+        .press-contact p {
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+        .press-contact a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .press-contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* Facts table */
+        .press-facts {
+            max-width: 40rem;
+        }
+        .press-fact-row {
+            display: grid;
+            grid-template-columns: 10rem 1fr;
+            gap: var(--space-4);
+            padding: var(--space-3) 0;
+            border-bottom: 1px solid var(--border);
+            font-size: var(--text-sm);
+        }
+        @media (max-width: 639px) {
+            .press-fact-row {
+                grid-template-columns: 1fr;
+                gap: var(--space-1);
+            }
+        }
+        .press-fact-label {
+            color: var(--text-secondary);
+        }
+        .press-fact-value {
+            color: var(--text);
+        }
+    </style>
+{% endblock head_extra %}
+
+{% block content %}
+        <!-- Header -->
+        <section class="press-header">
+            <div class="container">
+                <h1 class="press-title">Press Kit</h1>
+                <p class="press-subtitle">Everything you need to write about Archipelag.io. Brand assets, company description, and contact information.</p>
+            </div>
+        </section>
+
+        <!-- Company description -->
+        <section class="press-section">
+            <div class="container">
+                <h2 class="press-section-title">About Archipelag.io</h2>
+                <div class="press-boilerplate">
+                    <p class="press-section-subtitle">One-liner</p>
+                    <p class="press-oneliner">Archipelag.io is a distributed compute network that routes AI workloads to nearby community-operated hardware.</p>
+                    <button class="press-copy-btn" data-copy="Archipelag.io is a distributed compute network that routes AI workloads to nearby community-operated hardware.">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        Copy
+                    </button>
+
+                    <p class="press-section-subtitle">Short description</p>
+                    <p>Archipelag.io connects people who need compute with people who already have it. Users submit AI workloads, and the network routes them to a nearby host: someone's gaming PC, workstation, or phone. The host runs the job in a sandboxed container, streams results back, and earns credits for the work. A coordinator service handles placement, dispatch, and billing.</p>
+                    <button class="press-copy-btn" data-copy="Archipelag.io connects people who need compute with people who already have it. Users submit AI workloads, and the network routes them to a nearby host: someone's gaming PC, workstation, or phone. The host runs the job in a sandboxed container, streams results back, and earns credits for the work. A coordinator service handles placement, dispatch, and billing.">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        Copy
+                    </button>
+
+                    <p class="press-section-subtitle">Extended description</p>
+                    <p>Archipelag.io is a distributed compute network where anyone can contribute GPU, CPU, or neural engine resources and earn credits, while users get AI inference served from hardware that might be down the street rather than in a data center three time zones away. The platform supports LLM chat, image generation, and general inference workloads, with hosts ranging from gaming PCs with discrete GPUs to iPhones running small models on-device. A reputation system called karma tracks host reliability, and a compute exchange sets prices through supply and demand. The network is currently in open beta, with all credits and earnings virtual through June 2026.</p>
+                    <button class="press-copy-btn" data-copy="Archipelag.io is a distributed compute network where anyone can contribute GPU, CPU, or neural engine resources and earn credits, while users get AI inference served from hardware that might be down the street rather than in a data center three time zones away. The platform supports LLM chat, image generation, and general inference workloads, with hosts ranging from gaming PCs with discrete GPUs to iPhones running small models on-device. A reputation system called karma tracks host reliability, and a compute exchange sets prices through supply and demand. The network is currently in open beta, with all credits and earnings virtual through June 2026.">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        Copy
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick facts -->
+        <section class="press-section">
+            <div class="container">
+                <h2 class="press-section-title">Quick facts</h2>
+                <div class="press-facts">
+                    <div class="press-fact-row">
+                        <span class="press-fact-label">Full name</span>
+                        <span class="press-fact-value">Archipelag.io</span>
+                    </div>
+                    <div class="press-fact-row">
+                        <span class="press-fact-label">Pronunciation</span>
+                        <span class="press-fact-value">ar-ki-PEL-ag dot eye-oh</span>
+                    </div>
+                    <div class="press-fact-row">
+                        <span class="press-fact-label">Short form</span>
+                        <span class="press-fact-value">Archipelag</span>
+                    </div>
+                    <div class="press-fact-row">
+                        <span class="press-fact-label">Founded</span>
+                        <span class="press-fact-value">2025</span>
+                    </div>
+                    <div class="press-fact-row">
+                        <span class="press-fact-label">Status</span>
+                        <span class="press-fact-value">Open beta (through June 2026)</span>
+                    </div>
+                    <div class="press-fact-row">
+                        <span class="press-fact-label">Category</span>
+                        <span class="press-fact-value">Distributed computing, AI infrastructure</span>
+                    </div>
+                    <div class="press-fact-row">
+                        <span class="press-fact-label">Website</span>
+                        <span class="press-fact-value"><a href="https://archipelag.io" style="color: var(--accent); text-decoration: none;">archipelag.io</a></span>
+                    </div>
+                    <div class="press-fact-row">
+                        <span class="press-fact-label">GitHub</span>
+                        <span class="press-fact-value"><a href="https://github.com/archipelag-io" style="color: var(--accent); text-decoration: none;">github.com/archipelag-io</a></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand name usage -->
+        <section class="press-section">
+            <div class="container">
+                <h2 class="press-section-title">Brand name</h2>
+                <div class="press-brand-grid">
+                    <div class="press-brand-do">
+                        <div class="press-brand-do-label">Use</div>
+                        <ul>
+                            <li>Archipelag.io</li>
+                            <li>Archipelag</li>
+                        </ul>
+                    </div>
+                    <div class="press-brand-dont">
+                        <div class="press-brand-dont-label">Don't use</div>
+                        <ul>
+                            <li>Archipelago</li>
+                            <li>archipelag.io (lowercase start)</li>
+                            <li>ARCHIPELAG.IO</li>
+                            <li>Archipelag.IO</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Logo and assets -->
+        <section class="press-section">
+            <div class="container">
+                <h2 class="press-section-title">Logo and assets</h2>
+
+                <p class="press-section-subtitle">Brandmark</p>
+                <div class="press-asset-grid">
+                    <div class="press-asset-card">
+                        <div class="press-asset-preview dark-bg">
+                            <img src="/img/archipelagio-brandmark.png" alt="Archipelag.io brandmark on dark background" width="80" height="80">
+                        </div>
+                        <div class="press-asset-info">
+                            <div>
+                                <div class="press-asset-name">Brandmark</div>
+                                <div class="press-asset-meta">PNG, 512x512</div>
+                            </div>
+                            <a href="/img/archipelagio-brandmark.png" download class="press-asset-dl">Download</a>
+                        </div>
+                    </div>
+                    <div class="press-asset-card">
+                        <div class="press-asset-preview light-bg">
+                            <img src="/img/archipelagio-brandmark.png" alt="Archipelag.io brandmark on light background" width="80" height="80">
+                        </div>
+                        <div class="press-asset-info">
+                            <div>
+                                <div class="press-asset-name">Brandmark</div>
+                                <div class="press-asset-meta">AVIF, 512x512</div>
+                            </div>
+                            <a href="/img/archipelagio-brandmark.avif" download class="press-asset-dl">Download</a>
+                        </div>
+                    </div>
+                    <div class="press-asset-card">
+                        <div class="press-asset-preview checker-bg">
+                            <img src="/favicon.svg" alt="Archipelag.io network icon" width="64" height="64">
+                        </div>
+                        <div class="press-asset-info">
+                            <div>
+                                <div class="press-asset-name">Network icon</div>
+                                <div class="press-asset-meta">SVG</div>
+                            </div>
+                            <a href="/favicon.svg" download class="press-asset-dl">Download</a>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="press-section-subtitle">Wordmark</p>
+                <div class="press-asset-grid">
+                    <div class="press-asset-card">
+                        <div class="press-asset-preview dark-bg">
+                            <img src="/img/archipelagio-wordmark-dark.svg" alt="Archipelag.io wordmark for dark backgrounds">
+                        </div>
+                        <div class="press-asset-info">
+                            <div>
+                                <div class="press-asset-name">Wordmark (dark bg)</div>
+                                <div class="press-asset-meta">SVG</div>
+                            </div>
+                            <a href="/img/archipelagio-wordmark-dark.svg" download class="press-asset-dl">Download</a>
+                        </div>
+                    </div>
+                    <div class="press-asset-card">
+                        <div class="press-asset-preview light-bg">
+                            <img src="/img/archipelagio-wordmark-light.svg" alt="Archipelag.io wordmark for light backgrounds">
+                        </div>
+                        <div class="press-asset-info">
+                            <div>
+                                <div class="press-asset-name">Wordmark (light bg)</div>
+                                <div class="press-asset-meta">SVG</div>
+                            </div>
+                            <a href="/img/archipelagio-wordmark-light.svg" download class="press-asset-dl">Download</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Colors -->
+        <section class="press-section">
+            <div class="container">
+                <h2 class="press-section-title">Colors</h2>
+
+                <p class="press-section-subtitle">Primary palette</p>
+                <div class="press-color-grid">
+                    <div class="press-color-card">
+                        <div class="press-color-swatch" style="background: #0d9488;"></div>
+                        <div class="press-color-info">
+                            <div class="press-color-name">Teal (accent)</div>
+                            <div class="press-color-hex">#0d9488</div>
+                        </div>
+                    </div>
+                    <div class="press-color-card">
+                        <div class="press-color-swatch" style="background: #2dd4bf;"></div>
+                        <div class="press-color-info">
+                            <div class="press-color-name">Teal light</div>
+                            <div class="press-color-hex">#2dd4bf</div>
+                        </div>
+                    </div>
+                    <div class="press-color-card">
+                        <div class="press-color-swatch" style="background: #0891b2;"></div>
+                        <div class="press-color-info">
+                            <div class="press-color-name">Lagoon</div>
+                            <div class="press-color-hex">#0891b2</div>
+                        </div>
+                    </div>
+                    <div class="press-color-card">
+                        <div class="press-color-swatch" style="background: #f59e0b;"></div>
+                        <div class="press-color-info">
+                            <div class="press-color-name">Coral</div>
+                            <div class="press-color-hex">#f59e0b</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="press-section-subtitle">Backgrounds</p>
+                <div class="press-color-grid">
+                    <div class="press-color-card">
+                        <div class="press-color-swatch" style="background: #0c0a09; border-bottom: 1px solid #292524;"></div>
+                        <div class="press-color-info">
+                            <div class="press-color-name">Dark background</div>
+                            <div class="press-color-hex">#0c0a09</div>
+                        </div>
+                    </div>
+                    <div class="press-color-card">
+                        <div class="press-color-swatch" style="background: #1c1917; border-bottom: 1px solid #292524;"></div>
+                        <div class="press-color-info">
+                            <div class="press-color-name">Dark surface</div>
+                            <div class="press-color-hex">#1c1917</div>
+                        </div>
+                    </div>
+                    <div class="press-color-card">
+                        <div class="press-color-swatch" style="background: #ffffff;"></div>
+                        <div class="press-color-info">
+                            <div class="press-color-name">Light background</div>
+                            <div class="press-color-hex">#ffffff</div>
+                        </div>
+                    </div>
+                    <div class="press-color-card">
+                        <div class="press-color-swatch" style="background: #fafaf9;"></div>
+                        <div class="press-color-info">
+                            <div class="press-color-name">Light surface</div>
+                            <div class="press-color-hex">#fafaf9</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typography -->
+        <section class="press-section">
+            <div class="container">
+                <h2 class="press-section-title">Typography</h2>
+                <div class="press-type-specimen">
+                    <div class="press-type-row">
+                        <div class="press-type-label">Headings: Satoshi, Light 300</div>
+                        <div class="press-type-sample-brand">The compute is already here</div>
+                    </div>
+                    <div class="press-type-row">
+                        <div class="press-type-label">Body: iA Writer Quattro S, monospace</div>
+                        <div class="press-type-sample-body">A distributed compute network where you contribute what you have and use what you need. The hardware exists. The bandwidth exists. The people exist. We built the coordination layer to connect it all.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="press-section">
+            <div class="container">
+                <h2 class="press-section-title">Contact</h2>
+                <div class="press-contact">
+                    <p>For press inquiries, interviews, or if you need assets in a format not listed here: <a href="mailto:press@archipelag.io">press@archipelag.io</a></p>
+                    <p>For general questions about the platform: <a href="mailto:hello@archipelag.io">hello@archipelag.io</a></p>
+                </div>
+            </div>
+        </section>
+{% endblock content %}
+
+{% block scripts %}
+    <script>
+    (function() {
+        document.querySelectorAll('[data-copy]').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var text = this.getAttribute('data-copy');
+                navigator.clipboard.writeText(text).then(function() {
+                    var orig = btn.innerHTML;
+                    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:0.85rem;height:0.85rem"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied';
+                    setTimeout(function() { btn.innerHTML = orig; }, 1500);
+                });
+            });
+        });
+    })();
+    </script>
+{% endblock scripts %}

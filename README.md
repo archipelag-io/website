@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://archipelag.io"><img src="https://img.shields.io/website?url=https%3A%2F%2Farchipelag.io&label=archipelag.io" alt="Website"></a>
+  <a href="https://github.com/archipelag-io/website/blob/main/LICENSE"><img src="https://img.shields.io/github/license/archipelag-io/website" alt="License"></a>
+  <a href="https://www.getzola.org/"><img src="https://img.shields.io/badge/Built_with-Zola-blue" alt="Built with Zola"></a>
+</p>
+
 # Archipelag.io Website
 
 Marketing website for [archipelag.io](https://archipelag.io), built with [Zola](https://www.getzola.org/) static site generator.
@@ -234,6 +240,10 @@ See `.github/workflows/deploy.yml` for details.
 mise run build
 # Upload public/ to any static host
 ```
+
+## Contributing
+
+Contributions are welcome! Please see our [Contributing Guidelines](https://github.com/archipelag-io/.github/blob/main/CONTRIBUTING.md) and [Code of Conduct](https://github.com/archipelag-io/.github/blob/main/CODE_OF_CONDUCT.md).
 
 ## External Links
 

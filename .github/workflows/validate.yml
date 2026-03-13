@@ -1,0 +1,22 @@
+name: Validate
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Zola
+        run: |
+          curl -sL https://github.com/getzola/zola/releases/download/v0.19.2/zola-v0.19.2-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          sudo mv zola /usr/local/bin/
+
+      - name: Build site
+        run: zola build
+
+      - name: Check for broken internal links
+        run: zola check
