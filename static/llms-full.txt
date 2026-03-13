@@ -148,7 +148,7 @@ Basic usage is available without KYC. For higher-tier features and compliance ne
 - Website: https://archipelag.io
 - App: https://app.archipelag.io
 - Documentation: https://docs.archipelag.io
-- API Reference: https://docs.archipelag.io/api
+- API Reference: https://app.archipelag.io/api/v1/docs
 - SDKs: https://docs.archipelag.io/sdks
 - Developer Portal: https://app.archipelag.io/developer
 - Playground: https://app.archipelag.io/playground

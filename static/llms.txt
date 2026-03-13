@@ -59,7 +59,7 @@ Archipelag.io (pronounced "archipelago") is a decentralized AI compute network. 
 - Website: https://archipelag.io
 - App: https://app.archipelag.io
 - Documentation: https://docs.archipelag.io
-- API Reference: https://docs.archipelag.io/api
+- API Reference: https://app.archipelag.io/api/v1/docs
 - GitHub: https://github.com/archipelag-io
 - Contact: hello@archipelag.io
 - Support: support@archipelag.io

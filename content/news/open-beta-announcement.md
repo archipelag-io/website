@@ -73,7 +73,7 @@ We want to hear from you. If something is broken, [open an issue](https://github
 
 **Want to host?** [Grab the node agent](https://github.com/archipelag-io/node-agent/releases), point it at your API key, and set when you're available. Jobs will start arriving.
 
-**Want to build?** The [docs](https://docs.archipelag.io) have everything, including the [API reference](https://docs.archipelag.io/api) and SDK guides.
+**Want to build?** The [docs](https://docs.archipelag.io) have everything, including the [API reference](https://app.archipelag.io/api/v1/docs) and SDK guides.
 
 ## What happens next
 
