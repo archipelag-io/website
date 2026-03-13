@@ -5,7 +5,7 @@ date = 2025-01-26
 draft = true
 
 [extra]
-category = "Blog"
+category = "Announcement"
 +++
 
 We're just getting started. Check back soon for updates on:

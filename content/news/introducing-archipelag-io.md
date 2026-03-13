@@ -4,7 +4,7 @@ description = "We built a distributed compute network that routes AI workloads t
 date = 2025-01-26
 
 [extra]
-category = "Blog"
+category = "Announcement"
 +++
 
 This started with a question that kept nagging at us: why are we sending AI requests halfway across a continent when there's a perfectly good GPU two blocks away?

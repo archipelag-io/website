@@ -4,7 +4,7 @@ description = "We're opening Archipelag.io to everyone for three months. Come us
 date = 2026-03-13
 
 [extra]
-category = "Blog"
+category = "Announcement"
 +++
 
 There's a GPU in your computer that spends most of its life doing nothing.
