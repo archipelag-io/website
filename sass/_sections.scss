@@ -147,7 +147,7 @@ html.light .section-ocean::before {
 .section-eyebrow-numbered {
   display: inline-block;
   font-family: var(--font-body);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: var(--text-tertiary);
@@ -157,6 +157,8 @@ html.light .section-ocean::before {
     color: var(--accent);
     font-weight: 700;
     margin-right: var(--space-2);
+    font-feature-settings: "zero" 1;
+    font-variant-numeric: slashed-zero;
   }
 }
 
@@ -766,16 +768,11 @@ html.light .site-footer {
   border-top-color: rgba(255, 255, 255, 0.04);
 }
 
-// Brand column — spans all rows on desktop
+// Brand column
 .footer-brand-col {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-
-  @media (min-width: 1200px) {
-    grid-column: 1;
-    grid-row: 1 / -1;
-  }
 }
 
 .footer-logo {
@@ -824,15 +821,14 @@ html.light .footer-logo img { filter: invert(1); }
   @media (min-width: 1200px) {
     grid-template-columns: 1.4fr repeat(5, 1fr) !important;
     gap: 3.5rem 3rem;
-
-    // Second row of nav columns: start at column 2 (below first row, not below brand)
-    .footer-column:nth-child(n+7) {
-      grid-column-start: auto;
-    }
-    .footer-column:nth-child(7) {
-      grid-column-start: 2;
-    }
   }
+}
+
+// Stacked column pairs — two navs flow naturally within one grid cell
+.footer-col-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
 .footer-column {
@@ -852,7 +848,7 @@ html.light .footer-logo img { filter: invert(1); }
     padding: 0;
     margin: 0;
 
-    li { margin-bottom: var(--space-4); }
+    li { margin-bottom: var(--space-2); }
 
     a {
       font-family: var(--font-brand);
