@@ -244,7 +244,7 @@ name = "${HOSTNAME}"
 region = "auto"
 
 [coordinator]
-nats_url = "nats://nats.archipelag.io:4222"
+nats_url = "tls://island:f925ab35cc3c46e51af6bb9fb900ed47e16c940e4e196bc4@sail.archipelag.io:4222"
 
 [workload]
 llm_chat_image = "ghcr.io/archipelag-io/llm-chat:latest"
