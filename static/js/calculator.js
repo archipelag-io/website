@@ -97,6 +97,10 @@
   var PLATFORM_FEE = 0.20;
   var CREDIT_VALUE = 0.01; // $0.01 per credit (beta)
 
+  // Utilization: percentage of online time the GPU is actually running jobs.
+  // Beta network has limited demand — conservative estimate.
+  var UTILIZATION = 0.15; // 15% of online time is actual job execution
+
   // Populate GPU selector
   var select = document.getElementById('calc-gpu');
   GPU_DB.forEach(function (gpu) {
@@ -128,12 +132,12 @@
     var mult = TIER_MULT[gpu.tier] || 1.0;
 
     var html = '';
-    var totalDaily = 0;
+    var bestDaily = 0; // Track best single workload (GPU runs one at a time)
 
     WORKLOADS.forEach(function (wl) {
       var canRun = gpu.vram >= wl.minVram;
       var tokS = 0;
-      var jobsPerHour = 0;
+      var throughputLabel = '';
       var fitLevel = '';
       var creditsPerHour = 0;
 
@@ -142,23 +146,35 @@
         var efficiency = 0.55;
         var modeFactor = gpu.vram >= (wl.modelGb * 1.2) ? 1.0 : 0.5;
         tokS = Math.round(gpu.bw / wl.modelGb * efficiency * modeFactor);
-        // Assume ~200 tokens per chat response, so jobs/hr = tok_s * 3600 / 200
-        jobsPerHour = Math.round(tokS * 3600 / 200);
+        throughputLabel = tokS + ' tok/s';
         fitLevel = modeFactor === 1.0 ? 'Perfect' : 'Good';
+        // A typical chat request: ~200 output tokens at this tok/s rate,
+        // plus ~2s overhead (scheduling, container, prefill).
+        // Time per job = (200 / tokS) + 2 seconds
+        var secsPerJob = (200 / Math.max(tokS, 1)) + 2;
+        var maxJobsPerHour = Math.floor(3600 / secsPerJob);
+        // Apply utilization — GPU isn't busy 100% of the time
+        var jobsPerHour = Math.round(maxJobsPerHour * UTILIZATION);
         creditsPerHour = jobsPerHour * wl.basePrice * mult * (1 - PLATFORM_FEE);
       } else if (canRun && wl.type === 'container') {
-        // Container: assume ~15s per job
-        jobsPerHour = 240;
+        // Image generation: ~30s per image, not 15s
+        var maxPerHour = 120;
+        var jobsPerHour = Math.round(maxPerHour * UTILIZATION);
+        throughputLabel = jobsPerHour + ' jobs/hr';
         fitLevel = gpu.vram >= wl.minVram * 1.5 ? 'Perfect' : 'Good';
         creditsPerHour = jobsPerHour * wl.basePrice * mult * (1 - PLATFORM_FEE);
       } else if (canRun && wl.type === 'wasm') {
-        // WASM: lightweight, high throughput
-        jobsPerHour = 600;
+        // WASM: lightweight but still rate-limited by demand
+        var maxPerHour = 300;
+        var jobsPerHour = Math.round(maxPerHour * UTILIZATION);
+        throughputLabel = jobsPerHour + ' jobs/hr';
         fitLevel = 'Perfect';
         creditsPerHour = jobsPerHour * wl.basePrice * mult * (1 - PLATFORM_FEE);
       }
 
-      totalDaily += canRun ? (creditsPerHour * hoursPerDay) : 0;
+      // Track best single workload (a GPU serves one workload type at a time)
+      var thisDaily = canRun ? (creditsPerHour * hoursPerDay) : 0;
+      if (thisDaily > bestDaily) bestDaily = thisDaily;
 
       html += '<tr class="' + (canRun ? '' : 'calc-disabled') + '">';
       html += '<td>' + wl.name + '</td>';
@@ -169,15 +185,7 @@
         html += '<span class="calc-badge calc-badge-' + fitLevel.toLowerCase() + '">' + fitLevel + '</span>';
       }
       html += '</td>';
-      html += '<td>';
-      if (canRun && wl.type === 'llm') {
-        html += tokS + ' tok/s';
-      } else if (canRun) {
-        html += jobsPerHour + ' jobs/hr';
-      } else {
-        html += '&mdash;';
-      }
-      html += '</td>';
+      html += '<td>' + (canRun ? throughputLabel : '&mdash;') + '</td>';
       html += '<td>';
       if (canRun) {
         html += Math.round(creditsPerHour).toLocaleString() + ' cr/hr';
@@ -188,15 +196,15 @@
       html += '</tr>';
     });
 
-    // Summary
-    var dailyCredits = Math.round(totalDaily);
+    // Summary: use best single workload, not sum of all
+    var dailyCredits = Math.round(bestDaily);
     var monthlyCredits = dailyCredits * 30;
     var monthlyUsd = (monthlyCredits * CREDIT_VALUE).toFixed(2);
 
     document.getElementById('calc-daily').textContent = dailyCredits.toLocaleString();
     document.getElementById('calc-monthly').textContent = monthlyCredits.toLocaleString();
     document.getElementById('calc-usd').textContent = '$' + monthlyUsd;
-    document.getElementById('calc-tier').textContent = gpu.tier.replace('_', ' ');
+    document.getElementById('calc-tier').textContent = gpu.tier.replace(/_/g, ' ');
     document.getElementById('calc-mult').textContent = mult + 'x';
 
     document.getElementById('calc-table-body').innerHTML = html;
