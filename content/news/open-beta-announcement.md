@@ -81,7 +81,7 @@ After the beta, we plan to turn on real payments, add more models, and grow the 
 
 The longer arc is this: we want to build a compute network that's as decentralized and resilient as the internet was supposed to be. One where a freelance developer in Kraków can spin up an AI feature without a cloud contract. Where a student in Lagos can access the same models as a researcher at Stanford, served from hardware in their own city. Where the person running an Island earns enough to cover their electricity bill and then some, turning idle hardware into a genuine income stream.
 
-We're not pretending this is easy. Distributed systems are hard, incentive design is hard, getting strangers to trust a network with their hardware and their workloads is hard. But the alternative, a future where all AI compute funnels through three or four corporate clouds, is not a future we want to build toward.
+We're not pretending this is easy. Distributed systems are hard, incentive design is hard, getting strangers to trust a network with their hardware and their Cargos is hard. But the alternative, a future where all AI compute funnels through three or four corporate clouds, is not a future we want to build toward.
 
 We'll keep posting updates here and on [GitHub](https://github.com/archipelag-io). This is a small team building something that only works if people show up and use it. So thank you for showing up.
 

@@ -19,24 +19,24 @@ This Privacy Policy describes how Archipelag.io ("we", "us", or "our") collects,
 
 ### Information Collected Automatically
 
-- **Usage Data**: We collect information about how you use our Services, including API calls, workload types, and timestamps.
+- **Usage Data**: We collect information about how you use our Services, including API calls, Cargo types, and timestamps.
 - **Device Information**: We collect information about the device you use to access our Services, including browser type, operating system, and device identifiers.
 - **Log Data**: Our servers automatically record information including your IP address, access times, and pages viewed.
 - **Cookies**: We use essential cookies to maintain your session and preferences. We do not use third-party tracking cookies.
 
 ### Information from Islands
 
-When workloads run on Island machines:
-- Islands receive only the minimum data necessary to execute workloads
+When Cargos run on Island machines:
+- Islands receive only the minimum data necessary to execute Cargos
 - All data is encrypted in transit using TLS 1.3
-- Workloads run in isolated containers with no persistent storage
-- Islands cannot access or retain consumer data after workload completion
+- Cargos run in isolated containers with no persistent storage
+- Islands cannot access or retain consumer data after Cargo completion
 
 ## How We Use Your Information
 
 We use the information we collect to:
 
-- **Provide Services**: Process your requests, route workloads, and deliver results
+- **Provide Services**: Process your requests, route Cargos, and deliver results
 - **Manage Accounts**: Create and manage your account, process payments, and handle payouts
 - **Improve Services**: Analyze usage patterns to improve performance and develop new features
 - **Ensure Security**: Detect and prevent fraud, abuse, and security threats
@@ -53,7 +53,7 @@ We do not sell your personal information. We share information only in these cir
 - **Email services**: Transactional email delivery
 
 ### With Islands
-- Islands receive anonymized workload data necessary for execution
+- Islands receive anonymized Cargo data necessary for execution
 - Islands do not receive your identity, account details, or payment information
 - Geographic routing data is approximate (city-level) only
 

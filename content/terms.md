@@ -70,11 +70,11 @@ To participate as an Island (compute contributor), you must:
 - Maintain adequate internet connectivity
 - Comply with local laws regarding electricity usage and business operations
 
-### 5.2 Workload Execution
+### 5.2 Cargo Execution
 As an Island, you agree to:
-- Run only approved, signed workloads from our platform
-- Not inspect, copy, or retain consumer data processed through workloads
-- Maintain the security and isolation of workload containers
+- Run only approved, signed Cargos from our platform
+- Not inspect, copy, or retain consumer data processed through Cargos
+- Maintain the security and isolation of Cargo containers
 - Report any security incidents immediately
 
 ### 5.3 Earnings and Payouts
@@ -93,7 +93,7 @@ As an Island, you agree to:
 
 ### 6.2 Credit Usage
 - Credits are deducted based on actual compute usage
-- Usage rates vary by workload type and are displayed before submission
+- Usage rates vary by Cargo type and are displayed before submission
 - We reserve the right to adjust pricing with 30 days notice
 
 ### 6.3 Refunds

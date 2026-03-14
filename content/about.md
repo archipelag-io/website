@@ -9,7 +9,7 @@ description = "Archipelag.io builds sovereign compute infrastructure rooted in S
 
 ## Our Mission
 
-We're building compute infrastructure that respects data sovereignty. Every organization should be able to run AI workloads with full control over where their data is processed, who processes it, and how it's handled.
+We're building compute infrastructure that respects data sovereignty. Every organization should be able to run AI Cargos with full control over where their data is processed, who processes it, and how it's handled.
 
 Sovereignty is not a feature. It's the foundation.
 
@@ -28,7 +28,7 @@ For regulated industries — healthcare, finance, government — these aren't in
 
 Archipelag.io creates a distributed compute network where:
 
-- **Jurisdiction routing** ensures workloads run in specific regions — EU, Switzerland, or custom zones
+- **Jurisdiction routing** ensures Cargos run in specific regions — EU, Switzerland, or custom zones
 - **Verified nodes** are operated by attested providers with documented compliance capabilities
 - **Policy enforcement** happens at the infrastructure level, not as an afterthought
 - **Audit trails** document every execution for regulatory review
@@ -48,13 +48,13 @@ Our platform is built on:
 - **Rust agents** for efficient, secure edge computing with hardware attestation
 - **Elixir/Phoenix** for the coordination layer with real-time streaming
 - **NATS messaging** for reliable, low-latency job dispatch
-- **Container isolation** with signed workloads and seccomp profiles
+- **Container isolation** with signed Cargos and seccomp profiles
 - **Cryptographic verification** for node identity and execution integrity
 
 ## Security & Privacy
 
 - **Verified providers**: Every node operator goes through identity and compliance verification
-- **Signed workloads**: Only network-approved containers can execute
+- **Signed Cargos**: Only network-approved containers can execute
 - **Encrypted communication**: All traffic secured with mTLS
 - **Hardware isolation**: Strict resource limits, sandboxed execution
 - **Audit logging**: Complete execution records for regulatory review

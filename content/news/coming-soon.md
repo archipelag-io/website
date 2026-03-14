@@ -10,7 +10,7 @@ category = "Announcement"
 
 We're just getting started. Check back soon for updates on:
 
-- New workload types and models
+- New Cargo types and models
 - Community host spotlights
 - Technical architecture deep dives
 - Network performance insights

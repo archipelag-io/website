@@ -13,23 +13,23 @@ Security is fundamental to Archipelag.io. We've designed our platform with secur
 We operate on a zero-trust security model where:
 
 - **Consumers don't trust Islands**: All consumer data is encrypted and Islands never see plaintext content
-- **Islands don't trust workloads**: All workloads run in isolated containers with strict resource limits
-- **The coordinator is the authority**: Cryptographically signed workloads and authenticated communications
+- **Islands don't trust Cargos**: All Cargos run in isolated containers with strict resource limits
+- **The coordinator is the authority**: Cryptographically signed Cargos and authenticated communications
 
 ### Encryption
 
 - **In Transit**: All communications use TLS 1.3 with modern cipher suites
 - **At Rest**: Sensitive data encrypted using AES-256-GCM
-- **Workload Data**: End-to-end encryption for sensitive workload payloads
+- **Cargo Data**: End-to-end encryption for sensitive Cargo payloads
 - **API Keys**: Hashed using Argon2id before storage
 
 ### Workload Isolation
 
-Every workload on our network runs in complete isolation:
+Every Cargo on our network runs in complete isolation:
 
 - **Container Sandboxing**: Docker containers with seccomp profiles and AppArmor
 - **Resource Limits**: Strict CPU, memory, and network quotas
-- **No Persistent Storage**: Workloads cannot write to Island filesystems
+- **No Persistent Storage**: Cargos cannot write to Island filesystems
 - **Network Restrictions**: Outbound-only connections, no Island network access
 - **Signed Images**: Only cryptographically signed container images can execute
 
@@ -63,7 +63,7 @@ The Archipelag.io Island software is designed with security as a priority:
 ### Data Protection
 
 - **Regional Processing**: Data processed in your geographic region by default
-- **No Data Retention**: Workload inputs and outputs not stored after completion
+- **No Data Retention**: Cargo inputs and outputs not stored after completion
 - **Audit Logging**: Complete audit trail of account and API activity
 - **Right to Deletion**: Request complete data deletion at any time
 

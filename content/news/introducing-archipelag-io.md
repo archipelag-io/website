@@ -1,6 +1,6 @@
 +++
 title = "Introducing Archipelag.io"
-description = "We built a distributed compute network that routes AI workloads to nearby hardware instead of distant data centers. Here's the story of why, and what it actually does."
+description = "We built a distributed compute network that routes AI Cargos to nearby hardware instead of distant data centers. Here's the story of why, and what it actually does."
 date = 2025-01-26
 
 [extra]
@@ -17,11 +17,11 @@ We decided to see if we could connect those two sides.
 
 ## What Archipelag.io actually is
 
-The short version: you send us an AI workload (a chat message, an image prompt, an API call), and we route it to a nearby Island that can handle it. That machine runs the job, streams the result back to you, and the person who owns it earns money for the work.
+The short version: you send us an AI Cargo (a chat message, an image prompt, an API call), and we route it to a nearby Island that can handle it. That machine runs the job, streams the result back to you, and the person who owns it earns money for the work.
 
 The longer version involves a coordinator service that tracks which Islands are online, what hardware they have, how reliable they've been, and where they are relative to you. When a job comes in, the coordinator picks the best available Island based on all of that, dispatches the job over NATS (a messaging system built for exactly this kind of thing), and the Island software picks it up, runs it in a sandboxed container, and streams output back through the coordinator to your browser or API client.
 
-Islands build up a reputation score we call karma. Complete jobs reliably, respond quickly, stay online when you say you will, and your karma goes up. Higher karma means you get offered better jobs and can charge higher rates. Flake out or produce bad results, and the system routes around you. It's a simple mechanism, but it aligns incentives in a way that matters when you're trusting strangers' hardware with real workloads.
+Islands build up a reputation score we call karma. Complete jobs reliably, respond quickly, stay online when you say you will, and your karma goes up. Higher karma means you get offered better jobs and can charge higher rates. Flake out or produce bad results, and the system routes around you. It's a simple mechanism, but it aligns incentives in a way that matters when you're trusting strangers' hardware with real Cargos.
 
 ## What you can do with it today
 
@@ -47,7 +47,7 @@ We're not trying to replace cloud providers. Data centers are good at sustained,
 
 Over the coming months, we're adding more models, expanding into more regions, and shipping SDKs for Python and JavaScript so developers can build on top of this without thinking about the infrastructure underneath. We're also working on a mobile Island, because modern phones have serious compute capabilities and there's no reason they shouldn't participate in the network too.
 
-The harder work is in the economics and the trust model. How do you price compute fairly when every Island has different hardware, different electricity costs, different availability patterns? How do you build enough trust that people are willing to send real workloads to strangers' machines? We have initial answers to both of these, but they're hypotheses, not conclusions. We need real usage to test them.
+The harder work is in the economics and the trust model. How do you price compute fairly when every Island has different hardware, different electricity costs, different availability patterns? How do you build enough trust that people are willing to send real Cargos to strangers' machines? We have initial answers to both of these, but they're hypotheses, not conclusions. We need real usage to test them.
 
 ## Try it
 
