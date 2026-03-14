@@ -3,17 +3,17 @@
 {% block title %}Contribute Compute | {{ config.title }}{% endblock title %}
 
 {% block head_meta %}
-    <meta name="description" content="Run the node agent on your GPU machine and earn credits for AI inference jobs. Market-based pricing, sandboxed execution, identity-verified hosts. Open beta.">
+    <meta name="description" content="Turn your GPU into an Island on the Archipelag.io network and earn credits for AI inference jobs. Market-based pricing, sandboxed execution, identity-verified. Open beta.">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
-    <meta name="keywords" content="GPU hosting, compute hosting, earn with GPU, distributed computing, AI hosting, community compute, node agent, passive income GPU, GPU marketplace, rent GPU">
+    <meta name="keywords" content="GPU earning, compute island, earn with GPU, distributed computing, AI compute, community compute, archipelag island, passive income GPU, GPU marketplace, rent GPU">
     <link rel="canonical" href="{{ config.base_url }}/earn/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ config.base_url }}/earn/">
     <meta property="og:title" content="Contribute Compute &amp; Earn | {{ config.title }}">
-    <meta property="og:description" content="Run the node agent on your GPU and earn credits for completed AI inference jobs. Set your own price.">
+    <meta property="og:description" content="Turn your GPU into an Island on Archipelag.io and earn credits for completed AI inference jobs. Set your own price.">
     <meta property="og:image" content="{{ config.base_url }}/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -26,7 +26,7 @@
     <meta name="twitter:site" content="{{ config.extra.twitter }}">
     <meta name="twitter:creator" content="{{ config.extra.twitter }}">
     <meta name="twitter:title" content="Contribute Compute &amp; Earn | {{ config.title }}">
-    <meta name="twitter:description" content="Run the node agent on your GPU and earn credits for completed inference jobs. Open beta.">
+    <meta name="twitter:description" content="Turn your GPU into an Island on Archipelag.io and earn credits for completed inference jobs. Open beta.">
     <meta name="twitter:image" content="{{ config.base_url }}/og-image.png">
     <meta name="twitter:image:alt" content="Archipelag.io - Contribute Compute">
 {% endblock head_meta %}
@@ -42,7 +42,7 @@
                 "@id": "{{ config.base_url }}/earn/",
                 "url": "{{ config.base_url }}/earn/",
                 "name": "Contribute Compute and Earn",
-                "description": "Run the node agent on your GPU machine and earn credits for AI inference jobs on the Archipelag.io network.",
+                "description": "Turn your GPU into an Island on the Archipelag.io network and earn credits for AI inference jobs.",
                 "isPartOf": {
                     "@id": "{{ config.base_url }}/#website"
                 },
@@ -75,7 +75,7 @@
             },
             {
                 "@type": "HowTo",
-                "name": "How to host AI workloads on Archipelag.io",
+                "name": "How to become an Island on Archipelag.io",
                 "description": "Start earning by contributing your GPU compute to the Archipelag.io network.",
                 "totalTime": "PT15M",
                 "tool": [
@@ -87,8 +87,8 @@
                     {
                         "@type": "HowToStep",
                         "position": 1,
-                        "name": "Install the node agent",
-                        "text": "Download the Rust-based node agent binary for Linux, Mac, or Windows."
+                        "name": "Install Archipelag.io Island",
+                        "text": "Download the Island software for Linux, Mac, or Windows."
                     },
                     {
                         "@type": "HowToStep",
@@ -118,7 +118,7 @@
                         "name": "How much can I earn?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Earnings depend on your GPU, your asking price, your availability, and network demand. During the beta, demand is growing — early hosts build karma scores that give them priority as the network scales."
+                            "text": "Earnings depend on your GPU, your asking price, your availability, and network demand. During the beta, demand is growing — early Islands build karma scores that give them priority as the network scales."
                         }
                     },
                     {
@@ -126,7 +126,7 @@
                         "name": "Is it safe to run workloads on my machine?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Yes. Hosts only run network-approved, cosign-signed container images under seccomp security profiles. Containers have no access to your filesystem, network, or other processes. Resource limits are enforced by the node agent."
+                            "text": "Yes. Islands only run network-approved, cosign-signed container images under seccomp security profiles. Containers have no access to your filesystem, network, or other processes. Resource limits are strictly enforced."
                         }
                     },
                     {
@@ -142,7 +142,7 @@
                         "name": "What hardware do I need?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "An NVIDIA GPU with 8GB+ VRAM (RTX 3060 or better recommended), a stable internet connection, and Docker. The node agent runs on Linux, macOS, and Windows."
+                            "text": "An NVIDIA GPU with 8GB+ VRAM (RTX 3060 or better recommended), a stable internet connection, and Docker. Archipelag.io Island runs on Linux, macOS, and Windows."
                         }
                     }
                 ]
@@ -162,8 +162,8 @@
                     <span class="section-eyebrow">For GPU Owners</span>
                     <h1 id="hero-title" class="hero-title">Your hardware, your price</h1>
                     <p class="hero-subtitle">
-                        Run the node agent on any machine with a GPU. Set your own asking price.
-                        The coordinator matches you with nearby users who need compute.
+                        Turn any machine with a GPU into an Island. Set your own asking price.
+                        The coordinator matches you with nearby consumers who need compute.
                     </p>
                     <div class="hero-cta">
                         <a href="https://app.archipelag.io/auth/login" class="btn btn-tropical btn-lg">Join the beta</a>
@@ -195,7 +195,7 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <span class="host-diagram-label">Node agent starts</span>
+                                        <span class="host-diagram-label">Your Island comes online</span>
                                         <span class="host-diagram-detail">Registers with coordinator, reports GPU capabilities</span>
                                     </div>
                                 </div>
@@ -272,7 +272,7 @@
                         <div class="antigrid-card preview-content">
                             <h3 class="preview-title">What happens on your machine</h3>
                             <p class="preview-desc">
-                                The node agent is a lightweight Rust binary that manages everything.
+                                The Island software is a lightweight Rust binary that manages everything.
                                 It connects to the coordinator via NATS, pulls signed container images when a job arrives,
                                 runs them under strict sandboxing, and streams the output back.
                             </p>
@@ -314,7 +314,7 @@
                                 </svg>
                             </div>
                             <h3 class="principle-title">Market clearing</h3>
-                            <p class="principle-desc">The exchange snapshots rates every 5 minutes. More hosts in your region lowers the clearing price; more demand raises it.</p>
+                            <p class="principle-desc">The exchange snapshots rates every 5 minutes. More Islands in your region lowers the clearing price; more demand raises it.</p>
                         </div>
                         <div class="antigrid-card antigrid-principle">
                             <div class="principle-icon" aria-hidden="true">
@@ -323,7 +323,7 @@
                                 </svg>
                             </div>
                             <h3 class="principle-title">Early mover advantage</h3>
-                            <p class="principle-desc">The beta has growing demand and few hosts. Early hosts build high karma scores, which means job priority and better rates as the network scales.</p>
+                            <p class="principle-desc">The beta has growing demand and few Islands. Early Islands build high karma scores, which means job priority and better rates as the network scales.</p>
                         </div>
                     </div>
                 </div>
@@ -339,7 +339,7 @@
                             <span class="section-eyebrow-numbered"><span class="number">03</span> &mdash; Reputation</span>
                             <h2 id="karma-title" class="preview-title">Karma: your public track record</h2>
                             <p class="preview-desc">
-                                Every host has a karma score visible to the coordinator and the network.
+                                Every Island has a karma score visible to the coordinator and the network.
                                 It's calculated from your job success rate, response latency, and uptime consistency.
                             </p>
 
@@ -358,7 +358,7 @@
                                 </li>
                                 <li>
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                    <span>Coordinator factors karma into host selection alongside latency</span>
+                                    <span>Coordinator factors karma into Island selection alongside latency</span>
                                 </li>
                             </ul>
                         </div>
@@ -407,7 +407,7 @@
                                 </li>
                                 <li>
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                    <span><strong>No filesystem access</strong> &mdash; containers are isolated from your host filesystem</span>
+                                    <span><strong>No filesystem access</strong> &mdash; containers are isolated from your local filesystem</span>
                                 </li>
                                 <li>
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -423,8 +423,8 @@
                         <div class="antigrid-card preview-content">
                             <h3 class="preview-title">Defense in depth</h3>
                             <p class="preview-desc">
-                                The security model assumes mutual distrust. Users don't trust hosts with their data.
-                                Hosts don't trust the code they run. The coordinator is the authority on what's allowed.
+                                The security model assumes mutual distrust. Consumers don't trust Islands with their data.
+                                Islands don't trust the code they run. The coordinator is the authority on what's allowed.
                             </p>
                             <p class="preview-desc">
                                 In v1, the network only runs workloads that we've reviewed, signed, and published.
@@ -478,18 +478,85 @@
                                 </svg>
                             </div>
                             <h3 class="principle-title">Platform</h3>
-                            <p class="principle-desc">Linux, macOS, or Windows. Docker required for container workloads. The node agent is a single Rust binary&mdash;no runtime dependencies.</p>
+                            <p class="principle-desc">Linux, macOS, or Windows. Docker required for container workloads. The Island software is a single Rust binary&mdash;no runtime dependencies.</p>
                         </article>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Payouts -->
-        <section class="section" aria-labelledby="payouts-title">
+        <!-- Earnings Calculator -->
+        <section class="section" id="calculator" aria-labelledby="calculator-title">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-eyebrow-numbered"><span class="number">06</span> &mdash; Payouts</span>
+                    <span class="section-eyebrow-numbered"><span class="number">06</span> &mdash; Estimate</span>
+                    <h2 id="calculator-title" class="section-title">What can you earn?</h2>
+                    <p class="section-subtitle">Select your GPU and see estimated earnings across all workload types.</p>
+                </div>
+
+                <div class="calc-widget" id="calc-form">
+                    <div class="calc-inputs">
+                        <div class="calc-field">
+                            <label for="calc-gpu" class="calc-label">Your GPU</label>
+                            <select id="calc-gpu" class="calc-select" aria-label="Select your GPU model">
+                                <option value="">Select your GPU&hellip;</option>
+                            </select>
+                        </div>
+                        <div class="calc-field">
+                            <label for="calc-hours" class="calc-label">Hours online per day</label>
+                            <div class="calc-slider-row">
+                                <input type="range" id="calc-hours" min="1" max="24" value="8" class="calc-slider" aria-label="Hours online per day">
+                                <span id="calc-hours-value" class="calc-slider-value">8h</span>
+                            </div>
+                        </div>
+                        <button id="calc-btn" class="btn btn-tropical">Calculate</button>
+                    </div>
+
+                    <div id="calc-results" hidden>
+                        <div class="calc-summary">
+                            <div class="calc-summary-item">
+                                <div class="calc-summary-value" id="calc-daily">0</div>
+                                <div class="calc-summary-label">credits / day</div>
+                            </div>
+                            <div class="calc-summary-item calc-summary-highlight">
+                                <div class="calc-summary-value" id="calc-monthly">0</div>
+                                <div class="calc-summary-label">credits / month</div>
+                            </div>
+                            <div class="calc-summary-item">
+                                <div class="calc-summary-value" id="calc-usd">$0</div>
+                                <div class="calc-summary-label">est. USD / month</div>
+                            </div>
+                        </div>
+                        <div class="calc-tier-info">
+                            Hardware tier: <strong id="calc-tier"></strong> (<span id="calc-mult"></span> multiplier)
+                        </div>
+                        <div class="calc-table-wrapper">
+                            <table class="calc-table">
+                                <thead>
+                                    <tr>
+                                        <th>Workload</th>
+                                        <th>Fit</th>
+                                        <th>Throughput</th>
+                                        <th>Earnings</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="calc-table-body"></tbody>
+                            </table>
+                        </div>
+                        <p class="calc-disclaimer">
+                            Estimates assume sustained demand at current beta pricing ($0.01/credit).
+                            Actual earnings depend on network demand, your asking price, uptime, and karma score.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Payouts -->
+        <section class="section section-alt-flat" aria-labelledby="payouts-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow-numbered"><span class="number">07</span> &mdash; Payouts</span>
                     <h2 id="payouts-title" class="section-title">Getting paid</h2>
                 </div>
 
@@ -515,8 +582,8 @@
         <!-- CTA -->
         <section class="section section-alt-flat cta-section" aria-labelledby="cta-title">
             <div class="container text-center">
-                <h2 id="cta-title" class="cta-title">The beta needs hosts</h2>
-                <p class="cta-subtitle">Early hosts build karma and reputation before the network scales. Join now.</p>
+                <h2 id="cta-title" class="cta-title">The archipelago needs more Islands</h2>
+                <p class="cta-subtitle">Early Islands build karma and reputation before the network scales. Join now.</p>
                 <div class="btn-group justify-center">
                     <a href="https://app.archipelag.io/auth/login" class="btn btn-tropical btn-lg">Join the beta</a>
                     <a href="mailto:hey@archipelag.io" class="btn btn-secondary btn-lg">Talk to us</a>
@@ -527,4 +594,5 @@
 
 {% block scripts %}
     <script src="/js/hero.js" defer></script>
+    <script src="/js/calculator.js" defer></script>
 {% endblock scripts %}
