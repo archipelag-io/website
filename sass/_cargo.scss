@@ -124,12 +124,12 @@ html.light .cargo-sidebar-btn.active {
   flex-shrink: 0;
 }
 
-.dot-onnx { background: #6366f1; }
-.dot-containers { background: #0ea5e9; }
-.dot-wasm { background: #f59e0b; }
+.dot-onnx { background: #005CED; }
+.dot-containers { background: #0db7ed; }
+.dot-wasm { background: #654FF0; }
 .dot-gguf { background: #10b981; }
-.dot-diffusers { background: #ec4899; }
-.dot-coreml { background: #8b5cf6; }
+.dot-diffusers { background: #FFD21E; }
+.dot-coreml { background: #147CE5; }
 .dot-official { background: #10b981; }
 .dot-certified { background: #3b82f6; }
 .dot-community { background: #a855f7; }
@@ -255,18 +255,21 @@ html.light .cargo-search-input {
   letter-spacing: 0.04em;
 }
 
-.icon-onnx { background: rgba(99, 102, 241, 0.12); color: #818cf8; }
-.icon-containers { background: rgba(14, 165, 233, 0.12); color: #38bdf8; }
-.icon-wasm { background: rgba(245, 158, 11, 0.12); color: #fbbf24; }
+// Brand-aligned colors:
+// ONNX: #005CED (official blue), Docker: #0db7ed, WASM: #654FF0 (official purple)
+// GGUF/llama.cpp: green (no official brand), Diffusers/HF: #FFD21E (official yellow)
+.icon-onnx { background: rgba(0, 92, 237, 0.12); color: #4d94f3; }
+.icon-containers { background: rgba(13, 183, 237, 0.12); color: #3dc3ed; }
+.icon-wasm { background: rgba(101, 79, 240, 0.12); color: #8a7af4; }
 .icon-gguf { background: rgba(16, 185, 129, 0.12); color: #34d399; }
-.icon-diffusers { background: rgba(236, 72, 153, 0.12); color: #f472b6; }
+.icon-diffusers { background: rgba(255, 210, 30, 0.12); color: #ffd84d; }
 
 html.light {
-  .icon-onnx { background: rgba(99, 102, 241, 0.08); color: #4f46e5; }
-  .icon-containers { background: rgba(14, 165, 233, 0.08); color: #0284c7; }
-  .icon-wasm { background: rgba(245, 158, 11, 0.08); color: #b45309; }
+  .icon-onnx { background: rgba(0, 92, 237, 0.08); color: #005CED; }
+  .icon-containers { background: rgba(13, 183, 237, 0.08); color: #0993bf; }
+  .icon-wasm { background: rgba(101, 79, 240, 0.08); color: #654FF0; }
   .icon-gguf { background: rgba(16, 185, 129, 0.08); color: #059669; }
-  .icon-diffusers { background: rgba(236, 72, 153, 0.08); color: #db2777; }
+  .icon-diffusers { background: rgba(255, 210, 30, 0.08); color: #b8930a; }
 }
 
 // Content area (middle, grows)
@@ -276,6 +279,9 @@ html.light {
 }
 
 .cargo-row-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
   font-family: var(--font-brand);
   font-size: var(--text-base);
   font-weight: 500;
@@ -324,7 +330,7 @@ html.light .cargo-tag-gpu {
   color: #b45309;
 }
 
-// Maintainer badges (inline, before title)
+// Maintainer badges (inline, next to title)
 .cargo-badge {
   display: inline-block;
   font-family: var(--font-brand);
@@ -335,7 +341,7 @@ html.light .cargo-tag-gpu {
   padding: 1px 6px;
   border-radius: var(--radius-sm);
   line-height: 1.6;
-  margin-bottom: 2px;
+  flex-shrink: 0;
 }
 
 .badge-official {
