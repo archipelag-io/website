@@ -100,7 +100,7 @@
                         "@type": "HowToStep",
                         "position": 3,
                         "name": "Set your price and schedule",
-                        "text": "Configure your asking price per workload type and your availability hours."
+                        "text": "Configure your asking price per Cargo type and your availability hours."
                     },
                     {
                         "@type": "HowToStep",
@@ -123,7 +123,7 @@
                     },
                     {
                         "@type": "Question",
-                        "name": "Is it safe to run workloads on my machine?",
+                        "name": "Is it safe to run Cargos on my machine?",
                         "acceptedAnswer": {
                             "@type": "Answer",
                             "text": "Yes. Islands only run network-approved, cosign-signed container images under seccomp security profiles. Containers have no access to your filesystem, network, or other processes. Resource limits are strictly enforced."
@@ -245,7 +245,7 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <span class="host-diagram-label">Workload executes in sandbox</span>
+                                        <span class="host-diagram-label">Cargo executes in sandbox</span>
                                         <span class="host-diagram-detail">Seccomp profile applied, output streamed back</span>
                                     </div>
                                 </div>
@@ -305,7 +305,7 @@
                                 </svg>
                             </div>
                             <h3 class="principle-title">Asking price</h3>
-                            <p class="principle-desc">Set your rate per workload type. The coordinator only sends you jobs at or above your price. Adjust anytime.</p>
+                            <p class="principle-desc">Set your rate per Cargo type. The coordinator only sends you jobs at or above your price. Adjust anytime.</p>
                         </div>
                         <div class="antigrid-card antigrid-principle">
                             <div class="principle-icon" aria-hidden="true">
@@ -395,7 +395,7 @@
                             <ul class="preview-list" aria-label="Security layers" style="margin-bottom:0;">
                                 <li>
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                    <span><strong>Signed images only</strong> &mdash; workload containers are cosign-verified before execution</span>
+                                    <span><strong>Signed images only</strong> &mdash; Cargo containers are cosign-verified before execution</span>
                                 </li>
                                 <li>
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -403,7 +403,7 @@
                                 </li>
                                 <li>
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                                    <span><strong>Seccomp profiles</strong> &mdash; syscall filtering matched to workload sandbox tier</span>
+                                    <span><strong>Seccomp profiles</strong> &mdash; syscall filtering matched to Cargo sandbox tier</span>
                                 </li>
                                 <li>
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -427,7 +427,7 @@
                                 Islands don't trust the code they run. The coordinator is the authority on what's allowed.
                             </p>
                             <p class="preview-desc">
-                                In v1, the network only runs workloads that we've reviewed, signed, and published.
+                                In v1, the network only runs Cargos that we've reviewed, signed, and published.
                                 There is no path for arbitrary user code to reach your machine.
                             </p>
                             <a href="/security" class="btn btn-secondary" style="margin-top:var(--space-4);">Read the security model</a>
@@ -478,7 +478,7 @@
                                 </svg>
                             </div>
                             <h3 class="principle-title">Platform</h3>
-                            <p class="principle-desc">Linux, macOS, or Windows. Docker required for container workloads. The Island software is a single Rust binary&mdash;no runtime dependencies.</p>
+                            <p class="principle-desc">Linux, macOS, or Windows. Docker required for container Cargos. The Island software is a single Rust binary&mdash;no runtime dependencies.</p>
                         </article>
                     </div>
                 </div>
@@ -491,7 +491,7 @@
                 <div class="section-header">
                     <span class="section-eyebrow-numbered"><span class="number">06</span> &mdash; Estimate</span>
                     <h2 id="calculator-title" class="section-title">What can you earn?</h2>
-                    <p class="section-subtitle">Select your GPU and see estimated earnings across all workload types.</p>
+                    <p class="section-subtitle">Select your GPU and see estimated earnings across all Cargo types.</p>
                 </div>
 
                 <div class="calc-widget" id="calc-form">
@@ -534,7 +534,7 @@
                             <table class="calc-table">
                                 <thead>
                                     <tr>
-                                        <th>Workload</th>
+                                        <th>Cargo</th>
                                         <th>Fit</th>
                                         <th>Throughput</th>
                                         <th>Earnings</th>
@@ -546,7 +546,7 @@
                         <p class="calc-disclaimer">
                             These are best-case estimates assuming 15% utilization at beta pricing ($0.01/credit).
                             Actual earnings will vary based on network demand, your asking price, uptime, and karma score.
-                            Summary shows the highest-paying workload your hardware supports.
+                            Summary shows the highest-paying Cargo your hardware supports.
                         </p>
                     </div>
                 </div>

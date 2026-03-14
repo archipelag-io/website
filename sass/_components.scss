@@ -95,13 +95,15 @@ html.light .btn-primary {
   background: linear-gradient(
     135deg,
     #ffe0a0 0%,
-    #ffc9a8 25%,
-    #ffb5c0 50%,
-    #ffc9a8 75%,
+    #ffcca0 15%,
+    #ffb5c0 35%,
+    #ffc4d0 50%,
+    #ffd0b0 65%,
+    #ffe8a8 85%,
     #ffe0a0 100%
   );
-  background-size: 250% 100%;
-  animation: aurora-drift 10s ease-in-out infinite;
+  background-size: 300% 100%;
+  animation: aurora-drift 14s ease-in-out infinite;
   transition: filter 0.3s ease, transform var(--transition-fast);
   &:hover {
     filter: brightness(1.06);
@@ -109,8 +111,9 @@ html.light .btn-primary {
 }
 
 @keyframes aurora-drift {
-  0%, 100% { background-position: 0% 50%; }
+  0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .btn-secondary {
