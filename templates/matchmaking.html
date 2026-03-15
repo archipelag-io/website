@@ -1,0 +1,576 @@
+{% extends "base.html" %}
+
+{% block title %}Matchmaking | {{ config.title }}{% endblock title %}
+
+{% block head_meta %}
+    <meta name="description" content="How the Archipelag.io Compute Exchange matches supply and demand. Market-based pricing, bid/ask clearing, hardware tiers, and the economics of distributed compute.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="keywords" content="compute exchange, market-based pricing, GPU pricing, distributed compute economics, bid ask matching, compute marketplace, AI inference pricing">
+    <link rel="canonical" href="{{ config.base_url }}/matchmaking/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ config.base_url }}/matchmaking/">
+    <meta property="og:title" content="Matchmaking - How the Compute Exchange Works | {{ config.title }}">
+    <meta property="og:description" content="Market-based pricing for distributed AI compute. Islands set asking prices, consumers set bids, and the exchange clears a rate.">
+    <meta property="og:image" content="{{ config.base_url }}/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Archipelag.io - Compute Exchange">
+    <meta property="og:site_name" content="{{ config.title }}">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="{{ config.extra.twitter }}">
+    <meta name="twitter:creator" content="{{ config.extra.twitter }}">
+    <meta name="twitter:title" content="Matchmaking - How the Compute Exchange Works | {{ config.title }}">
+    <meta name="twitter:description" content="Market-based pricing for distributed AI compute. No fixed tiers, no subscriptions.">
+    <meta name="twitter:image" content="{{ config.base_url }}/og-image.png">
+    <meta name="twitter:image:alt" content="Archipelag.io - Compute Exchange">
+{% endblock head_meta %}
+
+{% block head_extra %}
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": "{{ config.base_url }}/matchmaking/",
+                "url": "{{ config.base_url }}/matchmaking/",
+                "name": "Matchmaking - How the Compute Exchange Works",
+                "description": "Market-based pricing for distributed AI compute. Islands set asking prices, consumers set bids, and the exchange clears a rate.",
+                "isPartOf": {
+                    "@id": "{{ config.base_url }}/#website"
+                },
+                "breadcrumb": {
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Home",
+                            "item": "{{ config.base_url }}/"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Matchmaking",
+                            "item": "{{ config.base_url }}/matchmaking/"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "How does pricing work on Archipelag.io?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Pricing is market-based. Islands set asking prices per Cargo type. Consumers set maximum bids. The coordinator matches each job to the cheapest Island willing to work at the consumer's price. There are no fixed tiers."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What determines the clearing price?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The clearing price equals the Island's asking price at the time of the match. Consumers always pay the Island's rate, not their maximum bid. You never overpay."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is surge pricing?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "When queued jobs exceed twice the available Island capacity, a 25% surge multiplier is applied. This incentivizes more Islands to come online during peak demand and smooths load over time."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+{% endblock head_extra %}
+
+{% block content %}
+        <!-- Hero -->
+        <div class="hero-wrapper" id="hero-wrapper">
+        <section class="hero-section" aria-labelledby="hero-title" style="overflow:hidden;">
+            <canvas id="archipelago-map" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;"></canvas>
+            <div class="container" style="position:relative;z-index:1;">
+                <div class="hero-glass">
+                    <span class="section-eyebrow">Compute Exchange</span>
+                    <h1 id="hero-title" class="hero-title">Prices set by the network, not by us</h1>
+                    <p class="hero-subtitle">
+                        Islands set asking prices. Consumers set bids.
+                        The coordinator matches supply and demand in real time and clears a market rate.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="https://app.archipelag.io/exchange" class="btn btn-tropical btn-lg">See live rates</a>
+                        <a href="#how-it-works" class="btn btn-secondary btn-lg">How it works</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+
+        <!-- The Model -->
+        <section id="how-it-works" class="section section-alt-flat" aria-labelledby="model-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow-numbered"><span class="number">01</span> &mdash; The Model</span>
+                    <h2 id="model-title" class="section-title">Ask-price auction</h2>
+                    <p class="section-subtitle">Every match follows the same rule: the consumer pays the Island's asking price, never more than their bid.</p>
+                </div>
+
+                <div class="antigrid-wrapper">
+                    <div class="antigrid antigrid-3">
+                        <div class="antigrid-card antigrid-principle">
+                            <canvas class="island-vignette" data-island-scene="solo" aria-hidden="true"></canvas>
+                            <h3 class="principle-title">Islands set asking prices</h3>
+                            <p class="principle-desc">Each Island posts a per-Cargo asking price based on their hardware costs, electricity, and desired margin. They can adjust anytime.</p>
+                        </div>
+                        <div class="antigrid-card antigrid-principle">
+                            <div class="principle-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="12" cy="7" r="4"/>
+                                </svg>
+                            </div>
+                            <h3 class="principle-title">Consumers set bid ceilings</h3>
+                            <p class="principle-desc">Set a maximum price per Cargo type. The coordinator only matches you with Islands at or below your budget. You can also bid per-job.</p>
+                        </div>
+                        <div class="antigrid-card antigrid-principle">
+                            <canvas class="island-vignette" data-island-scene="exchange" aria-hidden="true"></canvas>
+                            <h3 class="principle-title">Coordinator clears the match</h3>
+                            <p class="principle-desc">The coordinator finds the cheapest willing Island for each job. Clearing price = the Island's asking price. You never pay your full bid if cheaper options exist.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bid Resolution -->
+        <section class="section" aria-labelledby="resolution-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow-numbered"><span class="number">02</span> &mdash; Bid Resolution</span>
+                    <h2 id="resolution-title" class="section-title">How your price is determined</h2>
+                    <p class="section-subtitle">The system resolves a bid for every job, using a fallback chain so you always get a fair price.</p>
+                </div>
+
+                <div class="antigrid-wrapper">
+                    <div class="antigrid antigrid-2">
+                        <div class="antigrid-card">
+                            <div class="host-diagram">
+                                <div class="host-diagram-step">
+                                    <div class="host-diagram-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <span class="host-diagram-label">1. Explicit job bid</span>
+                                        <span class="host-diagram-detail">If you set a price on this specific job, that's used first</span>
+                                    </div>
+                                </div>
+                                <div class="host-diagram-arrow" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M12 5v14M19 12l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="host-diagram-step">
+                                    <div class="host-diagram-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <circle cx="12" cy="7" r="4"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <span class="host-diagram-label">2. Your saved preference</span>
+                                        <span class="host-diagram-detail">Your default max price for this Cargo type</span>
+                                    </div>
+                                </div>
+                                <div class="host-diagram-arrow" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M12 5v14M19 12l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="host-diagram-step">
+                                    <div class="host-diagram-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <span class="host-diagram-label">3. Current market rate</span>
+                                        <span class="host-diagram-detail">Average clearing price from recent jobs on the exchange</span>
+                                    </div>
+                                </div>
+                                <div class="host-diagram-arrow" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M12 5v14M19 12l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="host-diagram-step">
+                                    <div class="host-diagram-icon host-diagram-icon-accent" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <line x1="12" y1="1" x2="12" y2="23" stroke-linecap="round"/>
+                                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <span class="host-diagram-label">4. Cargo default price</span>
+                                        <span class="host-diagram-detail">The workload's base price &mdash; always a safe fallback</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="antigrid-card preview-content">
+                            <h3 class="preview-title">Set it once, forget it</h3>
+                            <p class="preview-desc">
+                                Most consumers set a bid preference per Cargo type and leave it. The coordinator uses your
+                                preference for every job, finds the cheapest Island willing to accept it, and charges you
+                                their asking price &mdash; not your maximum.
+                            </p>
+                            <p class="preview-desc">
+                                If you want more control, override on individual jobs. The system always picks the
+                                lowest clearing price available within your budget.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hardware Tiers -->
+        <section class="section section-alt-flat" aria-labelledby="tiers-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow-numbered"><span class="number">03</span> &mdash; Hardware Economics</span>
+                    <h2 id="tiers-title" class="section-title">Better hardware, higher rates</h2>
+                    <p class="section-subtitle">GPU quality sets each Island's natural price range. Consumers choose between budget and performance.</p>
+                </div>
+
+                <div class="antigrid-wrapper">
+                    <div class="antigrid antigrid-2">
+                        <div class="antigrid-card">
+                            <table style="width:100%; border-collapse:collapse; font-family:var(--font-brand);">
+                                <thead>
+                                    <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                                        <th style="text-align:left; padding:var(--space-3) var(--space-2); font-size:var(--text-sm); color:var(--text-secondary); font-weight:500;">Tier</th>
+                                        <th style="text-align:left; padding:var(--space-3) var(--space-2); font-size:var(--text-sm); color:var(--text-secondary); font-weight:500;">Hardware</th>
+                                        <th style="text-align:right; padding:var(--space-3) var(--space-2); font-size:var(--text-sm); color:var(--text-secondary); font-weight:500;">Multiplier</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                                        <td style="padding:var(--space-3) var(--space-2); font-weight:500;">Enterprise</td>
+                                        <td style="padding:var(--space-3) var(--space-2); color:var(--text-secondary);">H100, A100, RTX 4090</td>
+                                        <td style="padding:var(--space-3) var(--space-2); text-align:right; color:var(--accent); font-weight:600;">2.0x</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                                        <td style="padding:var(--space-3) var(--space-2); font-weight:500;">High-End</td>
+                                        <td style="padding:var(--space-3) var(--space-2); color:var(--text-secondary);">RTX 3090, RTX 4080, A6000</td>
+                                        <td style="padding:var(--space-3) var(--space-2); text-align:right; color:var(--accent); font-weight:600;">1.5x</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                                        <td style="padding:var(--space-3) var(--space-2); font-weight:500;">Mid-Range</td>
+                                        <td style="padding:var(--space-3) var(--space-2); color:var(--text-secondary);">RTX 3080, RTX 3070, RTX 4070</td>
+                                        <td style="padding:var(--space-3) var(--space-2); text-align:right; color:var(--accent); font-weight:600;">1.2x</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                                        <td style="padding:var(--space-3) var(--space-2); font-weight:500;">Entry</td>
+                                        <td style="padding:var(--space-3) var(--space-2); color:var(--text-secondary);">RTX 3060, GTX 1080 Ti</td>
+                                        <td style="padding:var(--space-3) var(--space-2); text-align:right; font-weight:600;">1.0x</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:var(--space-3) var(--space-2); font-weight:500;">CPU-only</td>
+                                        <td style="padding:var(--space-3) var(--space-2); color:var(--text-secondary);">No GPU</td>
+                                        <td style="padding:var(--space-3) var(--space-2); text-align:right; font-weight:600;">0.5x</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="antigrid-card preview-content">
+                            <h3 class="preview-title">Hardware sets the floor, the market sets the price</h3>
+                            <p class="preview-desc">
+                                Tier multipliers reflect the real cost difference between running inference on an H100
+                                versus a GTX 1080 Ti. An Island with enterprise hardware can ask 2x the base rate
+                                and still be competitive &mdash; they deliver faster inference.
+                            </p>
+                            <p class="preview-desc">
+                                Consumers on a budget can target entry-tier Islands at 1.0x or even CPU-only
+                                at 0.5x for lighter workloads. The exchange surfaces all options transparently.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Supply & Demand -->
+        <section class="section" aria-labelledby="dynamics-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow-numbered"><span class="number">04</span> &mdash; Market Dynamics</span>
+                    <h2 id="dynamics-title" class="section-title">A volatile, self-correcting market</h2>
+                    <p class="section-subtitle">Prices move with real-world conditions. That's the point.</p>
+                </div>
+
+                <div class="antigrid-wrapper">
+                    <div class="antigrid antigrid-3">
+                        <div class="antigrid-card antigrid-principle">
+                            <canvas class="island-vignette" data-island-scene="routing" aria-hidden="true"></canvas>
+                            <h3 class="principle-title">Availability</h3>
+                            <p class="principle-desc">Islands come and go. A home GPU in Berlin is online evenings; a rack server in Zurich runs 24/7. Supply shifts throughout the day, and prices adjust with it.</p>
+                        </div>
+                        <div class="antigrid-card antigrid-principle">
+                            <div class="principle-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3 class="principle-title">Energy costs</h3>
+                            <p class="principle-desc">Electricity prices vary by region and time of day. Islands in off-peak hours or cheap-energy regions can undercut competitors and capture more jobs.</p>
+                        </div>
+                        <div class="antigrid-card antigrid-principle">
+                            <canvas class="island-vignette" data-island-scene="compute" aria-hidden="true"></canvas>
+                            <h3 class="principle-title">Hardware costs</h3>
+                            <p class="principle-desc">GPU depreciation is real. Islands amortize their hardware investment over time. As GPUs age and new cards ship, the supply curve shifts and prices fall.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="antigrid-wrapper" style="margin-top: var(--space-8);">
+                    <div class="antigrid antigrid-3">
+                        <div class="antigrid-card antigrid-principle">
+                            <div class="principle-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3 class="principle-title">Regional demand</h3>
+                            <p class="principle-desc">A metro with many consumers and few Islands sees higher rates. More Islands joining that region pushes prices down. Geography matters.</p>
+                        </div>
+                        <div class="antigrid-card antigrid-principle">
+                            <div class="principle-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3 class="principle-title">Demand spikes</h3>
+                            <p class="principle-desc">When a product launch drives traffic, demand surges. The exchange responds: prices tick up, incentivizing more Islands online, and equilibrium is restored.</p>
+                        </div>
+                        <div class="antigrid-card antigrid-principle">
+                            <div class="principle-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3 class="principle-title">Karma gating</h3>
+                            <p class="principle-desc">New Islands must earn 10+ karma (about 10 hours of successful compute) before they can receive payouts. Reliability is a prerequisite, not a luxury.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Surge Pricing -->
+        <section class="section section-alt-flat" aria-labelledby="surge-title">
+            <div class="container">
+                <div class="antigrid-wrapper">
+                    <div class="antigrid antigrid-2">
+                        <div class="antigrid-card preview-content">
+                            <span class="section-eyebrow-numbered"><span class="number">05</span> &mdash; Surge Pricing</span>
+                            <h2 id="surge-title" class="preview-title">When demand exceeds supply</h2>
+                            <p class="preview-desc">
+                                If queued jobs exceed twice the available Island capacity, a 25% surge multiplier kicks in.
+                                This is automatic and transparent &mdash; the exchange UI shows when surge is active.
+                            </p>
+                            <p class="preview-desc">
+                                Surge pricing serves two purposes: it incentivizes more Islands to come online during peaks,
+                                and it prioritizes price-insensitive jobs that need to run now. As capacity normalizes,
+                                the multiplier drops back to 1.0x.
+                            </p>
+
+                            <ul class="preview-list" aria-label="Surge pricing details">
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span>Trigger: queue depth &gt; 2x available capacity</span>
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span>Multiplier: 1.25x (25% increase)</span>
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span>Cached for 30 seconds to prevent thrashing</span>
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span>Visible on the exchange dashboard</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="antigrid-card flex items-center justify-center">
+                            <figure class="w-full text-center" style="padding: var(--space-8);">
+                                <div style="font-family:var(--font-brand); font-size:var(--text-sm); color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:var(--space-4);">Example: Peak Demand</div>
+                                <div class="host-diagram">
+                                    <div class="host-diagram-step">
+                                        <div class="host-diagram-icon" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                                <rect x="2" y="3" width="7" height="7" rx="1"/><rect x="15" y="3" width="7" height="7" rx="1"/><rect x="2" y="14" width="7" height="7" rx="1"/><rect x="15" y="14" width="7" height="7" rx="1"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <span class="host-diagram-label">80 jobs queued</span>
+                                            <span class="host-diagram-detail">30 Islands with capacity</span>
+                                        </div>
+                                    </div>
+                                    <div class="host-diagram-arrow" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M12 5v14M19 12l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="host-diagram-step">
+                                        <div class="host-diagram-icon" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <span class="host-diagram-label">Ratio: 2.67x &gt; threshold</span>
+                                            <span class="host-diagram-detail">Surge pricing activates</span>
+                                        </div>
+                                    </div>
+                                    <div class="host-diagram-arrow" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M12 5v14M19 12l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="host-diagram-step">
+                                        <div class="host-diagram-icon host-diagram-icon-accent" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                                <line x1="12" y1="1" x2="12" y2="23" stroke-linecap="round"/>
+                                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <span class="host-diagram-label">Market rate: 0.12 &rarr; 0.15 credits</span>
+                                            <span class="host-diagram-detail">25% surge applied until capacity normalizes</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Exchange Dashboard -->
+        <section class="section" aria-labelledby="dashboard-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow-numbered"><span class="number">06</span> &mdash; The Dashboard</span>
+                    <h2 id="dashboard-title" class="section-title">Full transparency, real time</h2>
+                    <p class="section-subtitle">The Compute Exchange dashboard is public. Anyone can see current rates, historical trends, and order book depth.</p>
+                </div>
+
+                <div class="antigrid-wrapper">
+                    <div class="antigrid antigrid-3">
+                        <div class="antigrid-card antigrid-principle">
+                            <canvas class="island-vignette" data-island-scene="exchange" aria-hidden="true"></canvas>
+                            <h3 class="principle-title">Live market rates</h3>
+                            <p class="principle-desc">Current clearing price, average ask, average bid, active supply and demand counts, and jobs cleared &mdash; updated every 30 seconds.</p>
+                        </div>
+                        <div class="antigrid-card antigrid-principle">
+                            <canvas class="island-vignette" data-island-scene="streaming" aria-hidden="true"></canvas>
+                            <h3 class="principle-title">Price history</h3>
+                            <p class="principle-desc">Charts showing avg, min, max, and median clearing prices over 1 hour, 24 hours, 7 days, or 30 days. See how supply and demand evolved.</p>
+                        </div>
+                        <div class="antigrid-card antigrid-principle">
+                            <div class="principle-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                    <path d="M3 9h18M9 21V9" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <h3 class="principle-title">Order book</h3>
+                            <p class="principle-desc">Histogram of Islands' asking prices, bucketed by range. See how many Islands offer compute at each price level across the network.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: var(--space-10);">
+                    <a href="https://app.archipelag.io/exchange" class="btn btn-tropical btn-lg">Open the exchange</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Suggested Prices -->
+        <section class="section section-alt-flat" aria-labelledby="suggested-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow-numbered"><span class="number">07</span> &mdash; Price Guidance</span>
+                    <h2 id="suggested-title" class="section-title">We suggest, you decide</h2>
+                    <p class="section-subtitle">The platform offers suggested prices for both sides, but never forces them.</p>
+                </div>
+
+                <div class="antigrid-wrapper">
+                    <div class="antigrid antigrid-2">
+                        <article class="antigrid-card antigrid-principle">
+                            <div class="principle-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="12" cy="7" r="4"/>
+                                </svg>
+                            </div>
+                            <h3 class="principle-title">For consumers</h3>
+                            <p class="principle-desc">Suggested bid = current market rate &times; 1.05. A 5% premium over average ensures your job matches quickly without overpaying. You can always go lower and wait for a cheaper Island.</p>
+                        </article>
+                        <article class="antigrid-card antigrid-principle">
+                            <div class="principle-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                    <line x1="8" y1="21" x2="16" y2="21"/>
+                                    <line x1="12" y1="17" x2="12" y2="21"/>
+                                </svg>
+                            </div>
+                            <h3 class="principle-title">For Islands</h3>
+                            <p class="principle-desc">Suggested ask = current market rate &times; hardware tier multiplier. An RTX 4090 (2.0x) is guided to ask twice the base rate. Set it higher to earn more per job, lower to win more jobs.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beta Note -->
+        <section class="section section-alt-flat section-aurora cta-section" aria-labelledby="cta-title">
+            <div class="container text-center">
+                <h2 id="cta-title" class="cta-title">The exchange is live</h2>
+                <p class="cta-subtitle">During the beta, all credits are virtual &mdash; no real money changes hands. But the market mechanics are real: bid, ask, and match just like production.</p>
+                <div class="btn-group justify-center">
+                    <a href="https://app.archipelag.io/exchange" class="btn btn-tropical btn-lg">See live rates</a>
+                    <a href="https://app.archipelag.io/auth/login" class="btn btn-secondary btn-lg">Join the beta</a>
+                </div>
+            </div>
+        </section>
+{% endblock content %}
+
+{% block scripts %}
+    <script src="/js/hero.js" defer></script>
+    <script src="/js/island-vignettes.js" defer></script>
+{% endblock scripts %}
