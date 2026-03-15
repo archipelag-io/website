@@ -357,20 +357,12 @@
                             <p class="principle-desc">Set your rate per Cargo type. The coordinator only sends you jobs at or above your price. Adjust anytime.</p>
                         </div>
                         <div class="antigrid-card antigrid-principle">
-                            <div class="principle-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
+                            <canvas class="island-vignette" data-island-scene="exchange" aria-hidden="true"></canvas>
                             <h3 class="principle-title">Market clearing</h3>
                             <p class="principle-desc">The exchange snapshots rates every 5 minutes. More Islands in your region lowers the clearing price; more demand raises it.</p>
                         </div>
                         <div class="antigrid-card antigrid-principle">
-                            <div class="principle-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke-linecap="round"/>
-                                </svg>
-                            </div>
+                            <canvas class="island-vignette" data-island-scene="routing" aria-hidden="true"></canvas>
                             <h3 class="principle-title">Early mover advantage</h3>
                             <p class="principle-desc">The beta has growing demand and few Islands. Early Islands build high karma scores, which means job priority and better rates as the network scales.</p>
                         </div>
@@ -691,24 +683,13 @@
                 <div class="antigrid-wrapper">
                     <div class="antigrid antigrid-3">
                         <article class="antigrid-card antigrid-principle">
-                            <div class="principle-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <rect x="4" y="4" width="16" height="16" rx="2"/>
-                                    <rect x="9" y="9" width="6" height="6"/>
-                                    <path d="M4 9h5M15 9h5M4 15h5M15 15h5M9 4v5M9 15v5M15 4v5M15 15v5" stroke-linecap="round"/>
-                                </svg>
-                            </div>
+                            <canvas class="island-vignette" data-island-scene="compute" aria-hidden="true"></canvas>
                             <h3 class="principle-title">Desktop GPU</h3>
                             <p class="principle-desc">NVIDIA GPU with 8GB+ VRAM (RTX 3060 or better recommended) for full model support. More VRAM lets you run larger models.</p>
                         </article>
 
                         <article class="antigrid-card antigrid-principle">
-                            <div class="principle-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <rect x="5" y="2" width="14" height="20" rx="2"/>
-                                    <line x1="12" y1="18" x2="12.01" y2="18"/>
-                                </svg>
-                            </div>
+                            <canvas class="island-vignette" data-island-scene="solo" aria-hidden="true"></canvas>
                             <h3 class="principle-title">Or a phone</h3>
                             <p class="principle-desc">iPhone or iPad with A14+ or M-series chip for lightweight mobile models. No GPU workstation required.</p>
                         </article>
@@ -837,6 +818,7 @@
 
 {% block scripts %}
     <script src="/js/hero.js" defer></script>
+    <script src="/js/island-vignettes.js" defer></script>
     <script src="/js/calculator.js" defer></script>
     <script defer src="/js/cargo-whatis.js"></script>
 {% endblock scripts %}

@@ -206,31 +206,17 @@
                 <div class="antigrid-wrapper">
                     <div class="antigrid antigrid-3">
                         <div class="antigrid-card antigrid-principle">
-                            <div class="principle-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
+                            <canvas class="island-vignette" data-island-scene="exchange" aria-hidden="true"></canvas>
                             <h3 class="principle-title">Compute exchange</h3>
                             <p class="principle-desc">Islands set asking prices. Consumers set bid preferences. The coordinator clears a market rate per Cargo type. Check the <a href="https://app.archipelag.io/exchange" style="color:var(--accent)">exchange</a> for live rates.</p>
                         </div>
                         <div class="antigrid-card antigrid-principle">
-                            <div class="principle-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <line x1="12" y1="1" x2="12" y2="23" stroke-linecap="round"/>
-                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round"/>
-                                </svg>
-                            </div>
+                            <canvas class="island-vignette" data-island-scene="solo" aria-hidden="true"></canvas>
                             <h3 class="principle-title">Credits, not subscriptions</h3>
                             <p class="principle-desc">Buy credits when you need them. No monthly fees, no commitments. Credits never expire.</p>
                         </div>
                         <div class="antigrid-card antigrid-principle">
-                            <div class="principle-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
-                                    <path d="M3 9h18M9 21V9" stroke-linecap="round"/>
-                                </svg>
-                            </div>
+                            <canvas class="island-vignette" data-island-scene="streaming" aria-hidden="true"></canvas>
                             <h3 class="principle-title">Transparent billing</h3>
                             <p class="principle-desc">Every job shows its clearing price before execution. You see exactly what you'll pay and which Island will run it.</p>
                         </div>
@@ -417,4 +403,5 @@
 
 {% block scripts %}
     <script src="/js/hero.js" defer></script>
+    <script src="/js/island-vignettes.js" defer></script>
 {% endblock scripts %}

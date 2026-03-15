@@ -549,11 +549,7 @@ stream = client.chat.completions.create(
                 <div class="antigrid-wrapper">
                     <div class="antigrid antigrid-3">
                         <div class="antigrid-card antigrid-principle">
-                            <div class="principle-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
+                            <canvas class="island-vignette" data-island-scene="streaming" aria-hidden="true"></canvas>
                             <h3 class="principle-title">Chat interface</h3>
                             <p class="principle-desc">Full-featured web chat with conversation history, model selection, and host preferences. Real-time streaming built in.</p>
                         </div>
@@ -569,24 +565,12 @@ stream = client.chat.completions.create(
                             <p class="principle-desc">Web UI for text-to-image with configurable dimensions, inference steps, and a gallery of past generations.</p>
                         </div>
                         <div class="antigrid-card antigrid-principle">
-                            <div class="principle-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <polyline points="16 18 22 12 16 6" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <polyline points="8 6 2 12 8 18" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
+                            <canvas class="island-vignette" data-island-scene="solo" aria-hidden="true"></canvas>
                             <h3 class="principle-title">Playground</h3>
                             <p class="principle-desc">Try the API without signing up. Interactive testing with live code examples in Python and JavaScript.</p>
                         </div>
                         <div class="antigrid-card antigrid-principle">
-                            <div class="principle-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <rect x="2" y="3" width="7" height="7" rx="1"/>
-                                    <rect x="15" y="3" width="7" height="7" rx="1"/>
-                                    <rect x="2" y="14" width="7" height="7" rx="1"/>
-                                    <rect x="15" y="14" width="7" height="7" rx="1"/>
-                                </svg>
-                            </div>
+                            <canvas class="island-vignette" data-island-scene="compute" aria-hidden="true"></canvas>
                             <h3 class="principle-title">Batch jobs</h3>
                             <p class="principle-desc">Submit batches of inputs via the API or web UI. Monitor progress in real time with a visual dashboard.</p>
                         </div>
@@ -660,5 +644,6 @@ stream = client.chat.completions.create(
 
 {% block scripts %}
     <script src="/js/hero.js" defer></script>
+    <script src="/js/island-vignettes.js" defer></script>
     <script defer src="/js/cargo-whatis.js"></script>
 {% endblock scripts %}
