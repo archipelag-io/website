@@ -428,19 +428,36 @@
     resultsEl.style.display = 'block';
 
     // Update comparison chart to highlight selected GPU
-    updateComparison();
+    try { updateComparison(); } catch (err) { console.error('[calc] chart error:', err); }
   }
 
   // Calculate button
   var btn = document.getElementById('calc-btn');
-  btn.addEventListener('click', function () {
-    triggerCalc();
-    document.getElementById('calc-results').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  if (!btn) { console.error('[calc] button #calc-btn not found'); return; }
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+    try {
+      if (!select.value) {
+        // Flash the select to hint user needs to pick a GPU
+        select.focus();
+        select.style.outline = '2px solid var(--accent)';
+        setTimeout(function () { select.style.outline = ''; }, 1500);
+        return;
+      }
+      triggerCalc();
+      document.getElementById('calc-results').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } catch (err) {
+      console.error('[calc] error:', err);
+    }
   });
 
   // Auto-calculate when GPU selection changes
   select.addEventListener('change', function () {
-    if (select.value) triggerCalc();
+    try {
+      if (select.value) triggerCalc();
+    } catch (err) {
+      console.error('[calc] change error:', err);
+    }
   });
 
   // Initialize comparison table and chart on page load
