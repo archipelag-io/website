@@ -67,6 +67,20 @@ The Archipelag.io Island software is designed with security as a priority:
 - **Audit Logging**: Complete audit trail of account and API activity
 - **Right to Deletion**: Request complete data deletion at any time
 
+### Audit Logging
+
+- **Hash-Chained Logs**: Immutable audit trail with tamper detection via hash chaining
+- **Trust Events**: All approvals, rejections, and suspensions are logged with full context
+- **Security Incidents**: Automated incident recording with forensic detail
+- **Chain Verification**: Integrity of the audit log can be verified at any time
+
+### Rate Limiting & Abuse Prevention
+
+- **API Rate Limiting**: 100 requests per minute per API key
+- **Authentication Rate Limiting**: 5 requests per minute for magic link login
+- **Input Validation**: Message content capped at 32KB, job input at 256KB, max 128 messages per request
+- **Body Size Limits**: 1MB maximum request body
+
 ## Infrastructure Security
 
 ### Platform Security

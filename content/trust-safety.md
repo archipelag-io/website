@@ -48,6 +48,26 @@ If your verification is rejected, you can:
 2. **Contact support** — Email [hey@archipelag.io](mailto:hey@archipelag.io) if you believe the rejection was in error
 3. **Request manual review** — In exceptional circumstances, our team can review your case manually
 
+## Publisher Verification
+
+Developers who publish Cargos to the marketplace go through a separate verification process:
+
+- **Creator** (default) — up to 3 submissions, limited resource allocation, no GPU access
+- **Verified** — up to 10 submissions, higher resource limits, identity-verified publisher badge
+- **Official** — unlimited submissions, custom resource limits, GPU access, partner-level support
+
+Publisher tier upgrades are reviewed by the Archipelag.io team. All submitted Cargos undergo automated security scanning before approval.
+
+## Cargo Reputation
+
+Every Cargo in the marketplace has a reputation score (0.0 to 5.0) based on:
+
+- **Job success rate** — successful completions increase score, failures decrease it
+- **User reviews** — star ratings and written reviews from consumers
+- **Automated monitoring** — Cargos with sustained low success rates are automatically flagged or suspended
+
+Cargos that drop below a 0.5 reputation score are suspended from the network. Repeated complaints trigger manual review.
+
 ## Account Bans
 
 Accounts may be suspended for violations of our [Terms of Service](/terms), including:
