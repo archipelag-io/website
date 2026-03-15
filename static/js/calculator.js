@@ -423,7 +423,7 @@
     document.getElementById('calc-mult').textContent = mult + 'x';
 
     document.getElementById('calc-table-body').innerHTML = html;
-    document.getElementById('calc-results').hidden = false;
+    document.getElementById('calc-results').style.display = '';
 
     // Update comparison chart to highlight selected GPU
     updateComparison();
