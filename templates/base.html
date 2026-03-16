@@ -36,6 +36,7 @@
     {% endblock head_meta %}
 
     <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -74,10 +75,11 @@
                 "logo": {
                     "@type": "ImageObject",
                     "@id": "{{ config.base_url }}/#logo",
-                    "url": "{{ config.base_url }}/img/archipelagio-brandmark.png",
-                    "contentUrl": "{{ config.base_url }}/img/archipelagio-brandmark.png",
-                    "width": 512,
-                    "height": 512,
+                    "url": "{{ config.base_url }}/img/archipelagio-brandmark.svg",
+                    "contentUrl": "{{ config.base_url }}/img/archipelagio-brandmark.svg",
+                    "width": 358,
+                    "height": 358,
+                    "encodingFormat": "image/svg+xml",
                     "caption": "Archipelag.io"
                 },
                 "image": "{{ config.base_url }}/og-image.png",
@@ -144,6 +146,7 @@
             <div class="header-inner">
                 <a href="/" class="header-logo" aria-label="archipelag.io">
                     <picture>
+                        <source srcset="/img/archipelagio-brandmark.svg" type="image/svg+xml">
                         <source srcset="/img/archipelagio-brandmark.avif" type="image/avif">
                         <source srcset="/img/archipelagio-brandmark.webp" type="image/webp">
                         <img src="/img/archipelagio-brandmark.png" alt="Archipelag.io logo" width="32" height="32" loading="eager">
@@ -279,6 +282,7 @@
                 <div class="footer-brand-col">
                     <a href="/" class="footer-logo" aria-label="Archipelag.io - Home">
                         <picture>
+                            <source srcset="/img/archipelagio-brandmark.svg" type="image/svg+xml">
                             <source srcset="/img/archipelagio-brandmark.avif" type="image/avif">
                             <source srcset="/img/archipelagio-brandmark.webp" type="image/webp">
                             <img src="/img/archipelagio-brandmark.png" alt="" width="80" height="80" loading="lazy">
@@ -358,7 +362,7 @@
                             <li><a href="https://github.com/archipelag-io/app" target="_blank" rel="noopener noreferrer" class="external">Coordinator</a></li>
                             <li><a href="https://github.com/archipelag-io/node-agent" target="_blank" rel="noopener noreferrer" class="external">Island Agent</a></li>
                             <li><a href="https://github.com/archipelag-io/proto-contracts" target="_blank" rel="noopener noreferrer" class="external">Proto Contracts</a></li>
-                            <li><a href="https://github.com/archipelag-io/website" target="_blank" rel="noopener noreferrer" class="external">Website</a></li>
+                            <li><a href="https://github.com/archipelag-io/archipelag.io" target="_blank" rel="noopener noreferrer" class="external">Website</a></li>
                         </ul>
                     </nav>
                 </div>
