@@ -54,12 +54,18 @@ Our platform is built on:
 - **Compute Exchange** — market-based pricing with bid/ask matching and live rate snapshots
 - **Cargo Marketplace** — developer portal with publisher tiers, reviews, ratings, and per-execution payouts
 - **Mobile compute** — iOS agent with on-device LLM inference via CoreML; Android via ONNX
+- **Workflow orchestration** — chain Cargos into DAG pipelines with conditional branching, retry, and templates
+- **Inference caching** — semantic deduplication serves similar prompts from cache instantly (free)
+- **A/B testing** — split traffic between model versions, measure quality, auto-promote the winner
+- **Federated fine-tuning** — train models across Islands without centralizing data; differential privacy built in
+- **Confidential inference** — TEE hardware attestation + AES-256-GCM encryption; Islands never see your data
 
 ## Security & Privacy
 
 - **Verified providers**: Every node operator goes through identity and compliance verification
 - **Signed Cargos**: Only network-approved containers can execute
 - **Encrypted communication**: All traffic secured with mTLS
+- **Confidential inference**: TEE attestation (SGX, SEV, TrustZone, Nitro) + end-to-end encryption
 - **Hardware isolation**: Strict resource limits, sandboxed execution
 - **Audit logging**: Complete execution records for regulatory review
 
@@ -77,8 +83,11 @@ We're a small team of distributed systems engineers with backgrounds in cloud in
 - **Q1 2026** (done): Compute Exchange with live market rates, bid/ask matching, price history
 - **Q1 2026** (done): Cargo Marketplace with developer portal, publisher tiers, reviews and ratings
 - **Q1 2026** (done): Mobile compute &mdash; iOS agent with on-device LLM inference via CoreML
-- **Q1 2026** (done): Workflow orchestration &mdash; DAG-based multi-step pipelines with parallel dispatch and data mapping
-- **Q2 2026**: Workflow Phase 2 &mdash; conditional branching, loops, sub-workflows, visual DAG editor
+- **Q1 2026** (done): Workflow orchestration &mdash; DAG pipelines with conditional branching, retry, sub-workflows, visual editor
+- **Q1 2026** (done): Inference caching &mdash; semantic dedup, per-Cargo policy, cross-instance sync
+- **Q1 2026** (done): A/B testing &mdash; traffic splitting, statistical significance, auto-promote, dashboard
+- **Q1 2026** (done): Federated fine-tuning &mdash; train across Islands, FedAvg/FedProx, differential privacy, secure aggregation
+- **Q1 2026** (done): Confidential inference &mdash; TEE attestation, end-to-end encryption, homomorphic option
 - **Q2 2026**: Real-money billing, Stripe payouts for Islands, expanded EU/CH coverage
 - **Q3 2026**: Additional jurisdictions, compliance framework integrations, Android agent
 - **Q4 2026**: SOC 2 certification, AI Act compliance toolkit
