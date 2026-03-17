@@ -810,11 +810,42 @@
             </div>
         </section>
 
+        <!-- Install -->
+        <section id="install" class="section" aria-labelledby="install-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow-numbered"><span class="number">11</span> &mdash; Install</span>
+                    <h2 id="install-title" class="section-title">One command to get started</h2>
+                </div>
+
+                <div class="install-tabs" style="max-width: 640px; margin: 0 auto;">
+                    <div class="install-tab-buttons" role="tablist" style="display: flex; gap: var(--space-2); margin-bottom: var(--space-4);">
+                        <button role="tab" class="btn btn-sm install-tab-btn active" aria-selected="true" data-install-tab="unix">Linux / macOS</button>
+                        <button role="tab" class="btn btn-sm install-tab-btn" aria-selected="false" data-install-tab="windows">Windows</button>
+                    </div>
+
+                    <div class="install-tab-panel" data-install-panel="unix">
+                        <pre class="install-code"><code>curl -fsSL https://archipelag.io/install.sh | sh</code></pre>
+                        <p class="text-sm text-secondary" style="margin-top: var(--space-3);">
+                            Downloads the binary, creates a config, and sets up your PATH. <a href="https://docs.archipelag.io/getting-started/for-hosts/">Full guide</a>
+                        </p>
+                    </div>
+
+                    <div class="install-tab-panel" data-install-panel="windows" hidden>
+                        <pre class="install-code"><code>irm https://archipelag.io/install.ps1 | iex</code></pre>
+                        <p class="text-sm text-secondary" style="margin-top: var(--space-3);">
+                            Run in PowerShell. Or for the best experience, <a href="https://docs.archipelag.io/getting-started/for-hosts/#windows-wsl--recommended">use WSL</a> and run the Linux installer inside it. <a href="https://docs.archipelag.io/getting-started/for-hosts/">Full guide</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Payouts -->
         <section class="section section-alt-flat" aria-labelledby="payouts-title">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-eyebrow-numbered"><span class="number">11</span> &mdash; Payouts</span>
+                    <span class="section-eyebrow-numbered"><span class="number">12</span> &mdash; Payouts</span>
                     <h2 id="payouts-title" class="section-title">Getting paid</h2>
                 </div>
 
@@ -855,4 +886,5 @@
     <script src="/js/island-vignettes.js" defer></script>
     <script src="/js/calculator.js" defer></script>
     <script defer src="/js/cargo-whatis.js"></script>
+    <script defer src="/js/install-tabs.js"></script>
 {% endblock scripts %}

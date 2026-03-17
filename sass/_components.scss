@@ -159,6 +159,27 @@ html.light .btn-primary {
   }
 }
 
+// Install tabs
+.install-tab-btn {
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+  &.active { opacity: 1; background: var(--surface-2); }
+  &:hover { opacity: 0.8; }
+}
+
+.install-code {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-6);
+  font-family: var(--font-mono, 'IBM Plex Mono', monospace);
+  font-size: var(--text-sm);
+  overflow-x: auto;
+  color: var(--text);
+
+  code { background: none; padding: 0; }
+}
+
 // Cards
 .card {
   background: var(--surface-1);
@@ -507,6 +528,35 @@ html.light .btn-primary {
   .feature-icon { width: 48px; height: 48px; margin: 0 0 var(--space-5) 0; padding: var(--space-3); background: var(--surface-2); color: var(--accent); border-radius: var(--radius-md); svg { width: 100%; height: 100%; } }
   .feature-title { font-family: var(--font-brand); font-size: var(--text-xl); font-weight: 600; color: var(--text); margin-bottom: var(--space-3); }
   .feature-desc { font-family: var(--font-subline); font-size: var(--text-base); color: var(--text-secondary); line-height: 1.7; }
+}
+
+// Feature maturity badges (inline in feature titles)
+.feature-badge-experimental,
+.feature-badge-beta {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 6px;
+  border-radius: 4px;
+  vertical-align: middle;
+  margin-left: 0.5em;
+  position: relative;
+  top: -1px;
+}
+
+.feature-badge-experimental {
+  background: rgba(245, 158, 11, 0.12);
+  color: #b45309;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.feature-badge-beta {
+  background: rgba(59, 130, 246, 0.12);
+  color: #1d4ed8;
+  border: 1px solid rgba(59, 130, 246, 0.25);
 }
 
 .antigrid-stat {
